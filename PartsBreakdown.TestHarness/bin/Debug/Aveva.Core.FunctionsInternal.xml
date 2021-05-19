@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.FunctionsInternal</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Database.DbCommenting">
+            <summary>
+            Class to wrap a DB_Commenting object for PDMSNet.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.CreateNewThread(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create a new commenting thread at the default location (see DB_Commenting for details)
+            </summary>
+            <param name="anElement">    DbElement.</param>
+            <returns>
+            a CMTTHR element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.CreateNewPost(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create a new commenting post for the supplied thread.
+            </summary>
+            <param name="threadElement">    The thread to add a post to.</param>
+            <returns>
+            A post element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.CreateAttachment(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create a new attachment for the supplied commenting post.
+            </summary>
+            <param name="postElement">  The post to add an attachment to.</param>
+            <returns>
+            A attachment element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.CreateCapture(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create a capture element for the supplied commenting post.
+            </summary>
+            <param name="postElement">  The post to add an attachment to.</param>
+            <returns>
+            A attachment element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.AttachThread(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+            Attach a commenting thread to an element (of any kind)
+            </summary>
+            <param name="anElement">    The element to attach the thread to.</param>
+            <param name="threadElement">    The thread to attach.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.DetachThread(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+            Detach a commenting thread from an element.
+            </summary>
+            <param name="anElement"></param>
+            <param name="threadElement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.createNewThread(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create New Thread.
+            </summary>
+            <param name="anElement">    DbElement.</param>
+            <returns>
+            DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.createNewPost(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create New Post.
+            </summary>
+            <param name="threadElement">    DbElement.</param>
+            <returns>
+            DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.createAttachment(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create Attachment.
+            </summary>
+            <param name="postElement">  DbElement.</param>
+            <returns>
+            DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.createCapture(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create Capture.
+            </summary>
+            <param name="postElement">  DbElement.</param>
+            <returns>
+            DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.attachThread(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+            Attach Thread.
+            </summary>
+            <param name="anElement">    DbElement.</param>
+            <param name="threadElement">    DbElement.</param>
+            <returns>
+            DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.detachThread(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+            detach Thread.
+            </summary>
+            <param name="anElement">    DbElement.</param>
+            <param name="threadElement">    DbElement.</param>
+            <returns>
+            DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.getLastError">
+            <summary>
+            Get Last Error.
+            </summary>
+            <returns>
+            PdmsMessage.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.GetAllPosts(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get all commenting threads for a particular element.
+            </summary>
+            <param name="ce">   .</param>
+            <returns>
+            An array of database element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.GetAllThreads(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get all commenting threads for a particular element.
+            </summary>
+            <param name="ce">   .</param>
+            <returns>
+            An array of database element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommenting.GetAllThreads(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Get all commenting threads for an array of elements.
+            </summary>
+            <param name="list"> .</param>
+            <returns>
+            An array of database element.
+            </returns>
+        </member>
+        <member name="F:Aveva.Core.Database.DbCommenting.dbCommenting_">
+            <summary>
+            The database commenting.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.DbCommenting.LastError">
+            <summary>
+            Get the last error message from DB_Commenting.
+            </summary>
+            <value>
+            The last error.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.Database.DbRevision">
+            <summary>
+            Class to wrap a DB_Revision object for PDMSNet
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbRevision.GetControlledElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get the controlled element that the revision element belongs to
+            </summary>
+            <param name="revisionElement">The revision element (REVISS)</param>
+        </member>
+        <member name="M:Aveva.Core.Database.DbRevision.GetRevisionLink(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get the revision link element that holds the revision elements for the controlled element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbRevision.GetCreateRevisionLink(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get or create the revision link element that holds the revision elements for the controlled element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbRevision.GetAllRevisions(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get all the revision elements (REVISS) for the controlled element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbRevision.GetCurrentRevisionNumber(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get the current revision number for the controlled element
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Database.DbStatusCommand">
+            <summary>
+            Class to wrap a DB_StatusCommand object for PDMSNet
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.GetStatusCommand(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get a DbStatusCommand object for the given element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.GetStatusCommand(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Get a DbStatusCommand object for a list of elements
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.GetStatusCommand(System.Collections.ArrayList)">
+            <summary>
+            Get a DbStatusCommand object for an Arraylist of elements
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.Assign(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Assign a Status Definition with a comment
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.Remove(Aveva.Core.Database.DbElement)">
+            <summary>
+            Remove a Status Definition
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.Promote(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Promote a Status Definition with a comment
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.Demote(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Demote a Status Definition with a comment
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.Reset(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Reset a Status Definition with a comment
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.Set(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Set a Status Definition to a given Status Value with a comment
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.internalGetStatusCommand(Aveva.Core.Database.DbElement)">
+            <summary>
+            Internal method. Get a DbStatusCommand object for the given element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbStatusCommand.internalGetStatusCommand(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Internal method. Get a DbStatusCommand object for a list of elements
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Database.DbStatusCommand.mInternalStatusCommand">
+            <summary>
+            Singleton factory instance
+            </summary>
+        </member>
+    </members>
+</doc>

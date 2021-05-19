@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.Engineering.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Engineering.Interface.IEngineeringInfo">
+            <summary>
+            Interface IEngineeringInfo
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IEngineeringInfo.GetCanHaveAssociations(System.Collections.Generic.List{Aveva.Core.Database.DbElementType})">
+            <summary>
+            GetCanHaveAssociations
+            </summary>
+            <param name="elementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IEngineeringInfo.GetAssociationAttributes(System.Collections.Generic.List{Aveva.Core.Database.DbElementType})">
+            <summary>
+            Gets associationAttributes for elementType
+            </summary>
+            <param name="elementTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IEngineeringInfo.GetElementTypeForClass(System.String)">
+            <summary>
+            GetElementTypeForClass
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IEngineeringInfo.GetClassUriFromDecorationUri(System.String)">
+            <summary>
+            GetClassUriFromDecorationUri
+            </summary>
+            <param name="classDecorationUri"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IEngineeringInfo.Disciplines">
+            <summary>
+            Property to allow access to the Application's disciplines.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IEngineeringInfo.IsTMSProject">
+            <summary>
+            Is the project configured for TMS
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IEngineeringInfo.TMSServiceOnline">
+            <summary>
+            Whether or not the TMS Engineering Service is online
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.IAccessedElementsCache">
+            <summary>
+            Interface IAccessedElementsCache
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IAccessedElementsCache.AddLastAccessedElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            Adds the given element to last accessed element list
+            </summary>
+            <param name="ele">DB Element accessed</param>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IAccessedElementsCache.GetLastAccessedElementFromCache(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the suitable element from the cache for the given attribute
+            </summary>
+            <param name="elementTypes">List of Element Types</param>
+            <returns>suitable recently accessed element</returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IAccessedElementsCache.GetLastAccessedElementFromCache(System.Collections.Generic.IEnumerable{Aveva.Core.Database.DbElementType})">
+            <summary>
+            Gets the suitable element from the cache for the given attribute
+            </summary>
+            <param name="elementTypes">List of Element Types</param>
+            <returns>suitable recently accessed element</returns>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.IAccessClassPicker">
+            <summary>
+            IAccessClassPicker
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.IAccessClassPicker.LaunchClassPicker(System.Collections.Generic.List{System.String})">
+            <summary>
+            Method to LaunchClassPicker
+            </summary>
+            <param name="classIds"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IAccessClassPicker.SelectedClassId">
+            <summary>
+            SelectedClassId
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.ICatalogueRepository">
+            <summary>
+            The CatalogueRepository interface.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ICatalogueRepository.ImportCableCatalogueWithCores(System.Xml.XmlNodeList,System.Xml.XmlNodeList)">
+            <summary>
+            The import cable catalogue with cores.
+            </summary>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.ILanguageSupport">
+            <summary>
+            Language support interface
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ILanguageSupport.GetAttributeValueExt``1(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute,``0@,Aveva.Core.Database.DbQualifier)">
+            <summary>
+            This method gets the attribute value for a language variant attribute with given IETF tag as string qualifier.
+            </summary>
+            <typeparam name="T">The type of attribute value</typeparam>
+            <param name="databaseElement">The database element.</param>
+            <param name="attribute">The attribute.</param>
+            <param name="value">The value.</param>
+            <param name="qualifier">The qualifier.</param>
+            <returns>True if value is successfully read, else false.</returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ILanguageSupport.GetAttributeValueExt(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute,System.Object@,Aveva.Core.Database.DbQualifier)">
+            <summary>
+            Gets the attribute value ext.
+            </summary>
+            <param name="databaseElement">The database element.</param>
+            <param name="attribute">The attribute.</param>
+            <param name="value">The value.</param>
+            <param name="qualifier">The qualifier.</param>
+            <returns>True if value is successfully read, else false.</returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ILanguageSupport.SetAttributeValueExt(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute,Aveva.Core.Database.DbQualifier,System.String,Aveva.Core.Utilities.Messaging.PdmsMessage@)">
+            <summary>
+            This method sets the attribute value for a language variant attribute with given IETF tag as string qualifier.
+            </summary>
+            <param name="databaseElement">The database element.</param>
+            <param name="attribute">The attribute.</param>
+            <param name="qualifier">The qualifier.</param>
+            <param name="value">The value.</param>
+            <param name="error">The error.</param>
+            <returns>True if value is successfully set, else false.</returns>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ILanguageSupport.CurrentLanguage">
+            <summary>
+            Gets or sets current language
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ILanguageSupport.DefaultLanguage">
+            <summary>
+            Gets the default language
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ILanguageSupport.SelectedLanguages">
+            <summary>
+            Gets a list of languages which are configured in configuration module. The Key value pair contains the IETF tag as key and the English name of the language as value.   
+            </summary>
+            <value>
+            The selected languages.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.ICurrentLanguageMessage">
+            <summary>
+            Interface for Current Language changed message
+            </summary>
+            <seealso cref="T:Aveva.ApplicationFramework.IApplicationParam"/>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ICurrentLanguageMessage.CurrentLanguage">
+            <summary>
+            Gets or sets current language
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.ICoreElementManager">
+            <summary>
+            Interface to define/access the ElementManager members under Engineering.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ICoreElementManager.CreateElements(Aveva.Core.Engineering.Interface.ICoreRequestedElement,System.Collections.Generic.List{Aveva.Core.Engineering.Interface.ICoreRequestedAttribute},System.Boolean)">
+            <summary>
+            Calls internally Create Requested Element asynchronously
+            </summary>
+            <param name="requestedTag"></param>
+            <param name="attributes"></param>
+            <param name="createSubTag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ICoreElementManager.UpdateElement(Aveva.Core.Engineering.Interface.ICoreRequestedElement,System.Collections.Generic.List{Aveva.Core.Engineering.Interface.ICoreRequestedAttribute})">
+            <summary>
+            Calls internally Update Requested Element
+            </summary>
+            <param name="requestedTag"></param>
+            <param name="attributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Engineering.Interface.ICoreElementManager.ReclassifyElement(Aveva.Core.Engineering.Interface.ICoreRequestedElement,System.String)">
+            <summary>
+            Reclassifies the given requested element to the given class uri type
+            </summary>
+            <param name="requestedTag">The element to be reclassified</param>
+            <param name="toClassUri">To target class URI</param>
+            <returns>boolean status of reclassification</returns>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.ICoreRequestedAttribute">
+            <summary>
+            Interface to define Requested Attribute and value of it.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ICoreRequestedAttribute.Attribute">
+            <summary>
+            Requested Attribute
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ICoreRequestedAttribute.Value">
+            <summary>
+            Value of Requested Attribute
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.ICoreRequestedElement">
+            <summary>
+            Interface to define Requested Element.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ICoreRequestedElement.Type">
+             <summary>
+            Requested ElementType
+             </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ICoreRequestedElement.Element">
+             <summary>
+            Requested Element for update
+             </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.ICoreRequestedElement.Owner">
+             <summary>
+            Owner of Requested Element 
+             </summary>
+        </member>
+        <member name="T:Aveva.Core.Engineering.Interface.IUpdateAttributeMessage">
+            <summary>
+            Interface for update attribute message.
+            Used as an alternative mechanism to DB Legality checks
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IUpdateAttributeMessage.Element">
+            <summary>
+            Gets the DB Element which is being updated
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IUpdateAttributeMessage.Attribute">
+            <summary>
+            Gets the DB Attribute which is being updated
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IUpdateAttributeMessage.NewValue">
+            <summary>
+            Gets the new value that is being set on the attribute
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IUpdateAttributeMessage.IsValid">
+            <summary>
+            Gets or sets a value indicating whether the new value is valid for the update to continue
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Engineering.Interface.IUpdateAttributeMessage.SucceedingUpdates">
+            <summary>
+            Gets or sets the succeeding updates key value pairs which are to be performed
+            </summary>
+        </member>
+    </members>
+</doc>

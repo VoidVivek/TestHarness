@@ -1,0 +1,28 @@
+<ArrayOfPartType xmlns="http://schemas.datacontract.org/2004/07/Aveva.Engineering.PartsBreakdown.Models" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <PartType>
+    <ActualClassName>Input Channel</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#bd47a33dd-7342-4d8c-b00d-46fe07de1f36</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Channels</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#b934e790c-4c38-443e-9ac0-12c38b3cd043</AssociationUri>
+      <Cardinality>*</Cardinality>
+    </Association>
+    <BaseClassName></BaseClassName>
+    <BaseClassUri></BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+  <PartType>
+    <ActualClassName>Output Channel</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#b997c1ecf-9021-484d-883a-5e8665512b6a</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Channels</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#b934e790c-4c38-443e-9ac0-12c38b3cd043</AssociationUri>
+      <Cardinality>*</Cardinality>
+    </Association>
+    <BaseClassName></BaseClassName>
+    <BaseClassUri></BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+</ArrayOfPartType>

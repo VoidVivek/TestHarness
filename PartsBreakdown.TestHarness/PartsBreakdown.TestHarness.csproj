@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C06A38D-5516-4541-B3AD-5FAB4ACA70AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PartsBreakdown.TestHarness</RootNamespace>
+    <AssemblyName>PartsBreakdown.TestHarness</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aveva.ApplicationFramework, Version=1.2.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Build\Products\Engineering\Debug\Aveva.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.ApplicationFramework.Implementation, Version=1.2.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Build\Products\Engineering\Debug\Aveva.ApplicationFramework.Implementation.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Core.Engineering.Interface, Version=1.2.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>M:\Ajay.Paul_eng_aeai_15.1_dev_inhyz\Build\Products\Engineering\Debug\Aveva.Core.Engineering.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Aveva.Engineering.TMS.Addin, Version=15.1.0.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>M:\Ajay.Paul_eng_aeai_15.1_dev_inhyz\Build\Products\Engineering\Debug\Aveva.Engineering.TMS.Addin.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FakeAccessClassPicker.cs" />
+    <Compile Include="FakeClassPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FakeClassPicker.Designer.cs">
+      <DependentUpon>FakeClassPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FakeMainWindowViewModelFactory.cs" />
+    <Compile Include="FakePartsBreakDownRepository.cs" />
+    <Compile Include="FakeRequestFormViewModelCreator.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FakeClassPicker.resx">
+      <DependentUpon>FakeClassPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aveva.Engineering.PartsBreakdown\Aveva.Engineering.PartsBreakdown.csproj">
+      <Project>{837eaf4c-be29-48c6-9ddb-9fcde62107b6}</Project>
+      <Name>Aveva.Engineering.PartsBreakdown</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Serialised\Associations.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Serialised\PartType_1.1.xml" />
+    <EmbeddedResource Include="Serialised\PartType_1.xml" />
+    <EmbeddedResource Include="Serialised\PartType_2.1.xml" />
+    <EmbeddedResource Include="Serialised\PartType_2.xml" />
+    <EmbeddedResource Include="Serialised\PartType_3.1.xml" />
+    <EmbeddedResource Include="Serialised\PartType_3.xml" />
+    <EmbeddedResource Include="Serialised\PartType_4.1.xml" />
+    <EmbeddedResource Include="Serialised\PartType_4.xml" />
+    <EmbeddedResource Include="Serialised\PartType_5.1.xml" />
+    <EmbeddedResource Include="Serialised\PartType_5.xml" />
+    <EmbeddedResource Include="Serialised\TagClassCount_1.xml" />
+    <EmbeddedResource Include="Serialised\TagClassCount_2.xml" />
+    <EmbeddedResource Include="Serialised\TagClassCount_3.xml" />
+    <EmbeddedResource Include="Serialised\TagClassCount_4.xml" />
+    <EmbeddedResource Include="Serialised\TagClassCount_5.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

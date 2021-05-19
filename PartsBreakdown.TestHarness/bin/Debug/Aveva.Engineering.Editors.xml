@@ -1,0 +1,729 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Engineering.Editors</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Engineering.Editors.IsAttributeConverter">
+            <summary>
+            Converter used to determine whether ItemNode represents an attribute type.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.IsAttributeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Determines whether an ItemNode represents an attribute type.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.IsAttributeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not Used
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.IsParentContextClassConverter">
+            <summary>
+            Converter used to determine whether ItemNode's parent is the Context Class.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ClassItemsModel">
+            <summary>
+            Class for managing class items.
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.ClassItemsModel.DummyItemNode">
+            <summary>
+            Instantiation of a DummyItemNode for supporting lazy loading/population.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ItemNode">
+            <summary>
+            Class for managing structure of items within ClassItemsModel.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ItemNodePropertyChangedNotifier">
+            <summary>
+            For property change notifications on ItemNodes.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ItemNodePropertyChangedNotifier.OnItemNodePropertyChanged(System.String)">
+            <summary>
+            Fires the ItemNodePropertyChanged event.
+            </summary>
+        </member>
+        <member name="E:Aveva.Engineering.Editors.ItemNodePropertyChangedNotifier.PropertyChanged">
+            <summary>
+            Event handler for when ItemNode property changed.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ItemNode.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.Tag">
+            <summary>
+            Context object relating to this item node.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.Name">
+            <summary>
+            Name of the class item.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.AssociationId">
+            <summary>
+            ID of the association if this represents an association; null or empty string otherwise.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.ParentName">
+            <summary>
+            Name of the class item's parent item.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.ParentNode">
+            <summary>
+            Parent item of this item.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.ChildNodes">
+            <summary>
+            Child items of this item.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.IsExpanded">
+            <summary>
+            Whether item is expanded or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ItemNode.IsActive">
+            <summary>
+            Whether item is active or not.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.DummyItemNode">
+            <summary>
+            DummyItemNode used as a placeholder for an ItemNode populated via lazy population.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.DummyItemNode.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.AttributePickerViewModel">
+            <summary>
+            ViewModel for AttributePicker.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.#ctor(System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.GetClassItems(System.String,Aveva.Engineering.Editors.ItemNode)">
+            <summary>
+            Gets top level items (ItemNodes) for given class ID. The items returned are the attributes or associations for
+            the given class ID. The returned set of data is grouped by the ParentName property which represents the class
+            that it was defined on.
+            </summary>
+            <param name="classId">This is the ID/URI of the class that we want the items (attributes and associations) for.</param>
+            <param name="classItemNode">The ItemNode instance for the provided classId. This can be null. If provided, then
+            it is used as the parent node for the child items. This allows a "tree" to be built.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.PopulateChildClassItemNodes(Aveva.Engineering.Editors.ItemNode)">
+            <summary>
+            Gets child ItemNodes for given ItemNode and appends them to it.
+            Here to support lazy loading/population.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.GetFirstChildNode(Aveva.Engineering.Editors.ItemNode)">
+            <summary>
+            Gets the first child node from given node.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.GetFullPathID(Aveva.Engineering.Editors.ItemNode)">
+            <summary>
+            Gets the full path ID of the given ItemNode.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.GetName(System.String)">
+            <summary>
+            Gets a display name, given an ID.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.GetItemNodeIDsRecursively(Aveva.Engineering.Editors.ItemNode,System.Int32,System.Int32)">
+            <summary>
+            Gets list of item IDs from top to bottom of hierarchy and to desired depth level.
+            </summary>
+            <param name="itemNode">Item currently looking at.</param>
+            <param name="depth">Depth to limit to.</param>
+            <param name="currentDepth">Current depth of recursion. For internal use only.</param>
+            <returns>List of IDs.</returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.SelectAttribute">
+            <summary>
+            Sets the HasChanged property.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerViewModel.CloseWindow">
+            <summary>
+            Invoked the CloseWindowEvent
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.ContextClassID">
+            <summary>
+            ID of class picking attributes for.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.ContextClassName">
+            <summary>
+            Name of class picking attributes for.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.ClassItems">
+            <summary>
+            Class items to be presented.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.ActiveItemNode">
+            <summary>
+            Active ItemNode corresponding and data-bound to control.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.ActiveAttributeFullPathID">
+            <summary>
+            Active Attribute's Full Path ID e.g. ReferencedItemID\ParentItemID\ActiveItemID.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.ApplyChanges">
+            <summary>
+            Whether to apply changes or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.SelectCommand">
+            <summary>
+            Command bound to select button.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.CloseWindowCommand">
+            <summary>
+            Command bound to cancel button.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerViewModel.CloseWindowEvent">
+            <summary>
+            Event handler for close window event.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.AttributePicker">
+            <summary>
+            Interaction logic for AttributePicker.xaml
+            </summary>
+            <summary>
+            AttributePicker
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePicker.#ctor(Aveva.Engineering.Editors.AttributePickerViewModel)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePicker.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePicker.AttributePickerViewModel">
+            <summary>
+            ViewModel for AttributePicker.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.AttributePickerForm">
+            <summary>
+            WinForms Form, used to wrap WPF AttributePicker Control.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerForm.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerForm.ShowDialog(System.Windows.Forms.IWin32Window,System.String,System.String,System.String)">
+            <summary>
+            Show as modal dialog.
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.AttributePickerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.AttributePickerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.AttributePickerForm.ActiveAttributeID">
+            <summary>
+            ID of Active Attribute.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.BreadcrumbNavigator">
+            <summary>
+            Interaction logic for BreadcrumbNavigator.xaml
+            </summary>
+            <summary>
+            BreadcrumbNavigator
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.BreadcrumbNavigator.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.BreadcrumbNavigator.ContextItemNodeProperty">
+            <summary>
+            DependencyProperty wrapping ContextItemNode.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.BreadcrumbNavigator.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.BreadcrumbNavigator.ContextClassName">
+            <summary>
+            Context class name.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.BreadcrumbNavigator.ContextItemNode">
+            <summary>
+            Context ItemNode to display full path name for.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ClassPickerConstants">
+            <summary>
+            Class which contains all the constants for Class Picker
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.ClassPickerConstants.AvevaSharedIconsSetName">
+            <summary>
+            Aveva shared icons resource set name
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.ClassPickerConstants.AvevaShared">
+            <summary>
+            Aveva shared resource set name
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ImageToBitMapConverter">
+            <summary>
+            Converter used to convert from image or icon to BitmapImage
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ModeOfOperation">
+            <summary>
+            Enum to specify modes of operation for the Class Picker control. Additional modes of operation can be added here in future.
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.ModeOfOperation.SelectImplementedClass">
+            <summary>
+            In this node a user can select only implemented classes
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.ModeOfOperation.SelectAnyClass">
+            <summary>
+            In this mode user can select any class irrespective of whether it is implemented or not.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.NodeViewModel">
+            <summary>
+            View model for each node in the class picker control
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.NotifyPropertyChange">
+            <summary>
+            Class implementing INotifyPropertyChanged interface
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.NotifyPropertyChange.OnPropertyChanged(System.String)">
+            <summary>
+            Handler for the event PropertyChanged
+            </summary>
+            <param name="propertyName">Property Name</param>
+        </member>
+        <member name="E:Aveva.Engineering.Editors.NotifyPropertyChange.PropertyChanged">
+            <summary>
+            Property change event from INotifypropertychange interface
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.ClassId">
+            <summary>
+            Class id of the class/ node in context.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.DisplayName">
+            <summary>
+            Class name which is used to display in the tree view
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.Description">
+            <summary>
+            Description of the class.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.AllowSelection">
+            <summary>
+            Property to notify if the node can be selected or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.Parent">
+            <summary>
+            Parent class/ node for this node
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.Children">
+            <summary>
+            Child classes for this class/ node
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.IsExpanded">
+            <summary>
+            Specifies if this node is expanded or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.IsSelected">
+            <summary>
+            Specifies if this node is currently selected or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.IsImplemented">
+            <summary>
+            Flag to notify if this class is implemented in the conceptual model.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.ClassIcon">
+            <summary>
+            Holds the class icon.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.NodeViewModel.IsChecked">
+            <summary>
+            Flag to specify if node is checked (In the case of multi select only).
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.SelectedClassItem">
+            <summary>
+            Container class to store information about a selected class.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.SelectedClassItem.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.SelectedClassItem.#ctor">
+            <summary>
+            Empty constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.SelectedClassItem.DisplayName">
+            <summary>
+            Display name for the selected class
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.SelectedClassItem.ClassId">
+            <summary>
+            class URI for the selected class
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ClassPickerViewModel">
+            <summary>
+            This class is the view model for the Class Picker Control.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.#ctor(Aveva.ApplicationFramework.Presentation.IResourceManager,Aveva.Engineering.Editors.ModeOfOperation,System.Collections.Generic.List{System.String})">
+            <summary>
+            View model constructor
+            </summary>
+            <param name="resourceManager">IResourceManager</param>
+            <param name="modeOfOperation">ModeOfOperation</param>
+            <param name="rootClasses">rootClasses</param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.LoadViewModel">
+            <summary>
+            This method loads the TreeViewSource from the datasource object.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.RefreshTreeview">
+            <summary>
+            This method loads the TreeViewSource from the datasource object and enables the checkbox for the associated classes.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.CheckChildNodes(Aveva.Engineering.Editors.NodeViewModel)">
+            <summary>
+            This method checks all the child nodes and enables the checkbox for the associated classes.
+            </summary>
+            <param name="currentNode">The current node</param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.GetTreeViewSource">
+            <summary>
+            This method builds the tree view datasource from the datasource given by calling component.
+            </summary>
+            <returns>ObservableCollection of NodeViewModel</returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.GetTopParentNodes(System.Collections.Generic.List{System.String})">
+            <summary>
+            This method gets the top most nodes i.e. the nodes without parents, from the datasource.
+            </summary>
+            <returns>List of NodeModel</returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.vm_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Catch the property changed for each individual NodeViewModel so that we can manage the
+            selected items list.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.GetDataModelProvider">
+            <summary>
+            This method gets the DataModelProvider from the DependencyResolver if it can, otherwise creates a new one.
+            </summary>
+            <returns>IDataModelProvider</returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.GetAllSubClassesForParent(System.Collections.ObjectModel.ObservableCollection{Aveva.Engineering.Editors.NodeViewModel},Aveva.DataModelling.ApplicationInterface.IModelClass,Aveva.Engineering.Editors.NodeViewModel)">
+            <summary>
+            This method gets all the sub classes along with the root class in recursion.
+            </summary>
+            <param name="result">ObservableCollection of NodeViewModel</param>
+            <param name="currentNode">NodeModel</param>
+            <param name="parentOfCurrentNode">Parent of node as NodeViewModel</param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.GetNodeViewModel(Aveva.DataModelling.ApplicationInterface.IModelClass)">
+            <summary>
+            This method creates NodeViewModel for the respective NodeModel passed. 
+            Parent and Children properties are initialized not assigned.
+            </summary>
+            <param name="node">NodeModel</param>
+            <returns>NodeViewModel</returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.GetAllowSelection(System.Boolean)">
+            <summary>
+            Determines if an item in tree view should be focusable or not.
+            </summary>
+            <param name="isImplemented"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.SelectClass">
+            <summary>
+            Sets the SelectedItem property value to the item seleted in the tree view.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.CanExecuteSelect(System.Object)">
+            <summary>
+            Enables Select button when item is selected in tree view.
+            </summary>            
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.CloseWindow(System.Boolean)">
+            <summary>
+            Invoked the CloseWindowEvent
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.Search(System.String)">
+            <summary>
+            This method searches the entire datasource for NodeViewModels with a name that contains the search string.
+            </summary>
+            <param name="searchString">String to match</param>
+            <returns>List of string</returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerViewModel.FindSearchItem(System.String)">
+            <summary>
+            This method expands the found NodeViewModel, that has a Display name of the parameter, and its parents.
+            If no NodeViewModel is found, it will not alter the treeViewDataDource
+            </summary>
+            <param name="searchItem">String to match</param>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.CloseWindowEvent">
+            <summary>
+            Event handler for close window event.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.DataSource">
+            <summary>
+            Datasource for the class picker control. Set by the calling application.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.RootClasses">
+            <summary>
+            Collection of parent nodes.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.ModeOfOperation">
+            <summary>
+            Tells the mode of operation for the class picker
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.MultiSelect">
+            <summary>
+            Determine whether the classpicker should allow multi-select.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.TreeViewSource">
+            <summary>
+            Used as a datasource for binding the tree view.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.SelectedItems">
+            <summary>
+            Holds the selected node in the tree view.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.AssociatedClassIds">
+            <summary>
+            Holds the associated class ids
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.ButtonVisibility">
+            <summary>
+            Property  to change button visibility
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.ApplyChanges">
+            <summary>
+            Whether to apply changes or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.SelectCommand">
+            <summary>
+            Command binded to Select button
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerViewModel.CloseWindowCommand">
+            <summary>
+            Command binded to Cancel button
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.CommandHandler">
+            <summary>
+            Class which implements ICommand
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.CommandHandler.#ctor(System.Action,System.Predicate{System.Object})">
+            <summary>
+            Implementing CommandHandler form the interface ICommand
+            </summary>
+            <param name="action"></param>
+            <param name="canExecute"></param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.CommandHandler.CanExecute(System.Object)">
+            <summary>
+            Implementing CanExecute form the interface ICommand
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.CommandHandler.Execute(System.Object)">
+            <summary>
+            Implementing Execute form the interface ICommand
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.CommandHandler.RaiseCanExecuteChanged">
+            <summary>
+            Raise the event if the command changes its state.
+            </summary>
+        </member>
+        <member name="E:Aveva.Engineering.Editors.CommandHandler.CanExecuteChanged">
+            <summary>
+            CanExecuteChanged form the interface ICommand
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ClassPickerControl">
+            <summary>
+            Interaction logic for ClassPickerControl.xaml
+            </summary>
+            <summary>
+            ClassPickerControl
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerControl.#ctor(Aveva.Engineering.Editors.ClassPickerViewModel)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="classPickerViewModel">ClassPickerViewModel</param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.ClassPickerForm">
+            <summary>
+            Container form for Class Picker Control.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerForm.#ctor(Aveva.Engineering.ClassModelManager.IDataModelProvider,Aveva.Engineering.Editors.ModeOfOperation,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Constructor which loads Class Picker User control
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerForm.#ctor(Aveva.Engineering.Editors.ModeOfOperation,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Constructor that uses the default data model provider.
+            </summary>
+        </member>
+        <member name="F:Aveva.Engineering.Editors.ClassPickerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.ClassPickerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerForm.IsSelected">
+            <summary>
+            Check if a class is selected.
+            </summary>
+        </member>
+        <member name="P:Aveva.Engineering.Editors.ClassPickerForm.SelectedItems">
+            <summary>
+            Returns a list of SelectedItem container classes.
+            </summary>
+        </member>
+        <member name="T:Aveva.Engineering.Editors.PngToBitMapConverter">
+            <summary>
+            Converter used to convert from png image to BitmapImage
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.PngToBitMapConverter.System#Windows#Data#IValueConverter#Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert from png image to BitmapImage
+            </summary>
+        </member>
+        <member name="M:Aveva.Engineering.Editors.PngToBitMapConverter.System#Windows#Data#IValueConverter#ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts back a value - not implemented
+            </summary>
+        </member>
+    </members>
+</doc>

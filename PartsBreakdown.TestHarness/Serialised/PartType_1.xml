@@ -1,0 +1,48 @@
+<ArrayOfPartType xmlns="http://schemas.datacontract.org/2004/07/Aveva.Engineering.PartsBreakdown.Models" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <PartType>
+    <ActualClassName>Wire</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#bce01f86d-5d9a-450c-a35b-9dc951c7d68e</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Internal Connectors</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#ba6740eed-ddd6-45fa-9809-bccc0fffb0e2</AssociationUri>
+      <Cardinality>*</Cardinality>
+      <RangeClasses>
+        <Class>
+          <ClassName>Wire</ClassName>
+          <ClassUri>http://www.aveva.com/datamodel/item#bce01f86d-5d9a-450c-a35b-9dc951c7d68e</ClassUri>
+        </Class>
+        <Class>
+          <ClassName>Link</ClassName>
+          <ClassUri>http://www.aveva.com/datamodel/item#b2d0cc1ac-54e9-4abf-a3bc-43546121caa3</ClassUri>
+        </Class>
+      </RangeClasses>
+    </Association>
+    <BaseClassName>Wire</BaseClassName>
+    <BaseClassUri>http://www.aveva.com/datamodel/item#bce01f86d-5d9a-450c-a35b-9dc951c7d68e</BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+  <PartType>
+    <ActualClassName>Link</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#b2d0cc1ac-54e9-4abf-a3bc-43546121caa3</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Internal Connectors</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#ba6740eed-ddd6-45fa-9809-bccc0fffb0e2</AssociationUri>
+      <Cardinality>*</Cardinality>
+      <RangeClasses>
+        <Class>
+          <ClassName>Wire</ClassName>
+          <ClassUri>http://www.aveva.com/datamodel/item#bce01f86d-5d9a-450c-a35b-9dc951c7d68e</ClassUri>
+        </Class>
+        <Class>
+          <ClassName>Link</ClassName>
+          <ClassUri>http://www.aveva.com/datamodel/item#b2d0cc1ac-54e9-4abf-a3bc-43546121caa3</ClassUri>
+        </Class>
+      </RangeClasses>
+    </Association>
+    <BaseClassName>Link</BaseClassName>
+    <BaseClassUri>http://www.aveva.com/datamodel/item#b2d0cc1ac-54e9-4abf-a3bc-43546121caa3</BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+</ArrayOfPartType>

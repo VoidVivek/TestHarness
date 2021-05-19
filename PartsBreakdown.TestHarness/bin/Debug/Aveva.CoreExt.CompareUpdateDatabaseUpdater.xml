@@ -1,0 +1,2752 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.CoreExt.CompareUpdateDatabaseUpdater</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater">
+            <summary>
+            Updates elements in database
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider">
+            <summary>
+            Provide properties to integration class, DataBaseService class and compareservice class
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IUpdateDbOption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IUpdateDbOption.LinkInsertedElements">
+            <summary>
+            User option to link inserted elements.
+            </summary>
+            <value>
+            true if link inserted elements, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IUpdateDbOption.LinkMatchedElements">
+            <summary>
+            User option to link matched elements.
+            </summary>
+            <value>
+            true if link matched elements, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IUpdateDbOption.UpdateAttributesForLinkedInsertedElements">
+            <summary>
+            User option to update attributes for inserted and linked elements.
+            </summary>
+            <value>
+            true if update attributes for linked inserted elements, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IUpdateDbOption.UpdateAttributesForLinkedMatchedElements">
+            <summary>
+            User option to update attributes for matched and linked elements.
+            </summary>
+            <value>
+            true if update attributes for linked matched elements, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IUpdateDbOption.UnlinkSelectedElements">
+            <summary>
+            User option to unlink selected elements.
+            </summary>
+            <value>
+            true if unlink selected elements, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SimulationName">
+            <summary>
+            Gets or sets the simulation name.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.DialogResult">
+            <summary>
+            gets or sets whether dialogue result is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.DeleteFromDatabase">
+            <summary>
+            gets or sets whether delete from database is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.ActualProjectId">
+            <summary>
+            gets or sets actual project ID
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SourceData">
+            <summary>
+            Returns source data set
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CurrentElement">
+            <summary>
+            Rerurns current element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.InternalElementData">
+            <summary>
+            Returns data set for internal element 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.mData">
+            <summary>
+            Returns data set 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CompareDBAttribute">
+            <summary>
+            Returns Dbattribute for comparison
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CurrentElementName">
+            <summary>
+            Returns current element's name 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.AnyElementAccepted">
+            <summary>
+            True if any elements in the dataset have an accepted state
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.IsManyToOneMatching">
+            <summary>
+            Returns true if any elements has many to one matching 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CurrentElementRef">
+            <summary>
+            Returns current element's ref number
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CurrentDBType">
+            <summary>
+            Returns current database type.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.MatchedTagNo">
+            <summary>
+            list of matched tag numbers.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.VisibleElementType">
+            <summary>
+            Returns list of visible element type
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.IsBoundElementExist">
+            <summary>
+            Ture if  bound element is exist
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.IsLinkingAllowed">
+            <summary>
+            True if linking is allowed
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.IsIdenticalSourceAndDestinationDBType">
+            <summary>
+            True if source and destination database type are same
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SourceIntegrationElements">
+            <summary>
+            gets or sets source integration elements
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.LinkingAllowed">
+            <summary>
+            gets or sets whether linking is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.isRaisePMLCallbackEvents">
+            <summary>
+            gets or sets is Raise PML call back events true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.UsePMLForSearch">
+            <summary>
+            gets or sets whether to use PML for search or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.ComparebyDestination">
+            <summary>
+            gets or sets compare by destination is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.ComparebySource">
+            <summary>
+            gets or sets compare by source is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SelectedElement">
+            <summary>
+            gets or sets selected element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.DataBaseHelperCurrentElement">
+            <summary>
+            gets or sets database helper current element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CompareUDAName">
+            <summary>
+            gets or sets compare UDA name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.AddinConfigurationElements">
+            <summary>
+            gets or sets addin onfiguration elements
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.Id">
+            <summary>
+            gets or sets ID
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.Module">
+            <summary>
+            gets or sets module name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.ModuleDatabaseName">
+            <summary>
+            gets or sets module database name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.Source">
+            <summary>
+            gets or sets source name 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SourceShortName">
+            <summary>
+            gets or sets source short name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.ChildElementTypes">
+            <summary>
+            gets or sets child element types
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SelectedSource">
+            <summary>
+            gets or sets gets or sets selected source
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.SourceDataBaseName">
+            <summary>
+            gets or sets Service Module Name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.IsDabaconSource">
+            <summary>
+            gets or sets IsDabaconSource
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider.CaseKey">
+            <summary>
+            gets or sets selected source 
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility.UnMatchedElement(System.Data.DataRow)">
+            <summary>
+            process unmatched element
+            </summary>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility.UnlinkElements(System.Data.DataRow)">
+            <summary>
+            process unlink elements
+            </summary>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility.LinkMatchedElement(System.Data.DataRow)">
+            <summary>
+            process link matched elements 
+            </summary>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility.GetLinkedDbElement(System.Data.DataRow)">
+            <summary>
+            get linked db elements
+            </summary>
+            <param name="elementDataRow"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.dbUpdater">
+            <summary>
+            The component responsible for updating the database.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.isTmsProject">
+            <summary>
+            The is tag management system project.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.dbElement">
+            <summary>
+            The db element.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.errorOccurred">
+            <summary>
+            The error occurred.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.errorMessage">
+            <summary>
+            The error message.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.errorInAttributeUpdate">
+            <summary>
+            The error in attribute update.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.attributeErrorMessagesList">
+            <summary>
+            The attribute error messages list.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.updateAttributes">
+            <summary>
+            The update attributes.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.attributeDataRows">
+            <summary>
+            The attribute data rows.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.attributesTobeUpdated">
+            <summary>
+            The attributes to be updated.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.elementInserted">
+            <summary>
+            The element inserted.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.updateType">
+            <summary>
+            The update type.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.args">
+            <summary>
+            The args.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.tmsCompareUpdateElements">
+            <summary>
+            The tag management system compare update elements.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.destinationElement">
+            <summary>
+            The destination element.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.tmsElementInfo">
+            <summary>
+            The tag management system element info.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.rowsTobeDeleted">
+            <summary>
+            The rows to be deleted.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.attRowsTobeDeleted">
+            <summary>
+            The attribute rows to be deleted.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.elementInfoForReferenceAttributes">
+            <summary>
+            The element info for reference attributes.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.attributeErrorInfo">
+            <summary>
+            variable to store attributeErrorInfo, EG: Attribute Name as key and error as value
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater"/> class.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.#ctor(Aveva.CoreExt.CompareUpdateDatabaseUpdater.ICatalogueUpdater)">
+            <summary>
+            Constuctor
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.#ctor(Aveva.CoreExt.CompareUpdateDatabaseUpdater.IDataProvider)">
+            <summary>
+            Paramaterised constuctor
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.InitialiseResources">
+            <summary>
+            Initialises the resources.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetEnumValueforString(System.String,System.Boolean)">
+            <summary>
+            Returns database type enumeration after conversion of string value to enumeration.
+            </summary>
+            <param name="databasebType">database type</param>
+            <param name="isDestinationDbType">check if Destination database type </param>
+            <returns>returns database type</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateDatabse">
+            <summary>
+            Update database for both TMS and non TMS enabled projects
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateUnselectedElements(System.Collections.Generic.List{System.Data.DataRow})">
+            <summary>
+            update unselected elements
+            </summary>
+            <param name="unselectedElements"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateSelectedElements(System.Collections.Generic.List{System.Data.DataRow})">
+            <summary>
+            Update selected elements
+            </summary>
+            <param name="selectedElements">selected element list</param>
+            <returns>task</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateUIPostReferenceAttributeUpdate(System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult},System.Boolean)">
+            <summary>
+            Update element and attribute grid for reference type attributes after 2nd call to TMS
+            </summary>
+            <param name="results"></param>
+            <param name="errorInUpdate"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateAndFillReferenceAttributesAfterTMSUpdate(System.Boolean@)">
+            <summary>
+            update and fill element info list of reference attribute
+            </summary>
+            <param name="errorInUpdate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CreateSimulationInfoIntoEngineering">
+            <summary>
+            The create simulation info into engineering.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CreateSimObject(Aveva.Core.Database.DbElementType,Aveva.Core.Database.DbAttribute,Aveva.Core.Database.DbAttribute,Aveva.Core.Database.DbAttribute)">
+            <summary>
+            The create sim object.
+            </summary>
+            <param name="dbElementType">
+            The db element type.
+            </param>
+            <param name="simulationNameAttr">
+            The simulation name attr.
+            </param>
+            <param name="simulationCaseAttr">
+            The simulation case attr.
+            </param>
+            <param name="simulationSourceAttr">
+            The simulation source attr.
+            </param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.PostTMSUpdateDistributedAttributes(System.Collections.Generic.IEnumerable{Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo})">
+            <summary>
+            Update Distributed attributes
+            </summary>
+            <param name="elementsWithDistAttributes"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.DoPostTMSCreationAndUpdateUI(Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateDbUpdater,System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult},System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo})">
+            <summary>
+            Update database call for TMS
+            </summary>
+            <param name="updater"></param>
+            <param name="results"></param>
+            <param name="refElementsList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateAttributeGridWithTMSResult(System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeResult},Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo,System.Boolean,System.Collections.Generic.List{System.Data.DataRow}@)">
+            <summary>
+            Updates attribute grid with TMS result
+            </summary>
+            <param name="attributeResults"></param>
+            <param name="elementInfo"></param>
+            <param name="errorInUpdate"></param>
+            <param name="attRows"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateReferenceAttributesForTMS(System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo},Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo,Aveva.Core.Database.DbElement,System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult})">
+            <summary>
+            Prepare collection to send the Has part reference elements update for TMS
+            </summary>
+            <param name="refElementsList"></param>
+            <param name="elementInfo"></param>
+            <param name="element"></param>
+            <param name="results"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CheckAndFillDbElements(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute)">
+            <summary>
+            Validation method to check if the DbElement already exists in DB, else push for update
+            </summary>
+            <param name="parentElement"></param>
+            <param name="element"></param>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateReferenceAttributes(Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo,Aveva.Core.Database.DbElement,System.Collections.Generic.List{Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult})">
+            <summary>
+            Update Has part reference attributes
+            </summary>
+            <param name="elementInfo"></param>
+            <param name="element"></param>
+            <param name="results"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateDistributedAttributes(Aveva.Core.Database.DbElement,Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo,System.Collections.Generic.List{System.Data.DataRow}@)">
+            <summary>
+            Update Distributed attributes
+            </summary>
+            <param name="dbElement"></param>
+            <param name="elementInfo"></param>
+            <param name="attributeDataRows"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SetInformationsAndUpdateUDAAttributes(Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType,System.Data.DataRow,Aveva.Core.Database.DbElement,System.Data.DataRow[])">
+            <summary>
+            Sets the information and update the uda attributes
+            </summary>
+            <param name="updateType"></param>
+            <param name="elementDataRow"></param>
+            <param name="dbElement"></param>
+            <param name="attributeDataRows"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetElementRow(System.String)">
+            <summary>
+            gets element data row based on the key 
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetAttributeRow(System.String,System.String)">
+            <summary>
+            gets attribute name based on the element row number and attribute name
+            </summary>
+            <param name="keyName"></param>
+            <param name="attrName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.JoinString(Aveva.Core.Database.DbElement)">
+            <summary>
+            The join string.
+            </summary>
+            <param name="element">
+            The element.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UnlinkElements(System.Data.DataRow)">
+            <summary>
+            Unlink the source and target elements, use TYPE qualified Name or RefNo 
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.LinkMatchedElement(System.Data.DataRow)">
+            <summary>
+            Process Linking of Matched elements
+            </summary>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateNameAndAttributes(System.Data.DataRow)">
+            <summary>
+            The update name and attributes.
+            </summary>
+            <param name="elementDataRow">
+            The element data row.
+            </param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateNameAttribute(System.Data.DataRow[],Aveva.Core.Database.DbElement,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Updates name attribute
+            </summary>
+            <param name="attributeDataRows"></param>
+            <param name="dbElement"></param>
+            <param name="attributesTobeUpdated"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SetAttributeDataRowAfterUpdate(System.Boolean,System.String,System.Boolean@,System.Data.DataRow)">
+            <summary>
+            sets attribute data row after update
+            </summary>
+            <param name="errorOccured"></param>
+            <param name="errorMessage"></param>
+            <param name="errorInUpdate"></param>
+            <param name="attributeDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsDestinationLevelSkipped(Aveva.Core.Database.DbElement)">
+            <summary>
+             Indentify the level skipped (Element Type) and create a level (Element of the indentified type) for child.
+             </summary>
+             <param name="ownerElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CopyOwnerElement(System.Data.DataRow,Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+            Copies owner element
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="dbElement"></param>
+            <param name="ownerElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetLinkedDbElement(System.Data.DataRow)">
+            <summary>
+            Gets linked Db Element
+            </summary>
+            <param name="elementDataRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateUDAAttribute(System.String,System.Boolean@,System.Collections.Generic.List{System.String}@,System.String,System.String,Aveva.Core.Database.DbElement)">
+            <summary>
+            Update the Uda Attribute.
+            </summary>
+            <param name="key"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <param name="pidProjectName"></param>
+            <param name="pidDrawingAndSheetNo"></param>
+            <param name="dbElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetUDACompareValue(System.String,System.String,System.String)">
+            <summary>
+            Get the value to be compared for UDA.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="pidProjectNo">The pid project no.</param>
+            <param name="pidDrawingAndSheetNo">The pid drawing and sheet no.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateNoOfChangesColumn(System.Data.DataRow,System.Data.DataRow[])">
+            <summary>
+            Updates the no of changes column for given element data row.
+            </summary>
+            <param name="elementDataRow">The element data row.</param>
+            <param name="attributeDataRows">The attribute data rows.</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsRowLinked(System.Data.DataRow)">
+            <summary>
+            Determines whether [is row linked] [the specified row].
+            </summary>
+            <param name="row">The row.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.PrepareArguments(System.Data.DataRow,Aveva.Core.Database.DbElement@,System.Collections.ArrayList@)">
+            <summary>
+            
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="destinationElement"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetOwnerElement(System.Data.DataRow,System.Data.DataSet,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the owner element from element data row.
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="m_Data"></param>
+            <param name="m_MatchedTagNo"></param>
+            <param name="m_VisibleElementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetDestinationData(System.Data.DataRow,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets destination DbElement for source data row.
+            </summary>
+            <param name="sourceDataRow"></param>
+            <param name="m_MatchedTagNo"></param>
+            <param name="m_VisibleElementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.FindDbElement(System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.String,System.String)">
+            <summary>
+            Finds DbElement from PDMS database.
+            </summary>
+            <param name="keyColumnValue">Primary key value to be searched in integration UDA.</param>
+            <param name="elementName">Element name</param>
+            <param name="elementType">DbElement type name</param>
+            <param name="dbType">PDMS Database type</param>
+            <param name="pidProjectNo">PID project name </param>
+            <param name="pidDrawingSheetNo">Combination pid drawing and sheet no </param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SeggregateSelectedElements(System.Collections.Generic.List{System.Data.DataRow}@,System.Collections.Generic.List{System.Data.DataRow}@)">
+            <summary>
+            seggregate elements
+            </summary>
+            <param name="selectedElements"></param>
+            <param name="unselectedElements"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetRowElement(System.Data.DataRow)">
+            <summary>
+            Get the Element object that corresponds to the Type in the data row 
+            </summary>
+            <param name="dataRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UnMatchedElement(System.Data.DataRow)">
+            <summary>
+            Process unmatched elements
+            </summary>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateUnMatchedElement(System.Data.DataRow)">
+            <summary>
+            updates unmatched elements
+            </summary>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.FillDataIntoTmsElementForCreate(Aveva.Core.Database.DbElement,Aveva.Core.ImportIntegration.Common.Element,System.String,Aveva.Core.Database.DbElementType,Aveva.Core.Database.DbElement,System.Boolean,Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            fills data required for TMS
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CreateChildDbElement(Aveva.Core.Database.DbElement,Aveva.Core.ImportIntegration.Common.Element,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            creates child elements
+            </summary>
+            <param name="parentDbElement"></param>
+            <param name="element"></param>
+            <param name="key"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.LinkNewElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            Links newly created element
+            </summary>
+            <param name="dbElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.LinkMatchedElement(System.Data.DataRow,Aveva.Core.Database.DbElement,System.Boolean@,System.Collections.Generic.List{System.String}@,Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType@,System.Boolean@)">
+            <summary>
+            Link matched element
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="dbElement"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <param name="updateType"></param>
+            <param name="updateAttributes"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetOwner(System.Data.DataRow,System.Collections.ArrayList,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Get Owner based on the Priority (Parent Child,PML Callback,PML Expression,User defined Owner) 
+            </summary>
+            <param name="elementDataRow">The element data row.</param>
+            <param name="args">ArrayList returns from PML Callback</param>
+            <param name="errorMessage">Error Message</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetDbAttribute(System.String)">
+            <summary>
+            A method to get an attribute instance or return a null if such an attribute doesn't exist
+            This is useful for checking if a UDA exists.
+            This can be combined with HasAttribute to check the attribute is valid for a DbElementType.
+            </summary>
+            <param name="name">The name of the DbAttribute instance to get</param>
+            <returns>The DbAttribute instance or null</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.GetUpdateAttributes(Aveva.Core.Database.DbElement@,System.Data.DataRow[],System.Collections.Generic.List{System.String}@)">
+            <summary>
+            gets the attributes to be updated
+            </summary>
+            <param name="dbElement">The database element.</param>
+            <param name="attributeDataRows">The attribute data rows.</param>
+            <param name="attributesTobeUpdated">The attributes tobe updated.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateChildDbElements(Aveva.Core.ImportIntegration.Common.Element,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Updates all child elements
+            </summary>
+            <param name="element">Child element</param>
+            <param name="parentKey">Primary key value</param>
+            <param name="errorOccurred">Error occurred</param>
+            <param name="errorMessage">List of error message.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SimulationName">
+            <summary>
+            Gets or sets the simulation name.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ComparebyDestination">
+            <summary>
+            true if compare by destination is checked
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ComparebySource">
+            <summary>
+            tre if compare by source is checked
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.DialogResult">
+            <summary>
+            dialogue result of delete confirmation dialogue
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.DeleteFromDatabase">
+            <summary>
+            True if delete from database is allowed
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ActualProjectId">
+            <summary>
+            Gets or sets the actual project id.
+            </summary>
+            <value>
+            The m project identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SourceData">
+            <summary>
+            Gets or sets the  source data.
+            </summary>
+            <value>
+            The m source data.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CurrentElement">
+            <summary>
+            Gets or sets the current element.
+            </summary>
+            <value>
+            The current element.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.InternalElementData">
+            <summary>
+            Gets or sets the internal element data.
+            </summary>
+            <value>
+            The internal element data.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.mData">
+            <summary>
+            Gets or sets the m data.
+            </summary>
+            <value>
+            The m data.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CompareDBAttribute">
+            <summary>
+            Gets or sets the m compare database attribute.
+            </summary>
+            <value>
+            The m compare database attribute.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CurrentElementName">
+            <summary>
+            Gets or sets the name of the m current element.
+            </summary>
+            <value>
+            The name of the m current element.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.AnyElementAccepted">
+            <summary>
+            True if any elements in the dataset have an accepted state
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsManyToOneMatching">
+            <summary>
+            Gets or sets a value indicating whether elements is many to one matching].
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CurrentElementRef">
+            <summary>
+            Gets or sets the m current element reference.
+            </summary>
+            <value>
+            The m current element reference.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CurrentDBType">
+            <summary>
+            Current database type.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.MatchedTagNo">
+            <summary>
+            list of matched tag numbers.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.VisibleElementType">
+            <summary>
+            Gets or sets the type of the visible element.
+            </summary>
+            <value>
+            The type of the m visible element.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsBoundElementExist">
+            <summary>
+            Gets or sets a value indicating whether bound element exist.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsLinkingAllowed">
+            <summary>
+            Gets or sets a value indicating whether linking allowed.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsIdenticalSourceAndDestinationDBType">
+            <summary>
+            Gets or sets a value indicating whether source and destination database type is same.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SourceIntegrationElements">
+            <summary>
+            Gets or sets a value indicating whether source and destination database type is same.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.isRaisePMLCallbackEvents">
+            <summary>
+            gets or sets whether raise PML call back events is true or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.LinkingAllowed">
+            <summary>
+            gets or sets whether linking is allowed or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UsePMLForSearch">
+            <summary>
+            gets or sets whether to use PML for search or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SelectedElement">
+            <summary>
+            gets or sets the element selected
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.DataBaseHelperCurrentElement">
+            <summary>
+            gets or sets the database helper current element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CompareUDAName">
+            <summary>
+            gets or sets compare UDA name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.AddinConfigurationElements">
+            <summary>
+            gets or sets addin configuration elements 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ChildElementTypes">
+            <summary>
+            gets or sets addin configuration elements 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SelectedSource">
+            <summary>
+            gets or sets selected source 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CaseKey">
+            <summary>
+            gets or sets CaseKey
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.LinkInsertedElements">
+            <summary>
+            gets or sets link inserted elements is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.LinkMatchedElements">
+            <summary>
+            gets or sets link matched elements is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateAttributesForLinkedInsertedElements">
+            <summary>
+            gets or sets whether update attributes for linked inserted elements is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UpdateAttributesForLinkedMatchedElements">
+            <summary>
+            gets or sets whether update attributes for linked matched elements is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UnlinkSelectedElements">
+            <summary>
+            gets or sets whether unlink selected elements is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.PreserveElementNames">
+            <summary>
+            get or sets whether to update the element names with existing name or with naming rule
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Id">
+            <summary>
+            gets or sets Id
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Module">
+            <summary>
+            gets or sets Module name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ModuleDatabaseName">
+            <summary>
+            gets or sets module database name 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Source">
+            <summary>
+            gets or sets source name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SourceShortName">
+            <summary>
+            gets or sets source short name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.SourceDataBaseName">
+            <summary>
+            gets or sets Service Module Name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsDabaconSource">
+            <summary>
+            gets or sets IsDabaconSource
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.IsAGroup">
+            <summary>
+            gets or sets whether the current configuration is a group configuration or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.RaisePmlUpdateAction">
+            <summary>
+            Gets or sets the raise pml before update action.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Updater">
+            <summary>
+            The component responsible for updating the database.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.CatalogueUpdater">
+            <summary>
+            Entity representing the database helper for catalogue
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ProIISvgFilePath">
+            <summary>
+            Gets or sets ProII SVG file path.
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus">
+            <summary>
+            Class encapsulates element update status
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.m_MatchedColumnName">
+            <summary>
+            gets or sets matched column name
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.m_LinkedOkText">
+            <summary>
+            gets or sets linked ok text 
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.m_MultipleLinksText">
+            <summary>
+            gets or sets multiple links text
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.m_YesText">
+            <summary>
+            gets or sets YEs text
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.m_MultipleMatchesText">
+            <summary>
+            gets or sets multiple matches text
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.m_LinkedText">
+            <summary>
+            gets or sets linked text 
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.nextLink">
+            <summary>
+            gets or sets nextLink  
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus"/> class. 
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.SetSuccessor(Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus,System.Boolean)">
+            <summary>
+            sets the next element update status
+            </summary>
+            <param name="next"></param>
+            <param name="isUnlink"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.Execute(System.Data.DataRow,Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility)">
+            <summary>
+            Execute the next link if exists
+            </summary>
+            <param name="elementRow"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.ElementUpdateStatus.UnlinkSelectedElements">
+            <summary>
+            Gets or sets a value indicating whether unlink selected elements
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Unlink">
+            <summary>
+            Unlink ElementUpdateStatus class
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Unlink.Execute(System.Data.DataRow,Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility)">
+            <summary>
+            Execute unlink elements if unlink is selected and row is linked, else calls base execute to check the next state
+            </summary>
+            <param name="elementRow"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UnMatched">
+            <summary>
+            UnMatched ElementUpdateStatus
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.UnMatched.Execute(System.Data.DataRow,Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility)">
+            <summary>
+            executes unmatched-element method if row is not matched, else calls base execute to check the next state
+            </summary>
+            <param name="elementRow"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Matched">
+            <summary>
+            Matched ElementUpdateStatus
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Matched.Execute(System.Data.DataRow,Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility)">
+            <summary>
+            Executes LinkMatchedElement method if row is matched, else calls base execute to check the next state
+            </summary>
+            <param name="elementRow"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Matched.IsRowMatched(System.Data.DataRow)">
+            <summary>
+            Determines whether [is row matched] [the specified row].
+            </summary>
+            <param name="row">The row.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Linked">
+            <summary>
+            Linked ElementUpdateStatus
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Linked.Execute(System.Data.DataRow,Aveva.CoreExt.CompareUpdateDatabaseUpdater.IStateResponsibility)">
+            <summary>
+            Executes GetLinkedDbElement method if row is Linked, else calls base execute to check the next state
+            </summary>
+            <param name="elementRow"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DatabaseUpdater.Linked.IsRowLinked(System.Data.DataRow)">
+            <summary>
+            The is row linked.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant">
+            <summary>
+            Constants
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cAvevaERM">
+            <summary>
+            The constant AVEVA ERM
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cExternalDatabase">
+            <summary>
+            The constant External Database
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cParts">
+            <summary>
+            The Has Parts string
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cProII">
+            <summary>
+            The c pro ii.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cSimCentral">
+            <summary>
+            The c sim central.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cSimulationName">
+            <summary>
+            The c sim central.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cBeforeUpdate">
+            <summary>
+            The before update.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cBeginUpdate">
+            <summary>
+            The begin update.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.cAfterUpdate">
+            <summary>
+            The after update.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.UnitOperationNameAttributeUri">
+            <summary>
+            Unit Operation Name Attribute Uri
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.SimulationNameAttributeUri">
+            <summary>
+            Simulation Name Attribute Uri.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.Constant.SimulationSourceNameAttributeUri">
+            <summary>
+            Simulation Source Name Attribute Uri
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper">
+            <summary>
+            A class to encapsulate access to Integrator link methods.
+            Accessed through a static Instance property.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper.Initialise(Aveva.Core.Database.DbType,Aveva.Core.Database.DbType)">
+            <summary>
+            Initialise
+            </summary>
+            <param name="sourceDBType"></param>
+            <param name="targetDBType"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper.LinkedElements(System.String)">
+            <summary>
+            Return a list of linked elements
+            </summary>
+            <param name="elementRef"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper.Link(System.String,System.String)">
+            <summary>
+            Link the source and target elements, arguments *must be* either RefNo or TYPE qualified Name.
+            An unqualified name eg, "/Fred" could refer randomly to either a schematic, design or an engineering element of the same name.
+            Must use "PIPE /Fred" or "=2468/456" instead.
+            </summary>
+            <param name="sourceElementRef">reference of the source element to link</param>
+            <param name="targetElementRef">reference of the target element to link</param>
+            <returns>A BoolString object: Success is true if linked OK; Result is the reason for failure</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper.Unlink(System.String)">
+            <summary>
+            Unlink the target element, argument *must be* either RefNo or TYPE qualified Name.
+            An unqualified name eg, "/Fred" could refer randomly to either a schematic, a design or an engineering element of the same name.
+            Must use "PIPE /Fred" or "=2468/456" instead.
+            </summary>
+            <param name="sourceElementRef">reference of the source element to unlink</param>
+            <returns>A BoolString object: Success is true if unlinked OK; Result is the reason for failure</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper.GetLinkedElements(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get linked Schematic/Design/Engineering element in destination mode
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.LinkHelper.Instance">
+            <summary>
+            Gets instance of LinkHelper.
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.#ctor">
+            <summary>
+            Constuctor
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.conceptualModel">
+            <summary>
+            The conceptual model.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetAttributeValueForUpdate(Aveva.Core.ImportIntegration.Common.Element,Aveva.Core.Database.DbAttribute,System.String,System.String,System.String,Aveva.Core.ImportIntegration.Common.Elements)">
+            <summary>
+            gets attribute value for update
+            </summary>
+            <param name="element"></param>
+            <param name="dbAttribute"></param>
+            <param name="sourceAttribute"></param>
+            <param name="destinationAttribute"></param>
+            <param name="value"></param>
+            <param name="AddinConfigurationElements"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetBoundElement(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            gets bound element
+            </summary>
+            <param name="dbElement"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.UpdateColumnsOfElementRow(Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType,System.Data.DataRow,System.Boolean,Aveva.Core.Database.DbElement,Aveva.Core.ImportIntegration.Common.Element)">
+            <summary>
+            update columns of element roe after update
+            </summary>
+            <param name="updateType"></param>
+            <param name="elementDataRow"></param>
+            <param name="updateAttributes"></param>
+            <param name="dbElement"></param>
+            <param name="CurrentElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.SetAttributeDataRowAfterUpdate(System.String,System.String,System.String,System.Boolean,System.String,System.Boolean@,System.Data.DataRow)">
+            <summary>
+            sets attribute data rows after update
+            </summary>
+            <param name="m_CurrentModuleAttributeColumnName"></param>
+            <param name="m_CurrentModuleValueColumnName"></param>
+            <param name="m_CurrentSourceValueColumnName"></param>
+            <param name="errorOccured"></param>
+            <param name="errorMessage"></param>
+            <param name="errorInUpdate"></param>
+            <param name="attributeDataRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsDeletionAllowed">
+            <summary>
+            determines if user has delete permisssion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsDimensionMatch(Aveva.Core.Database.DbDouble,Aveva.Core.Database.DbAttribute)">
+            <summary>
+            Checks whether source attribute and destination attribute dimensions matches or not.
+            If match, it will update the destination attribute otherwise will throw pdms exception.
+            </summary>
+            <param name="dVal">Source value converted to DbDouble</param>
+            <param name="attribute">Destination attribute which needs to be update</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.SetDFLT(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Set DFLT and run command
+            </summary>
+            <param name="element"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetDbAttribute(System.String)">
+            <summary>
+            A method to get an attribute instance or return a null if such an attribute doesn't exist
+            This is useful for checking if a UDA exists.
+            This can be combined with HasAttribute to check the attribute is valid for a DbElementType.
+            </summary>
+            <param name="name">The name of the DbAttribute instance to get</param>
+            <returns>The DbAttribute instance or null</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.UpdateAttribute(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            update attribute in databse
+            </summary>
+            <param name="dbElement"></param>
+            <param name="attribute"></param>
+            <param name="newValue"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.UpdateAttribute(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute,System.String,Aveva.Core.Database.DbQualifier,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            update attribute in databse
+            </summary>
+            <param name="dbElement"></param>
+            <param name="attribute"></param>
+            <param name="newValue"></param>
+            <param name="qualifier"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetDbAttribute(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Gets Dbattribute which is valid for specified dbelement.
+            </summary>
+            <param name="dbElement">DBElement</param>
+            <param name="attributeName">DbAttribute name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsDbElementOfCorrectType(Aveva.Core.Database.DbElement@,System.String)">
+            <summary>
+             Return boolean value indicating the dbelement is of correct type
+            </summary>
+            <param name="dbElement"></param>
+            <param name="elementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsInsertAllowed(Aveva.Core.ImportIntegration.Common.Element,System.Boolean)">
+            <summary>
+            checks whether insertion is allowed or not
+            </summary>
+            <param name="elementDefinition"></param>
+            <param name="isManyToOneMatching"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.CanCreateTag">
+            <summary>
+            determines whether user can create tag or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetCurrentUser">
+            <summary>
+            Gets current user.
+            </summary>
+            <returns>
+            The current user.
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GenerateSummaryData(System.Data.DataRow,System.Boolean,Aveva.Core.ImportIntegration.Common.Element,System.Boolean,System.Boolean@,System.Boolean,System.String)">
+            <summary>
+            generates summary data
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="errorOccurred"></param>
+            <param name="currentElement"></param>
+            <param name="isLinkingAllowed"></param>
+            <param name="isAnyElementAccepted"></param>
+            <param name="isManyToOneMatching"></param>
+            <param name="module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsRowMatched(System.Data.DataRow)">
+            <summary>
+            Determines whether [is row matched] [the specified row].
+            </summary>
+            <param name="row">The row.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsRowLinked(System.Data.DataRow)">
+            <summary>
+            Determines whether [is row linked] [the specified row].
+            </summary>
+            <param name="row">The row.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetExternalDatasourceCompareUDAName(System.String,System.String)">
+            <summary>
+            gets compare uda name for external data sources
+            </summary>
+            <param name="compareUDAName"></param>
+            <param name="udaSuffix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.SplitDBRef(System.String)">
+            <summary>
+            Split the given DBRef value into two values
+            </summary>
+            <param name="dbRefValue">System.String dbref value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetPDMSNameAttributeValue(System.String,System.String)">
+            <summary>
+            Get the name attribute value from source application
+            </summary>
+            <param name="prefix">prefix</param>
+            <param name="value">value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetPIDProjectName(System.Data.DataRow,System.String)">
+            <summary>
+            gets PID project  name
+            </summary>
+            <param name="dr"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.IsUDAUpdateRequired(System.String,Aveva.Core.ImportIntegration.Common.Element,Aveva.Core.ImportIntegration.Common.Element)">
+            <summary>
+            Return true if the Compare/Update UDA value is required to update.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetPIDDrawingAndSheetNo(System.Data.DataRow,System.String)">
+            <summary>
+            gets PID drawing and sheet number
+            </summary>
+            <param name="dr"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetPMLArrayList(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            </summary>
+            <param name="arg1">
+            </param>
+            <param name="arg2">
+            </param>
+            <param name="arg3">
+            </param>
+            <param name="arg4">
+            </param>
+            <param name="arg5">
+            </param>
+            <param name="arg6">
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.GetAttributeByUri(System.String)">
+            <summary>
+            The get attribute by uri.
+            </summary>
+            <param name="attributeUri">
+            The attribute uri.
+            </param>
+            <returns>
+            The <see cref="T:Aveva.Core.Database.DbAttribute"/>.
+            </returns>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateUtility.ConceptualModel">
+            <summary>
+            Gets the conceptual model.
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.XML_TRUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.XML_FALSE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.GetString(System.String)">
+            <summary>
+            Gets a string resource from the Aveva.Database.Xml resources
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceID'
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.GetStringFromResourceSet(System.String,System.String)">
+            <summary>
+            Gets a string resource from a given resource set
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the string from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceID'
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.GetString(System.String,System.Object[])">
+            <summary>
+             Gets a string resource from the Aveva.Database.Xml resources and substitutes the given
+             arguments into it
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <param name="args">The arguments to substitute into it</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceSet+resourceID' {arg[1..n]}</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.GetStringFromResourceSet(System.String,System.String,System.Object[])">
+            <summary>
+            Gets a string resource from a specified resource set and substitutes the given
+             arguments into it
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the resource from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <param name="args">The arguments to substitute into it</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceSet+resourceID' {arg[1..n]}</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.GetImage(System.String)">
+            <summary>
+            Gets a image resource from a given resource set
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The image resource if present
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.GetImageFromResourceSet(System.String,System.String)">
+            <summary>
+            Gets a image resource from a given resource set
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the string from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The image resource if present
+            </returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.initResources">
+            <summary>
+            Checks the resource manager is initialised and the Aveva.Database.Xml resources are loaded.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResources.ResourceSet">
+            <summary>
+            Gets the name of the resource set used by Aveva.Database.Xml
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater">
+            <summary>
+            Default Compare update updater
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateDbUpdater">
+            <summary>
+            Base Compare Update Database updater
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateDbUpdater.UpdateDatabase(System.Collections.Generic.IList{Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo})">
+            <summary>
+            Update the database in an synchronous way.
+            </summary>
+            <param name="plainNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateDbUpdater.UpdateDatabaseAsync(System.Collections.Generic.IList{Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo},System.Boolean)">
+            <summary>
+            Update the database in an asynchronous way.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateDbUpdater.ReportMessage(Aveva.Core.Database.Xml.LOGRECORDTYPE,System.String)">
+            <summary>
+            Report a message of the given severity 
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.m_UpdatedDiagramNames">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.skipLevelDictionary">
+            <summary>
+            dictionary that contains ParentElementType-childElementType as key and array of elementTypes as value
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.m_UpdateDatabaseEvent">
+            <summary>
+            The update database event
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetEnumValueforString(System.String,System.Boolean)">
+            <summary>
+            Returns database type enumeration after conversion of string value to enumeration.
+            </summary>
+            <param name="databasebType">database type</param>
+            <param name="isDestinationDbType">check if Destination database type </param>
+            <returns>returns database type</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.InitialiseResources">
+            <summary>
+            initialise resources
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateDatabase(System.Collections.Generic.IList{Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo})">
+            <summary>
+            Update plain nodes in database
+            </summary>
+            <param name="plainNodes">plain nodes list</param>
+            <returns>list of compare update results</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetSkipLevelsForParentChildConfiguration(Aveva.Core.Database.DbElementType,Aveva.Core.Database.DbElementType,System.Collections.Generic.Dictionary{Aveva.Core.Database.DbElementType,Aveva.Core.Database.DbElementType})">
+            <summary>
+            gets the skipped element type between the parent and child element
+            </summary>
+            <param name="parentType">parent type</param>
+            <param name="childType">child type</param>
+            <param name="uniqueElements">unique elements</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CreateSkippedElement(Aveva.Core.Database.DbElement@)">
+            <summary>
+            Indentify the level skipped (Element Type) and create a level (Element of the indentified type) for child.
+            </summary>
+            <param name="ownerElement">owner element</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CreateSkippedElements(Aveva.Core.Database.DbElement@,Aveva.Core.Database.DbElementType[])">
+            <summary>
+            creates the DbElements of type in skippedElementTypes and returns the actual owner under which child has to be created
+            </summary>
+            <param name="ownerElement">owner element</param>
+            <param name="skippedElementTypes">skipped element types that need to be created</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CopyOwnerElement(System.Data.DataRow,Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+             Copies the owner element for element data row (if it is wrong element) .
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="dbElement"></param>
+            <param name="ownerElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.IsDestinationLevelSkipped(Aveva.Core.Database.DbElement)">
+            <summary>
+             Indentify the level skipped (Element Type) and create a level (Element of the indentified type) for child.
+             </summary>
+             <param name="ownerElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateDistributedAttributes(Aveva.Core.Database.DbElement,Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo)">
+            <summary>
+            Update distributed attributes
+            </summary>
+            <param name="dbElement"></param>
+            <param name="elementInfo"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateAttributes(Aveva.Core.Database.DbElement,Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo)">
+            <summary>
+            update attributes
+            </summary>
+            <param name="dbElement"></param>
+            <param name="elementInfo"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateReferenceAttributes(Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo,Aveva.Core.Database.DbElement,System.Data.DataRow)">
+            <summary>
+            Update Has part reference attributes
+            </summary>
+            <param name="elementInfo"></param>
+            <param name="element"></param>
+            <param name="elementDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SetErrorData(System.Data.DataRow,System.String)">
+            <summary>
+            sets error data on element row
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.RecordAffectedDiagrams(Aveva.Core.Database.DbElement)">
+            <summary>
+             Record any diagrams on which the updated element exists
+            </summary>
+            <param name="dbElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetDiagramNames(Aveva.Core.Database.DbElement)">
+            <summary>
+            Gets a list of diagram names for the specified element
+            </summary>
+            <param name="dbElement">Db Element</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateNoOfChangesColumn(System.Data.DataRow,System.Data.DataRow[])">
+            <summary>
+            Updates the no of changes column for given element data row.
+            </summary>
+            <param name="elementDataRow">The element data row.</param>
+            <param name="attributeDataRows">The attribute data rows.</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SetAttributeDataRowAfterUpdate(System.Boolean,System.Collections.Generic.List{System.String},System.Boolean@,System.Data.DataRow)">
+            <summary>
+            sets attribute row after update
+            </summary>
+            <param name="errorOccured"></param>
+            <param name="errorMessage"></param>
+            <param name="errorInUpdate"></param>
+            <param name="attributeDataRow"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetDbAttribute(System.String)">
+            <summary>
+            A method to get an attribute instance or return a null if such an attribute doesn't exist
+            This is useful for checking if a UDA exists.
+            This can be combined with HasAttribute to check the attribute is valid for a DbElementType.
+            </summary>
+            <param name="name">The name of the DbAttribute instance to get</param>
+            <returns>The DbAttribute instance or null</returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.LinkMatchedElement(System.Data.DataRow,Aveva.Core.Database.DbElement,System.Boolean@,System.Collections.Generic.List{System.String}@,Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType@,System.Boolean@)">
+            <summary>
+            Process Link Matched element
+            </summary>
+            <param name="elementDataRow"></param>
+            <param name="dbElement"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <param name="updateType"></param>
+            <param name="updateAttributes"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CreateDbElement(Aveva.Core.ImportIntegration.Common.Element,System.String,Aveva.Core.Database.DbElementType,System.Boolean@,System.Collections.Generic.List{System.String}@,System.String,System.String,Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Creates an element of specified element type with respect to owner.
+            </summary>
+            <param name="element"></param>
+            <param name="key"></param>
+            <param name="dbElementType"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <param name="pidProjectName"></param>
+            <param name="pidDrawingAndSheetNo"></param>
+            <param name="parentDbElement"></param>
+            <param name="internalKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.ProcessReferenceElement(Aveva.Core.ImportIntegration.Common.Element,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Processes the reference element.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="key">The key.</param>
+            <param name="errorOccurred">if set to <c>true</c> [error occurred].</param>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.FindDbElement(System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.String,System.String)">
+            <summary>
+            Finds DbElement from PDMS database.
+            </summary>
+            <param name="keyColumnValue">Primary key value to be searched in integration UDA.</param>
+            <param name="elementName">Element name</param>
+            <param name="elementType">DbElement type name</param>
+            <param name="dbType">PDMS Database type</param>
+            <param name="pidProjectNo">PID project name </param>
+            <param name="pidDrawingSheetNo">Combination pid drawing and sheet no </param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateInternalDbElement(Aveva.Core.ImportIntegration.Common.Element,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@,System.String)">
+            <summary>
+            Updates the internal database element.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="key">The key.</param>
+            <param name="errorOccurred">if set to <c>true</c> [error occurred].</param>
+            <param name="errorMessage">The error message.</param>
+            <param name="internalkey">internal element data table key</param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateUDAAttribute(System.String,System.Boolean@,System.Collections.Generic.List{System.String}@,System.String,System.String,Aveva.Core.Database.DbElement)">
+            <summary>
+            Update the Uda Attribute.
+            </summary>
+            <param name="key"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <param name="pidProjectName"></param>
+            <param name="pidDrawingAndSheetNo"></param>
+            <param name="dbElement"></param>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetUDACompareValue(System.String,System.String,System.String)">
+            <summary>
+            Get the value to be compared for UDA.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="pidProjectNo">The pid project no.</param>
+            <param name="pidDrawingAndSheetNo">The pid drawing and sheet no.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetOwnerForPartsAssociatedElement">
+            <summary>
+            Find the owner. The owner will be an engineering group.
+            The create algorithm is:
+            Find the world of the engineering database.
+            Find the ENGWLD under which all elements will be created.
+            If there is no ENGWLD (e.g. it is the first time that TMS works) then create one.
+            Find an ENGGRP under the ENGWLD to start creating the elements.
+            If there is no ENGGRP then create one. 
+            If there is one, then check the number of elements of this. If it is more than 400 then create a new ENGGRP (load balancing based on performance observations).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.FindEngWorld(Aveva.Core.Database.DbElement)">
+            <summary>
+            Find the first engineering world (ENGWLD) to store elements. If it doesn't exist, then create one.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.FindEngGroup(System.Collections.Generic.IReadOnlyList{Aveva.Core.Database.DbElement},Aveva.Core.Database.DbElement)">
+            <summary>
+            Find the appropriate engineering group to use. If one doesn't exist, then create a new one.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CreateNewElementInternal(Aveva.Core.Database.DbElementType,Aveva.Core.Database.DbElement)">
+            <summary>
+            Create a new element of the specified type, in a transaction.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.GetOwnerElement">
+            <summary>
+            Get owner element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SimulationName">
+            <summary>
+            Gets or sets the simulation name.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.ComparebyDestination">
+            <summary>
+            gets or sets compare by destination is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.ComparebySource">
+            <summary>
+            gets or sets compare by source is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.DialogResult">
+            <summary>
+            gets or sets dialogue result 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.DeleteFromDatabase">
+            <summary>
+            gets or sets delete from database is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.ActualProjectId">
+            <summary>
+            Gets or sets the actual project id.
+            </summary>
+            <value>
+            The m project identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SourceData">
+            <summary>
+            Gets or sets the  source data.
+            </summary>
+            <value>
+            The m source data.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CurrentElement">
+            <summary>
+            Gets or sets the current element.
+            </summary>
+            <value>
+            The current element.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.InternalElementData">
+            <summary>
+            Gets or sets the internal element data.
+            </summary>
+            <value>
+            The internal element data.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SourceTable">
+            <summary>
+            Gets or sets the m source table.
+            </summary>
+            <value>
+            The m source table.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.mData">
+            <summary>
+            Gets or sets the m data.
+            </summary>
+            <value>
+            The m data.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CompareDBAttribute">
+            <summary>
+            Gets or sets the m compare database attribute.
+            </summary>
+            <value>
+            The m compare database attribute.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CurrentElementName">
+            <summary>
+            Gets or sets the name of the m current element.
+            </summary>
+            <value>
+            The name of the m current element.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.AnyElementAccepted">
+            <summary>
+            True if any elements in the dataset have an accepted state
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.IsManyToOneMatching">
+            <summary>
+            Gets or sets a value indicating whether elements is many to one matching].
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CurrentElementRef">
+            <summary>
+            Gets or sets the m current element reference.
+            </summary>
+            <value>
+            The m current element reference.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CurrentDBType">
+            <summary>
+            Current database type.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.MatchedTagNo">
+            <summary>
+            list of matched tag numbers.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.VisibleElementType">
+            <summary>
+            Gets or sets the type of the visible element.
+            </summary>
+            <value>
+            The type of the m visible element.
+            </value>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.IsBoundElementExist">
+            <summary>
+            Gets or sets a value indicating whether bound element exist.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.IsLinkingAllowed">
+            <summary>
+            Gets or sets a value indicating whether linking allowed.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.IsIdenticalSourceAndDestinationDBType">
+            <summary>
+            Gets or sets a value indicating whether source and destination database type is same.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SourceIntegrationElements">
+            <summary>
+            Gets or sets a value indicating whether source and destination database type is same.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.isRaisePMLCallbackEvents">
+            <summary>
+            gets or sets raise PML call back events is true or false
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.LinkingAllowed">
+            <summary>
+            gets or sets whether linking is allowed
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UsePMLForSearch">
+            <summary>
+            gets or sets whether to use PML for search
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SelectedElement">
+            <summary>
+            gets or sets selected element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.DataBaseHelperCurrentElement">
+            <summary>
+            gets or sets database helper current element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CompareUDAName">
+            <summary>
+            gets or sets Compare UDA name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.AddinConfigurationElements">
+            <summary>
+            gets or sets addin configuration elements
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.ChildElementTypes">
+            <summary>
+            gets or sets child element types
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SelectedSource">
+            <summary>
+            gets or sets selected source 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CaseKey">
+            <summary>
+            gets or sets CaseKey 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.LinkInsertedElements">
+            <summary>
+            gets or sets whether Link inserted elements is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.LinkMatchedElements">
+            <summary>
+            gets or sets whether Link matched elements is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateAttributesForLinkedInsertedElements">
+            <summary>
+            gets or sets whether update attributes for linked inserted elements is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateAttributesForLinkedMatchedElements">
+            <summary>
+            gets or sets whether update attributes for linked matched elements is checked or not
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UnlinkSelectedElements">
+            <summary>
+            gets or sets whether unlink selected 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.Id">
+            <summary>
+            gets or sets Id
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.Module">
+            <summary>
+            gets or sets Module
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.ModuleDatabaseName">
+            <summary>
+            gets or sets module database name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.Source">
+            <summary>
+            gets or sets source name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SourceShortName">
+            <summary>
+            gets or sets source short name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.SourceDataBaseName">
+            <summary>
+            gets or sets Service Module Name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.IsDabaconSource">
+            <summary>
+            gets or sets IsDabaconSource
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.Provider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.RaisePmlUpdateAction">
+            <summary>
+            Gets or sets the raise pml before update action.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.CatalogueUpdater">
+            <summary>
+            gets or sets catalogueUpdater
+            </summary>
+        </member>
+        <member name="E:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateDatabaseStatusChanged">
+            <summary>
+            Event for database update status changed
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.DefaultDbpdater.UpdateDatabaseEventHandler">
+            <summary>
+            Delegate to handle database update event
+            </summary>
+            <param name="name">Current record's name being updated.</param>
+            <param name="isInternalElement">Flag indicating whether current element is internal.</param>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ICatalogueUpdater">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ICatalogueUpdater.UpdateChildDbElements(Aveva.Core.ImportIntegration.Common.Element,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Updates all child elements
+            </summary>
+            <param name="element"></param>
+            <param name="parentKey"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ICatalogueUpdater.CreateChildDbElement(Aveva.Core.Database.DbElement,Aveva.Core.ImportIntegration.Common.Element,System.String,System.Boolean@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            create child db element
+            </summary>
+            <param name="parentDbElement"></param>
+            <param name="element"></param>
+            <param name="key"></param>
+            <param name="errorOccurred"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.m_SourceDataCount">
+            <summary>
+            Member variable to store the count of source data
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.Instance">
+            <summary>
+            Gets instance of integration data summary.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.TotalItemsReadFromAvevaSource">
+            <summary>
+            Gets or Sets the total items read from AVEVA.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.TotalOwnerMemberItemsReadFromAvevaSource">
+            <summary>
+            Gets or Sets the total items read from AVEVA for update Form.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfOwnerMemberItemChanged">
+            <summary>
+            Gets or Sets the number of items changed for update Form.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsLinked">
+            <summary>
+            Gets or Sets the number of items linked. This includes items with no changes.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemMatched">
+            <summary>
+            Gets or Sets the number of items not matched.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemNotMatched">
+            <summary>
+            Gets or Sets the number of items not matched.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemChanged">
+            <summary>
+            Gets or Sets the number of items changed.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfMatchedItemsFullyAccepted">
+            <summary>
+            Gets or Sets the number of matched fully accepted items for update.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfMatchedItemsPartiallyAccepted">
+            <summary>
+            Gets or Sets the number of matched partially accepted items.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfLinkedItemsFullyAccepted">
+            <summary>
+            Gets or Sets the number of linked fully accepted items for update.
+            This only includes items with changes.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfLinkedItemsPartiallyAccepted">
+            <summary>
+            Gets or Sets the number of linked partially accepted items for update.
+            This only includes items with changes.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfLinkedItemsWithNoChangesAccepted">
+            <summary>
+            Gets or Sets the number of items linked with no changes.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsUpdatedOK">
+            <summary>
+            Gets or Sets the number of items updated successfully.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsInsertededOK">
+            <summary>
+            Gets or Sets the number of items inserted successfully.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsUnlinkedOK">
+            <summary>
+            Gets or Sets the number of items unlinked successfully.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemWithErrors">
+            <summary>
+            Gets or Sets the number of items updated with errors.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsWithOwnerExpressionErrors">
+            <summary>
+            Gets or Sets the total number of items with owner expression errors.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsFullyAcceptedForInsert">
+            <summary>
+            Gets or Sets the number of fully accepted items for insert.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsPartiallyAcceptedForInsert">
+            <summary>
+            Gets or Sets the number of partially accepted items for insert.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfInsertableItems">
+            <summary>
+            Gets or Sets the number of items that are available to be inserted.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfUpdateableItems">
+            <summary>
+            Gets or Sets the number of items that are available to be linked or updated.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsToUnlink">
+            <summary>
+            Gets the number of items to unlink
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfMatchedOrLinkedItemsFullyAccepted">
+            <summary>
+            Gets the number of fully accepted linked or matched items
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfMatchedOrLinkedItemsPartiallyAccepted">
+            <summary>
+            Gets the number of partially accepted linked or matched items
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.IntegrationDataSummary.NoOfItemsLinkedOK">
+            <summary>
+            Gets or Set the number of items linked
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.NoUpdate">
+            <summary>
+            No update required
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.Update">
+            <summary>
+            update elements
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.Insert">
+            <summary>
+            insert elements
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.MatchLink">
+            <summary>
+            match and link elements
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.InsertLink">
+            <summary>
+            Insert and link elements
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.Unlink">
+            <summary>
+            unlink elements
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.Delete">
+            <summary>
+            delete elements
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementUpdateType.ReferenceAttributeUpdate">
+            <summary>
+            reference attributes update
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeDifference">
+            <summary>
+            Represent the whether attribute difference exists.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeDifference.Yes">
+            <summary>
+            Yes
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeDifference.No">
+            <summary>
+            No
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeDifference.New">
+            <summary>
+            Difference exist as element and all attribute are new.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeDifference.DefaultNew">
+            <summary>
+            Difference exist as element and all attribute are new and default.
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult">
+            <summary>
+            Represent the compare result for a record.
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.LinkedWithoutChanges">
+            <summary>
+            Found linked but no changes
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.LinkedWithChanges">
+            <summary>
+            Found linked with changes
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.MatchedWithoutChanges">
+            <summary>
+            Matched during comparison but no changes
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.MatchedWithChanges">
+            <summary>
+            Comparison result indicates a match with changes
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.Ignored">
+            <summary>
+            Ignored during comparison
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.None">
+            <summary>
+            Not in comparison
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareResult.Error">
+            <summary>
+            Error in comparison
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState.Unlink">
+            <summary>
+            element unlinked 
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState.Linked">
+            <summary>
+            elemet linked 
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState.Matched">
+            <summary>
+            element matched 
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState.UnMatched">
+            <summary>
+            element unmatched
+            </summary>
+        </member>
+        <member name="F:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementState.Deleted">
+            <summary>
+            element deleted
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo">
+            <summary>
+            Attribute info
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo.AttributeName">
+            <summary>
+            gets or sets Attriute Name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo.DistributedAttribute">
+            <summary>
+            gets or sets Distributed Attribute
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo.Attribute">
+            <summary>
+            gets or sets Attribute
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo.AttributeValue">
+            <summary>
+            gets or sets Attribute Value
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo.HasInternalDbElement">
+            <summary>
+            Has Internal DbElement Property
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeInfo.AttributeCaseKey">
+            <summary>
+            gets or sets Case Key
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeResult">
+            <summary>
+            Attribute result
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeResult.AttributeName">
+            <summary>
+            gets or sets Attribute Name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeResult.IsErrorInUpdate">
+            <summary>
+            gets or sets Is error in update
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.AttributeResult.AttributeErrorMessage">
+            <summary>
+            gets or sets Attribute Error Message
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult">
+            <summary>
+            Contains Compare Update result information
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.DbElementRef">
+             <summary>
+            gets or sets Db element reeference
+             </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.AttributesResult">
+            <summary>
+            gets or sets Attribute result
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.ElementStatus">
+            <summary>
+            gets or sets Element Status
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.ErrorOccured">
+            <summary>
+            gets or sets error occured
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.ErrorMessage">
+            <summary>
+            gets or sets Error message
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.ElementName">
+            <summary>
+            gets or sets element name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CompareUpdateResult.ModifiedElementName">
+            <summary>
+            gets or sets the modified element name
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo">
+            <summary>
+            Element Information class
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.CurrentElement">
+            <summary>
+            gets or sets current element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.Key">
+            <summary>
+            gets or sets key 
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.Owner">
+            <summary>
+            gets or sets owner
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.ProjectName">
+            <summary>
+            gets or sets project name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.DrawingAndSheetNo">
+            <summary>
+            gets or sets drawing sheet and number
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.IsNewElement">
+            <summary>
+            gets or sets is new element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.State">
+            <summary>
+            gets or sets element state
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.Element">
+            <summary>
+            gets or sets element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.DestinationElement">
+            <summary>
+            gets or sets destintion element
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.ElementName">
+            <summary>
+            Property to get or set the element name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.Attributes">
+            <summary>
+            Property to get or set the element attributes
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.DistributedAttributes">
+            <summary>
+            Property to get or set the element attributes
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.DbElementType">
+            <summary>
+            Property to get or set the actual type
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.DBREF">
+            <summary>
+            Property to get or set the element db reference
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.CaseQualifiers">
+            <summary>
+            Property to get or set the case information
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.ElementUpdateType">
+            <summary>
+            gets or sets Element update type
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.Parent">
+            <summary>
+            Gets or sets the owner dabacon name
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.IsPartsRef">
+            <summary>
+            gets or sets is parts ref
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.ElementInfo.IsWrongOwner">
+            <summary>
+            gets or sets whether destination attribute is mapped to wrong owner
+            </summary>
+        </member>
+        <member name="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CachedModelAttribute">
+            <summary>
+            The cached model attribute.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CachedModelAttribute.#ctor(Aveva.DataModelling.ApplicationInterface.IModelAttribute)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CachedModelAttribute"/> class.
+            </summary>
+            <param name="original">
+            The original.
+            </param>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CachedModelAttribute.Implementations">
+            <summary>
+            Gets the implementations.
+            </summary>
+        </member>
+        <member name="P:Aveva.CoreExt.CompareUpdateDatabaseUpdater.CachedModelAttribute.IsImplemented">
+            <summary>
+            Gets a value indicating whether is implemented.
+            </summary>
+        </member>
+    </members>
+</doc>

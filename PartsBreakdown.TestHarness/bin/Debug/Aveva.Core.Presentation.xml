@@ -1,0 +1,962 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.Presentation</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Presentation.EditMode">
+            <summary>
+            Editing modes
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.EditMode.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.EditMode.Move">
+            <summary>
+            Move
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.EditMode.Copy">
+            <summary>
+            Copy
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.Clipboard">
+            <summary>
+            Summary description for Clipboard.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.Clipboard.CurrentClipboard">
+            <summary>
+            Current clipboard
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.Clipboard.Members">
+            <summary>
+            Elements contained in clipboard
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.Clipboard.Mode">
+            <summary>
+            Editing mode
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.SelectionChangedArgs">
+            <summary>
+            Selection event arguments
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SelectionChangedArgs.#ctor(System.Object,System.Collections.Generic.IEnumerable{Aveva.Core.Database.DbElement})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="sender"></param>
+            <param name="selectedElements"></param>
+        </member>
+        <member name="P:Aveva.Core.Presentation.SelectionChangedArgs.Sender">
+            <summary>
+            Control selection is in
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.SelectionChangedArgs.SelectedElements">
+            <summary>
+            New selection event applies to
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.ISelectableElementList">
+            <summary>
+            Control that has selectable list of elements
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ISelectableElementList.SelectOccurrence(Aveva.Core.Database.DbElement,System.Boolean)">
+            <summary>
+            Method to select occurrence of given database element
+            </summary>
+            <param name="dbElement">element to search for</param>
+            <param name="goToNext">indicates whether current valid selection should be kept (false) or next occurrence should be selected (true)</param>
+            <returns>true if occurrence of give element was found, otherwise false</returns>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ISelectableElementList.SelectedElement">
+            <summary>
+            Get the selected element
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ISelectableElementList.SelectedElements">
+            <summary>
+            Get list of the selected elements
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ISelectableElementList.MembersOfSelected">
+            <summary>
+            Get list of the members of selected elements
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ISelectableElementList.MembersOnSelectedLevel">
+            <summary>
+            Gets list of elements that are owned by the same parent as selected elements
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.Presentation.ISelectableElementList.SelectionChanged">
+            <summary>
+            Fires when selection changes
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.ISelectableTextList">
+            <summary>
+            Control that has selectable list of texts
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ISelectableTextList.SelectedText">
+            <summary>
+            Get the selected text
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ISelectableTextList.SelectedTexts">
+            <summary>
+            Get list of the selected texts
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.SelectionChangedEventHandler">
+            <summary>
+            Selection Changed event handler delegate.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.Selection">
+            <summary>
+            Summary description for Selection.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.Selection.CurrentSelection">
+            <summary>
+            Current Selection
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Selection.RaiseSelectionChanged(System.Object,Aveva.Core.Presentation.SelectionChangedEventArgs)">
+            <summary>
+            Raise the Selection Changed event.
+            </summary>
+            <param name="sender">Object raising the event</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="P:Aveva.Core.Presentation.Selection.Members">
+            <summary>
+            Members
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.Presentation.Selection.SelectionChanged">
+            <summary>
+            Current Element Changed event.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.SelectionChangedEventArgs">
+            <summary>
+            Event arguments for Selection Changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SelectionChangedEventArgs.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.DataSetManager">
+            <summary>
+            Summary description for DataSetManager.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.DataSetManager.Instance">
+            <summary>
+            Instance of Abstract class
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.DataSetManager.CurrentDataSet">
+            <summary>
+            Get/Set current data set
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.DataSetManager.CurrentLayout">
+            <summary>
+            Get/Set whether formatting header
+            </summary>      
+        </member>
+        <member name="T:Aveva.Core.Presentation.ColumnLayout">
+            <summary>
+            An abstract entity responsible for storting
+            informaton related to column layout and formatting
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ColumnLayout.internalColumnLayout">
+            <summary>
+            Singleton factory instance
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ColumnLayout.internalGetColumnLayout">
+            <summary>
+            Internal method. Get new instance of Column Layout.
+            </summary>
+            <returns>Layout instance</returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ColumnLayout.GetColumnLayout">
+            <summary>
+            Get new instance of Column Layout
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ColumnLayout.FormatHeader">
+            <summary>
+            Gets or Sets whether formatting header
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ColumnLayout.Format">
+            <summary>
+            Gets or Sets format for column
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ColumnLayout.Width">
+            <summary>
+            Gets or Sets width for column
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.FormatManager">
+            <summary>
+            Summary description for FormatManager.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.FormatManager.Instance">
+            <summary>
+            Singleton instance
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.GetFormat(Aveva.Core.Database.DbDoubleDimension,Aveva.Core.Database.DbDoubleUnits)">
+            <summary>
+            Get format for given dimension and units
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.GetFormat(Aveva.Core.Database.DbDoubleDimension)">
+            <summary>
+            Get format for given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.AddFormat(Aveva.Core.Database.DbDoubleDimension,Aveva.Core.Database.DbDoubleUnits,Aveva.Core.Database.DbFormat)">
+            <summary>
+            Add format for given dimension and units
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.AddFormat(Aveva.Core.Database.DbDoubleDimension,Aveva.Core.Database.DbFormat)">
+            <summary>
+            Add format for given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.RemoveFormat(Aveva.Core.Database.DbDoubleDimension,Aveva.Core.Database.DbDoubleUnits)">
+            <summary>
+            Remove format for given dimension and units
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.RemoveFormat(Aveva.Core.Database.DbDoubleDimension)">
+            <summary>
+            Remove format for given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.GetCurrentUnits(Aveva.Core.Database.DbDoubleDimension)">
+            <summary>
+            Get current units for given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.AddCurrentUnits(Aveva.Core.Database.DbDoubleDimension,Aveva.Core.Database.DbDoubleUnits)">
+            <summary>
+            Add current units for given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FormatManager.RemoveCurrentUnits(Aveva.Core.Database.DbDoubleDimension)">
+            <summary>
+            Remove current units for given dimension
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.PMLFormatManager">
+            <summary>
+            Summary description for PMLFormatManager.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.Assign(Aveva.Core.Presentation.PMLFormatManager)">
+            <summary>
+            Assign, required by PML
+            </summary>
+            <param name="that"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.AddUnitFormat(Aveva.Core.PMLNet.PMLNetAny,Aveva.Core.PMLNet.PMLNetAny,Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Add Unit Format
+            </summary>
+            <param name="pmlDimension"></param>
+            <param name="pmlUnits"></param>
+            <param name="pmlFormat"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.AddDimensionFormat(Aveva.Core.PMLNet.PMLNetAny,Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Add Dimension Format
+            </summary>
+            <param name="pmlDimension"></param>
+            <param name="pmlFormat"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.RemoveUnitFormat(Aveva.Core.PMLNet.PMLNetAny,Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Remove Unit Format
+            </summary>
+            <param name="pmlDimension"></param>
+            <param name="pmlUnits"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.RemoveDimensionFormat(Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Remove Dimension Format
+            </summary>
+            <param name="pmlDimension"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.GetUnitFormat(Aveva.Core.PMLNet.PMLNetAny,Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+             Get Unit Format
+            </summary>
+            <param name="pmlDimension"></param>
+            <param name="pmlUnits"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.GetDimensionFormat(Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Get Dimension Format
+            </summary>
+            <param name="pmlDimension"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.AddCurrentUnits(Aveva.Core.PMLNet.PMLNetAny,Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Add Currency Units
+            </summary>
+            <param name="pmlDimension"></param>
+            <param name="pmlUnits"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.RemoveCurrentUnits(Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Remove Currency Units
+            </summary>
+            <param name="pmlDimension"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.PMLFormatManager.GetCurrentUnits(Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Get Currency Units
+            </summary>
+            <param name="pmlDimension"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.Core.Presentation.DbTypeDisplay">
+            <summary>
+            DbType display class
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.DbTypeDisplay.#ctor(Aveva.Core.Database.DbType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbType"></param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.DbTypeDisplay.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.DbTypeDisplay.CompareTo(Aveva.Core.Presentation.DbTypeDisplay)">
+            <summary>
+            CompareTo, for sorting
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Presentation.DbTypeDisplay.DbType">
+            <summary>
+            DbType
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.DbTypeDisplay.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.EnumExtension">
+            <summary>
+            Enum Extension methods
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.EnumExtension.GetDescription(System.Enum)">
+            <summary>
+            Get description from attribute
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.Core.Presentation.Res">
+            <summary>
+            Class to help simplify resource access for Aveva.Core.Presentation
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetString(System.String)">
+            <summary>
+            Gets a string resource from the Aveva.Core.Presentation resources
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceID'
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetStringFromResourceSet(System.String,System.String)">
+            <summary>
+            Gets a string resource from a given resource set
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the string from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceID'
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetString(System.String,System.Object[])">
+            <summary>
+             Gets a string resource from the Aveva.Core.Presentation resources and substitutes the given
+             arguments into it
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <param name="args">The arguments to substitute into it</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceSet+resourceID' {arg[1..n]}</returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetStringFromResourceSet(System.String,System.String,System.Object[])">
+            <summary>
+            Gets a string resource from a specified resource set and substitutes the given
+             arguments into it
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the resource from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <param name="args">The arguments to substitute into it</param>
+            <returns>
+            The string resource if present, otherwise the following message is returned :-
+            No resource with the key 'resourceSet+resourceID' {arg[1..n]}</returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetIcon(System.String)">
+            <summary>
+            Gets an icon resource from the Aveva.Core.Presentation resources
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The icon resource if present, otherwise null
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetIconFromResourceSet(System.String,System.String)">
+            <summary>
+            Gets an Icon resource from a given resource set
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the Icon from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The icon resource if present, otherwise null.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetImage(System.String)">
+            <summary>
+            Gets an image resource from the Aveva.Core.Presentation resources
+            </summary>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The image resource if present, otherwise null
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.Res.GetImageFromResourceSet(System.String,System.String)">
+            <summary>
+            Gets an image resource from a given resource set
+            </summary>
+            <param name="resourceSet">The name of the resource set to get the image from</param>
+            <param name="resourceID">The identity of the resource to return</param>
+            <returns>
+            The image resource if present, otherwise null.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.Presentation.Res.ResourceSet">
+            <summary>
+            Gets the name of the resource set used by Aveva.Core.Presentation
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.AddRemoveItemList">
+            <summary>
+            Generic Control enabling selection of items, using Source and Destination lists.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.PopulateScreen">
+            <summary>
+            Populates the AddRemoveItemList.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.ActivateFirstRowForDestinationItemsGrid">
+            <summary>
+            while creating the reports. Single row showing selected row in user interface, but not active row in source code
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.SortSourceListByColumn(System.String)">
+            <summary>
+            Sorts the Source List in ascending order, based on a given column.
+            </summary>
+            <param name="columnName">Name of column to sort by.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.SortDestinationListByColumn(System.String)">
+            <summary>
+            Sorts the Destination List in ascending order, based on a given column.
+            </summary>
+            <param name="columnName">Name of column to sort by.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.BeforeAddRemoveItemMoved(Aveva.Core.Presentation.AddRemoveItem,System.Boolean)">
+            <summary>
+            Override to perform action, before AddRemoveItem moved between source and destination lists.
+            </summary>
+            <param name="itemMoving">AddRemoveItem being moved.</param>
+            <param name="addingItem">Determines if item being added/removed as part of move. addingItem == false if item being removed.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.BeforeAddRemoveItemAdded(Aveva.Core.Presentation.AddRemoveItem)">
+            <summary>
+            Override to perform action, before AddRemoveItem added to destination list.
+            </summary>
+            <returns>True/False whether to allow add of item or not. This is based on TemplateAddRowShown property by default.</returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.AfterAddRemoveItemAdded(Aveva.Core.Presentation.AddRemoveItem)">
+            <summary>
+            Override to perform action, after AddRemoveItem added to destination list.
+            </summary>
+            <param name="itemAdded">AddRemoveItem added.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.BeforeAddRemoveItemUpdated(Aveva.Core.Presentation.AddRemoveItem)">
+            <summary>
+            Override to perform action, before AddRemoveItem updated.
+            </summary>
+            <param name="itemUpdating">AddRemoveItem being updated.</param>
+            <returns>True/False whether to allow update or not. This is based on ReadOnly property of AddRemoveItem by default.</returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.AfterAddRemoveItemUpdated(Aveva.Core.Presentation.AddRemoveItem)">
+            <summary>
+            Override to perform action, after AddRemoveItem updated.
+            </summary>
+            <param name="itemUpdated">AddRemoveItem just updated.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.BeforeAddRemoveItemDeleted(Aveva.Core.Presentation.AddRemoveItem)">
+            <summary>
+            Override to perform action, before AddRemoveItem deleted.
+            </summary>
+            <param name="itemDeleting">AddRemoveItem being deleted.</param>
+            <returns>True/False whether to allow delete or not. This is false by default.</returns>
+        </member>
+        <member name="F:Aveva.Core.Presentation.AddRemoveItemList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItemList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.ListColumns">
+            <summary>
+            Columns featuring in lists.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.TemplateAddRowText">
+            <summary>
+            Default text for the Add Row in the Destination Item list.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.TemplateAddRowShown">
+            <summary>
+            Whether the TemplateAddRow is present at the top of the Destination Item List.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.AllowAddAllItems">
+            <summary>
+            Whether the Add All Items button (>>) is available.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.AllowHorizontalGridScrolling">
+            <summary>
+            Property controls if the grid controls can used in the add remove item list can use horizontal scrolling
+            Horizontal scrolling allowed by default
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.SourceItemListTitle">
+            <summary>
+            Title String for the Source Item List grouping.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.DestinationItemListTitle">
+            <summary>
+            Title String for the Destination Item List grouping.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.SourceItemList">
+            <summary>
+            Returns all AddRemoveItems from source list.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.DestinationItemList">
+            <summary>
+            Returns all AddRemoveItems from destination list.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.SelectedSourceItems">
+            <summary>
+            Returns selected AddRemoveItems from source list.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItemList.SelectedDestinationItems">
+            <summary>
+            Returns selected AddRemoveItems from destination list.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.AddRemoveItem">
+            <summary>
+            AddRemoveItem to be used with AddRemoveItemList.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItem.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveItem.GetValues(System.String[],System.Boolean)">
+            <summary>
+            Get specific values from flexible list, given keys.
+            </summary>
+            <param name="keys">Keys of values to get.</param>
+            <param name="includeTag">Include AddRemoveItem in list of values.</param>
+            <returns>Values mapping to specified keys.</returns>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItem.Tag">
+            <summary>
+            Any reference Object we wish to tag onto AddRemoveItem.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItem.IsReadOnly">
+            <summary>
+            Whether AddRemoveItem is ReadOnly.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItem.IsMovable">
+            <summary>
+            Whether AddRemoveItem is movable between Source and Destination lists.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveItem.Values">
+            <summary>
+            Flexible list of values, which map to AddRemoveColumns.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.AddRemoveColumn">
+            <summary>
+            AddRemoveColumn to be used with AddRemoveItemList.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.AddRemoveColumn.#ctor(System.String,System.Type)">
+            <summary>
+            Default Constructor.
+            </summary>
+            <param name="columnName">Internal/display name of column.</param>
+            <param name="type">Data Type of column.</param>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveColumn.ColumnName">
+            <summary>
+            Internal/display name of column.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveColumn.Type">
+            <summary>
+            Data Type of column.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveColumn.Visible">
+            <summary>
+            Whether column is visible in list.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveColumn.ReadOnly">
+            <summary>
+            Whether column is ReadOnly/editable.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.AddRemoveColumn.ValueList">
+            <summary>
+            Predefined list of selectable values for column.
+            Data entry will change to drop-down list if specified.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.ContentsSorter">
+            <summary>
+            This class is an implementation of the 'IComparer' interface.
+            It is used to sort contents of a sorted list view.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ContentsSorter.columnToSort">
+            <summary>
+            Specifies the column to be sorted.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ContentsSorter.orderOfSort">
+            <summary>
+            Specifies the order in which to sort (e.g. 'Ascending').
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ContentsSorter.objectCompare">
+            <summary>
+            Comparer used to compare subitems.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ContentsSorter.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ContentsSorter.Compare(System.Object,System.Object)">
+            <summary>
+            This method is inherited from the IComparer interface.
+            It compares the two list view items passed using a case insensitive comparison.
+            </summary>
+            <returns>The result of the comparison. "0" if equal,
+            negative if 'x' is less than 'y' and positive if 'x' is greater than 'y'.</returns>
+        </member>
+        <member name="T:Aveva.Core.Presentation.ElementTypeSelector">
+            <summary>
+            This is a control containing a filtered list view that is filled
+            with database element types. One of the types can be selected in the list view.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ElementTypeSelector.elementTypes">
+            <summary>
+            All element types taken into consideration when selecting types
+            mapped onto list view items representing those types.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ElementTypeSelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypeSelector.#ctor(System.Boolean)">
+            <summary>
+            At construction specify behavior of the selector.
+            </summary>
+            <param name="showUDET">True to show UDET types in the list and show a Base Type column for them.
+            False to show only system types.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypeSelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypeSelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypeSelector.FocusSelected">
+            <summary>
+            Focus the selector on the currently selected item.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ElementTypeSelector.ListView">
+            <summary>
+            Property to return ListView from ElementTypeSelector
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ElementTypeSelector.SelectedType">
+            <summary>
+            Get or set a single selected type in the list. Null value denotes "no selection".
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ElementTypeSelector.SelectedTypes">
+            <summary>
+            Get or set an array list with DbElementType objects being selected in the list view.
+            If the selector is a single-selector there can be only one item in the list.
+            The list may be empty.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.ElementTypesSelector">
+            <summary>
+            A dialog used to select a number of element types from a list
+            of all available database element types.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ElementTypesSelector.elementTypes">
+            <summary>
+            All selected element types mapped onto list view items representing those types.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.ElementTypesSelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypesSelector.#ctor(System.Collections.ArrayList)">
+            <summary>
+            At construction provide a list of currently selected element types.
+            </summary>
+            <param name="elemTypes">A list of DbElementType objects currently selecetd.</param>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypesSelector.AddElementType(Aveva.Core.Database.DbElementType)">
+            <summary>
+            Add a list view item to the list view with chosen types.
+            The new list view item will represent the provided element type.
+            </summary>
+            <returns>True on success. False if the type was already added to the list.</returns>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypesSelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypesSelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypesSelector.AddSelection">
+            <summary>
+            Add the current selection in the list of available types to the list
+            of chosen types.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.ElementTypesSelector.UpdateButtonAdd">
+            <summary>
+            Update the enabled state of the "add" button depending on whether any selected
+            type can be added to the chosen list or not.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.ElementTypesSelector.SelectedTypes">
+            <summary>
+            Get a list of element types chosen in the selector.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.FilteredListView">
+            <summary>
+            A control consisting of a sorted list view and a text box that is used
+            to filter items in the list view.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.FilteredListView.filteredItems">
+            <summary>
+            List view items that are taken out from the list view because they
+            didn't match the filter. They are stored temporarily here before
+            they match a new filter again.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Presentation.FilteredListView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FilteredListView.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FilteredListView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FilteredListView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FilteredListView.MatchFilter(System.Windows.Forms.ListViewItem)">
+            <summary>
+            Check if the given list view item matches the current filter.
+            The item matches the filter if any of the subitems also matches the filter.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.FilteredListView.MatchFilter(System.Windows.Forms.ListViewItem.ListViewSubItem)">
+            <summary>
+            Check if the given sub item matches the current filter.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Presentation.FilteredListView.ListView">
+            <summary>
+            Property to get ListView from FilteredListView.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.SortedListView">
+            <summary>
+            A list view supporting sorting of contents.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SortedListView.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SortedListView.DisableSorting">
+            <summary>
+            Turn off contents sorting.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SortedListView.EnableSorting">
+            <summary>
+            Turn on contents sorting with the current column sorter and sort all items.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SortedListView.SetSorting(System.Int32)">
+            <summary>
+            Reset sorting column to the one with given index.
+            Sort order is ascending.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SortedListView.SetSorting(System.Int32,System.Windows.Forms.SortOrder)">
+            <summary>
+            Reset sorting to sorting by given column with given sort order.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Presentation.SortedListView.SetSortIndicator(System.Int32,System.Windows.Forms.SortOrder)">
+            <summary>
+            Add (or take away) an arrow indicating sort order to the list view header
+            on given column.
+            </summary>
+            <param name="columnIndex">Column which to affect.</param>
+            <param name="order">Denotes type of indicator:
+            Ascending - up indicator, Descending - down indicator, None - clear indicator.</param>
+        </member>
+        <member name="P:Aveva.Core.Presentation.SortedListView.ColumnSorter">
+            <summary>
+            Property to return ContentsSorter for SortedListView.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Presentation.Win32">
+            <summary>
+            Win32 PInvoke declarations and constants.
+            </summary>
+        </member>
+    </members>
+</doc>

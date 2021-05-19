@@ -1,0 +1,591 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.ToolTip</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.ToolTip.ToolTipUtility">
+             <summary>
+              Tooltip Utility Class with common methods that are needed in other classes
+             </summary>
+            
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipUtility.HeaderName(Aveva.Core.Database.DbElement)">
+            <summary>
+            The return the element name.
+            </summary>
+            <param name="element">DbElement</param>     
+            <returns>Returns the name for that DBElemnt</returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipUtility.resolveSearchPath(System.String,System.String)">
+            <summary>
+            Finds the first path in a search path that contains a given directory or file, or if the directory
+            doesn't exist in any returns the first path from the search path.
+            </summary>
+            <param name="searchPath">The expanded search path</param>
+            <param name="dirOrFile">The directory or file to search for</param>
+            <returns>string.Empty, the first path that contains the specified directory/file or the first path from the search path if the directory wasn't found.</returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipUtility.SplitSearchPath(System.String)">
+            <summary>
+            splits a search path into its component parts such as the expanded AVEVA_DESIGN_EXE
+            </summary>
+            <param name="path">the expanded path to split</param>
+            <returns>the list of elements making up the search path</returns>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipExtractManager">
+             <summary>
+             Extract tooltips without initializing the toolTip Control
+             </summary>
+            
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipExtractManager.#cctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipExtractManager.ExtractToolTipTextForDbElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            The return the attributes list.
+            </summary>
+            <param name="element">DbElement</param>     
+            <returns>Returns the attributes list for DbElement depending on the rules</returns>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipExtractManager.ToolTipRuleFilePath">
+            <summary>
+            ToolTip Rule file path property
+            </summary>       
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipManager">
+            <summary>
+            Management of tool-tips.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.ToolTipRuleFile">
+            <summary>
+            The tool tip rule file.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.defaultRule">
+            <summary>
+            The default rule.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.toolTip">
+            <summary>
+            The tool tip.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.toolTipRuleFilePath">
+            <summary>
+            Full pathname of the tool tip rule file.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.previousEnabledState">
+            <summary>
+            State of the previous enabled.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.#cctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.WheelContextMenuShowing(System.Object,System.EventArgs)">
+            <summary>
+            Wheel context menu showing.
+            </summary>
+            <param name="sender">Source of the event.</param>
+            <param name="args">Event information.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.WheelShowing(System.Object,System.EventArgs)">
+            <summary>
+            Wheel showing.
+            </summary>
+            <param name="sender">Source of the event.</param>
+            <param name="args">Event information.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.SuppressToolTipsShowing(System.Object,System.EventArgs)">
+            <summary>
+            Suppress ToolTips showing.
+            </summary>
+            <param name="sender">Source of the event.</param>
+            <param name="args">Event information.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.Initialize">
+            <summary>
+            Initialise.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.ShowToolTipForElementName(System.String,System.Drawing.Point,System.Int32)">
+            <summary>
+            Show tool-tip for named element.
+            </summary>
+            <param name="elementName">.</param>
+            <param name="position">.</param>
+            <param name="initialDelay">.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.ShowToolTip(Aveva.Core.Database.DbElement,System.Drawing.Point,System.Int32)">
+            <summary>
+            ShowToolTip.
+            </summary>
+            <param name="element">.</param>
+            <param name="position">.</param>
+            <param name="initialDelay">.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.Distance(System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Distance between 2 points.
+            </summary>
+            <param name="p1">.</param>
+            <param name="p2">.</param>
+            <returns>
+            A double.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.HideToolTip">
+            <summary>
+            Hide Tool-tip.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.DisableToolTips">
+            <summary>
+            Disables the tool tips.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.SaveRules">
+            <summary>
+            Save Rules.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.ToolTipForDbElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get Tool-tip for DbElement.
+            </summary>
+            <param name="element">.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.EvaluateToolTipForElementName(System.String)">
+            <summary>
+            Evaluate Tool-tip for named element.
+            </summary>
+            <param name="name">.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.EvaluateToolTipForDbElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            Evaluate Tool-tip for DbElement.
+            </summary>
+            <param name="element">.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.IconType(Aveva.Core.Database.DbElement)">
+            <summary>
+            Icon type.
+            </summary>
+            <param name="element">.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.SystemType(Aveva.Core.Database.DbElement)">
+            <summary>
+            System type.
+            </summary>
+            <param name="element">.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.Type(Aveva.Core.Database.DbElement)">
+            <summary>
+            Types the given element.
+            </summary>
+            <param name="element">.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.GetImage(Aveva.Core.Database.DbElement)">
+            <summary>
+            Gets an image.
+            </summary>
+            <param name="element">.</param>
+            <returns>
+            The image.
+            </returns>
+        </member>
+        <member name="E:Aveva.Core.ToolTip.ToolTipManager.TooltipInvokedEventCallback">
+            <summary>
+            TooltipInvokedEvent.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipManager.ToolTipRules">
+            <summary>
+            Tool-tip Rules.
+            </summary>
+            <value>
+            The tool tip rules.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipManager.ToolTipRuleFilePath">
+            <summary>
+            Tool-tip Rule File Path.
+            </summary>
+            <value>
+            The full pathname of the tool tip rule file.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipManager.ToolTipVisible">
+            <summary>
+            Gets a value indicating whether the tool tip is visible.
+            </summary>
+            <value>
+            true if tool tip visible, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipManager.ToolTipsEnabled">
+            <summary>
+            Are tool-tips enabled.
+            </summary>
+            <value>
+            true if tool tips enabled, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipManager.ToolTipRuleFilePathWritable">
+            <summary>
+            Is Tool-tip Rule File-path writable.
+            </summary>
+            <value>
+            true if tool tip rule file path writable, false if not.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipManager.TooltipInvokedEvent">
+            <summary>
+            Tool-tip Invoked Event.
+            </summary>
+            <param name="element">.</param>
+            <param name="position">.</param>
+            <param name="data">.</param>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipManager.FileIcon">
+            <summary>
+            A file icon.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHGFI_ICON">
+            <summary>
+            The shgfi icon.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHGFI_LARGEICON">
+            <summary>
+            'Large icon.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHGFI_SMALLICON">
+            <summary>
+            'Small icon.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHGetFileInfo(System.String,System.UInt32,Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHFILEINFO@,System.UInt32,System.UInt32)">
+            <summary>
+            Sh get file information.
+            </summary>
+            <param name="pszPath">Full pathname of the file.</param>
+            <param name="dwFileAttributes">The file attributes.</param>
+            <param name="psfi">The psfi.</param>
+            <param name="cbSizeFileInfo">Information describing the size file.</param>
+            <param name="uFlags">The flags.</param>
+            <returns>
+            An IntPtr.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.FileIcon.GetLargeIcon(System.String)">
+            <summary>
+            Gets large icon.
+            </summary>
+            <param name="file">The file.</param>
+            <returns>
+            The large icon.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipManager.FileIcon.GetSmallIcon(System.String)">
+            <summary>
+            Gets small icon.
+            </summary>
+            <param name="file">The file.</param>
+            <returns>
+            The small icon.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHFILEINFO">
+            <summary>
+            A shfileinfo.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHFILEINFO.hIcon">
+            <summary>
+            The icon.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHFILEINFO.iIcon">
+            <summary>
+            Zero-based index of the icon.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHFILEINFO.szDisplayName">
+            <summary>
+            Name of the display.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipManager.FileIcon.SHFILEINFO.szTypeName">
+            <summary>
+            Name of the type.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipRule">
+            <summary>
+            Tool-tip Rule
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.IListItemValue">
+            <summary>
+            List Item Value interface
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.IListItemValue.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.IListItemValue.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipRule.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipRule.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipRule.SelectionExpression">
+            <summary>
+            Selection Expression
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipRule.DummyAttribute">
+            <summary>
+            Dummy Attribute
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipRule.ToolTipLines">
+            <summary>
+            Tool-tip Lines
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipRule.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipRuleCollection">
+            <summary>
+            Tool-tip Rule Collection
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipRuleEditor">
+            <summary>
+            Tool-tip Rule editor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipRuleEditor.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipRuleEditor.ShowEditor">
+            <summary>
+            Show
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipRuleEditor.HighlightRule(Aveva.Core.ToolTip.ToolTipRule)">
+            <summary>
+            Highlight Rule
+            </summary>
+            <param name="rule"></param>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipRuleEditor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipRuleEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipRuleEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipRuleEditor.Instance">
+            <summary>
+            Singleton Instance
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ToolTipLine">
+            <summary>
+            Tool-tip Line
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipLine.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="expression"></param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipLine.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipLine.Expression">
+            <summary>
+            Expression
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipLine.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ToolTipLine.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ToolTipControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ToolTipControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.ListEditor">
+            <summary>
+            List Editor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ListEditor.Clear">
+            <summary>
+            Clear List
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ToolTip.ListEditor.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ListEditor.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.ListEditor.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ListEditor.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ListEditor.List">
+            <summary>
+            List
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ListEditor.Caption">
+            <summary>
+            Caption
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ListEditor.AddEnabled">
+            <summary>
+            Adding to List enabled
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.ListEditor.RemoveEnabled">
+            <summary>
+            Removing from List enabled
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.SelectedItemEventArgs">
+            <summary>
+            Selected Item Event Arguments
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.ToolTip.SelectedItemEventArgs.#ctor(System.Object,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="item"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.SelectedItemEventArgs.Item">
+            <summary>
+            Item selected
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.SelectedItemEventArgs.Index">
+            <summary>
+            Index of Item Selected
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.ToolTip.StatusEventArgs">
+            <summary>
+            Status Event Arguments
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.StatusEventArgs.Item">
+            <summary>
+            Item
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.StatusEventArgs.Error">
+            <summary>
+            If error occurred
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.ToolTip.StatusEventArgs.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+    </members>
+</doc>

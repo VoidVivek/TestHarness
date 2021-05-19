@@ -1,0 +1,2368 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnitSets</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.UnitSets.CompoundUnitsOverride">
+            <summary>
+            Class for Compound Units Override
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.CompoundUnitsOverride.GetDatabaseUnits(System.String)">
+            <summary>
+            Get database units
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.CompoundUnitsOverride.GetDatabaseUnitsLabel(System.String,System.String)">
+            <summary>
+            Get the database unit given a label
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Instance">
+            <summary>
+            CompoundUnitsOverride instance
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Acceleration">
+            <summary>
+            Acceleration
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Area">
+            <summary>
+            Area
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Density">
+            <summary>
+            Density
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.MassFlowrate">
+            <summary>
+            MassFlowrate
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Power">
+            <summary>
+            Power
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Pressure">
+            <summary>
+            Pressure
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.PressureDropLength">
+            <summary>
+            PressureDropLength
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.SpecificEnthalpy">
+            <summary>
+            SpecificEnthalpy
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.SurfaceTension">
+            <summary>
+            SurfaceTension
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.TemperatureRate">
+            <summary>
+            TemperatureRate
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.ThermalConductivity">
+            <summary>
+            ThermalConductivity
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.VelocityAngular">
+            <summary>
+            VelocityAngular
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.VelocityLinear">
+            <summary>
+            VelocityLinear
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.ViscocityDynamic">
+            <summary>
+            ViscocityDynamic
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.Volume">
+            <summary>
+            Volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.VolumetricFlowRate">
+            <summary>
+            VolumetricFlowRate
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.GaugePressure">
+            <summary>
+            GaugePressure
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.AbsPressure">
+            <summary>
+            AbsPressure
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.KinematicViscosity">
+            <summary>
+            KinematicViscosity
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.CompoundUnitsOverride.SpecHeatCapacity">
+            <summary>
+            SpecHeatCapacity
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.DabaconProvider">
+            <summary>
+            A provider that offers connection to Dabacon.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider">
+            <summary>
+            Provides an interface for the Unit sets database provider
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.GetAttributeDimension(System.Object)">
+            <summary>
+            Get the dimension of an attribute/property in the database, if it exists.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.GetDimension(System.String)">
+            <summary>
+            Gets the database's internal representation of a dimension
+            </summary>
+            <param name="dimension">The name of the required dimension</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.IsValidUnit(System.String,System.String)">
+            <summary>
+            Returns true if the selected unit is valid for the dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.IsValidDimension(System.String)">
+            <summary>
+            Checks if there is a valid represantion in the database for the given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.GetAllDbDimensions">
+            <summary>
+            Gets all the dimensions of the database
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.GetDefaultUnits(System.Object)">
+            <summary>
+            Gets all the default units of measure for a dimension or for an attribute from the database.
+            </summary>
+            <param name="key">The dimension or attribute</param>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider.DataSourceUpdated">
+            <summary>
+            This event is triggered when the datasource is updated.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.#ctor">
+            <summary>
+            Default constructor
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.IsValidUnit(System.String,System.String)">
+            <summary>
+            Returns if it is a valid unit for the database
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.IsValidDimension(System.String)">
+            <summary>
+            Checks if there is a valid representation in the database for the given dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.GetDimension(System.String)">
+            <summary>
+            Get the name of the dimension as it is in the database
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.GetAttributeDimension(System.Object)">
+            <summary>
+            Get the dimension of an attribute/property from the database, if it exists, otherwise return an empty string.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.GetAllDbDimensions">
+            <summary>
+            Get all the dimensions the database has
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconProvider.GetDefaultUnits(System.Object)">
+            <summary>
+            Get defaults units of measure for an attribute or a dimension
+            </summary>
+            <param name="key">The key can be either an attribute (DbAttribute) or a dimension string</param>        
+        </member>
+        <member name="E:Aveva.Core.UnitSets.DabaconProvider.DataSourceUpdated">
+            <summary>
+            The event is triggered for getwork/savework
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.DabaconImportExport">
+            <summary>
+            The import and export provider to save and load unit sets in the database.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.Interface.IUnitSetsImportExport">
+            <summary>
+            This interface is used to for custom import and export functionality for the unit sets.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsImportExport.Import(Aveva.Core.UnitSets.UnitSetsContainer@,System.String,System.Object[])">
+            <summary>
+            Imports a unit sets configuration. 
+            </summary>
+            <param name="destination">The dictionary that will be filled with the new configuration</param>
+            <param name="fullFilename">The name of the file and its path</param>
+            <param name="options">Extra options for the import operation</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.IUnitSetsImportExport.Export(Aveva.Core.UnitSets.UnitSetsContainer,System.String,System.Object[])">
+            <summary>
+            Exports a unit set configuration
+            </summary>
+            <param name="source">The source of the configuration</param>
+            <param name="fullFilename">The name of the file and its path (if known)</param>
+            <param name="options">Extra options for the export operation</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconImportExport.Import(Aveva.Core.UnitSets.UnitSetsContainer@,System.String,System.Object[])">
+            <summary>
+            Import (load) from db
+            </summary>
+            <param name="destination">The container where the db model will be loaded</param>
+            <param name="fullFilename">(Optional) The filename from which the model will be loaded</param>
+            <param name="options">(Optional) Any extra options needed for the import / load operation</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconImportExport.Export(Aveva.Core.UnitSets.UnitSetsContainer,System.String,System.Object[])">
+            <summary>
+            Export (save) to db
+            </summary>
+            <param name="source">The model that will be saved to the db</param>
+            <param name="fullFilename">(Optional) The filename from which the model will be loaded</param>
+            <param name="options">(Optional) Any extra options needed for the export / save operation</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconImportExport.CreateNewUnit(Aveva.Core.Database.DbElement,Aveva.Core.UnitSets.UnitOfMeasure)">
+            <summary>
+            Create a new unit in the db for the specified unitset, given a unit of the model.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DabaconImportExport.GetMemberUnitSets(System.Collections.Generic.IEnumerable{Aveva.Core.Database.DbElement},System.Collections.Generic.ICollection{Aveva.Core.Database.DbElement})">
+            <summary>
+            Recursive method to get Unit Sets elements
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.DefaultDatabaseProvider">
+            <summary>
+            A default database provider that doesn't provide any information back
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultDatabaseProvider.GetDimension(System.String)">
+            <summary>
+            Returns an empty string
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultDatabaseProvider.IsValidUnit(System.String,System.String)">
+            <summary>
+            Returns false for any units
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultDatabaseProvider.IsValidDimension(System.String)">
+            <summary>
+            Returns false for any dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultDatabaseProvider.GetAllDbDimensions">
+            <summary>
+            Returns an empty list
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultDatabaseProvider.GetDefaultUnits(System.Object)">
+            <summary>
+            Returns an empty list
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultDatabaseProvider.GetAttributeDimension(System.Object)">
+            <summary>
+            Return an empty string.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.DefaultDatabaseProvider.DataSourceUpdated">
+            <summary>
+            DataSourceUpdated event
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.DefaultImportExportProvider">
+            <summary>
+            A provider that does not offer any import or export operation
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultImportExportProvider.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultImportExportProvider.Import(Aveva.Core.UnitSets.UnitSetsContainer@,System.String,System.Object[])">
+            <summary>
+            A dummy import operation
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.DefaultImportExportProvider.Export(Aveva.Core.UnitSets.UnitSetsContainer,System.String,System.Object[])">
+            <summary>
+            A dummy export operation
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.DefaultImportExportProvider.DatabaseProvider">
+            <summary>
+            Returns a null provider or a provider that has been supplied. Default is null.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsCollection">
+            <summary>
+            The collection of unit sets
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.#ctor">
+            <summary>
+            Default constructor. Initialises an empty list.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.#ctor(System.Collections.Generic.Dictionary{System.String,Aveva.Core.UnitSets.UnitSet})">
+            <summary>
+            Constructor that initialises with an existing dictionary
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.AddUnitSet(Aveva.Core.UnitSets.UnitSet)">
+            <summary>
+            Adds a new unit set to the model
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.AddUnitSet(System.String,System.String)">
+            <summary>
+            Adds a new unit set to the model
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.RemoveUnitSet(System.String)">
+            <summary>
+            Remove the specified unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.ContainsUnitSet(System.String)">
+            <summary>
+            Checks if the unit set exists in the model. Its name or dbName can be used.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.GetUnitSet(System.String)">
+            <summary>
+            Get a unit set with a specific name, or a dbName
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.UpdateUnitSetSystem(System.String,System.String)">
+            <summary>
+            Update the system for the unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.UpdateDecimalSeparator(System.String,System.String)">
+            <summary>
+            Update the decimal separator
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.UpdateUnitSetName(System.String,System.String)">
+            <summary>
+            Update a unitset name
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.UpdateDimension(System.String,System.String)">
+            <summary>
+            Changes the dimension of the current set
+            </summary>
+            <param name="setName">The name of the set</param>
+            <param name="dimension">The new dimension</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.CopyUnitSet(System.String,System.String)">
+            <summary>
+            Makes a copy of a unit set to a new name
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.CopyUnitSet(System.String)">
+            <summary>
+            Copies an existing unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.GetSchema">
+            <summary>
+            Always return null for the schema. If you really need to provide a Schema, then use XmlSchemaProviderAttribute.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Read the xml.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsCollection.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Write to xml
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsCollection.UnitSetsList">
+            <summary>
+            Gets the list of unit sets in the model
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSet">
+            <summary>
+            The unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.#ctor(Aveva.Core.UnitSets.UnitSet)">
+            <summary>
+            Copy constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,Aveva.Core.UnitSets.UnitOfMeasure})">
+            <summary>
+            Costructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.MoveUnitUpOrder(System.String)">
+            <summary>
+            Move the unit higher in order
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.MoveUnitDownOrder(System.String)">
+            <summary>
+            Move the unit lower in order
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.AddUnit(Aveva.Core.UnitSets.UnitOfMeasure)">
+            <summary>
+            Adds a unit to the unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.UpdateUnit(System.String,System.String[])">
+            <summary>
+            Updates a specified unit with new information.
+            newUnitInfo array has the following order. (Add new info as necessary)
+            [0] = unit label
+            [1] = unit precision
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.RemoveUnit(System.String)">
+            <summary>
+            Remove a unit from the unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.ContainsUnitLabel(System.String)">
+            <summary>
+            Check if the requested unit label exists in the set.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.ContainsUnitDbName(System.String)">
+            <summary>
+            Check if the requested unit dbname exists in the set.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.GetUnitFromLabel(System.String)">
+            <summary>
+            Get the unit that is described by a label.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.GetDefaultUnit">
+            <summary>
+            Get the default unit for the unit set.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.GetLabelFromUnit(System.String)">
+            <summary>
+            Get the label of a specific unit
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.GetUnitModel(System.String)">
+            <summary>
+            Get a unit given its label
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.GetPrecisionForUnit(System.String)">
+            <summary>
+            Gets the precision of the unit, given its label
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.UpdateDimension(System.String)">
+            <summary>
+            Update the dimension of the unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.GetSchema">
+            <summary>
+            GetSchema
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Read XML
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSet.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Write xml
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSet.DbName">
+            <summary>
+            The name of the unit set as it is stored in the database
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSet.Name">
+            <summary>
+            The name of the unit set
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSet.Dimension">
+            <summary>
+            The dimension of the unit set
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSet.System">
+            <summary>
+            The system that this unit set follows (for now).
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSet.DecimalSeparator">
+            <summary>
+            The decimal separator used
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSet.UnitsOfMeasure">
+            <summary>
+            The units of measure contained in this unit set
+            </summary>        
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitOfMeasure">
+            <summary>
+            The class includes all the information needed for the presentation of a Unit of Measure (UoM).
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitOfMeasure.#ctor">
+            <summary>
+            Empty Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitOfMeasure.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitOfMeasure.#ctor(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="name">The name of the unit</param>
+            <param name="precision">The desired precision. -1 for default</param>
+            <param name="label">The desired label</param>
+            <param name="order">The order the unit should appear in the unit set</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitOfMeasure.#ctor(Aveva.Core.UnitSets.UnitOfMeasure)">
+            <summary>
+            Copy constructor
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitOfMeasure.CompareTo(Aveva.Core.UnitSets.UnitOfMeasure)">
+            <summary>
+            Compare this UoM with another based on their order.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitOfMeasure.UnitOrder">
+            <summary>
+            The order of the unit
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitOfMeasure.DbName">
+            <summary>
+            The name of the element in the database
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitOfMeasure.UnitName">
+            <summary>
+            The original name of the unit
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitOfMeasure.UnitPrecision">
+            <summary>
+            The desired precision
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitOfMeasure.UnitLabel">
+            <summary>
+            The unit as it would appear in the various presentation forms
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsContainer">
+            <summary>
+            The unit sets configuration is a container class for units sets and unit systems. Configuration in this context, means both
+            the units sets and the systems and is depicts the state of the xml file
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsContainer.#ctor">
+            <summary>
+            Default constructor that initilises empty collections
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsContainer.#ctor(System.Collections.Generic.Dictionary{System.String,Aveva.Core.UnitSets.UnitSet},System.Collections.Generic.List{Aveva.Core.UnitSets.UnitSystem})">
+            <summary>
+            Constructor that initialises the collections with the specified unit sets and systems.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsContainer.Sets">
+            <summary>
+            All the unit sets of the current configuration
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsContainer.Systems">
+            <summary>
+            All the unit systems of the current configuration
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsHelper">
+            <summary>
+            Static helper class that provides access to common functions among all the classes
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsHelper.IsValidXML(System.Xml.Linq.XElement)">
+            <summary>
+            Validate the xml document against the current schema file that exists in the installation directory
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsHelper.ValidationCallback(System.Object,System.Xml.Schema.ValidationEventArgs)">
+            <summary>
+            The method reports any problem during the xml validation
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsHelper.GetInstallationPath">
+            <summary>
+            Gets the default installation path for PDMS or E3D
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsHelper.ResolveSearchPath(System.String,System.String,System.Boolean)">
+            <summary>
+            Finds the first path in a search path that contains a given directory, or if the directory
+            doesn't exist in any returns the first path from the search path.
+            </summary>
+            <param name="searchPath">The expanded search path</param>
+            <param name="searchToken">The token to look for. Can be either a file or a directory</param>
+            <param name="isFile">True if the token is a file</param>
+            <returns>string.Empty, the first path that contains the specified directory or the first path from the search path if the directory wasn't found.</returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsHelper.SplitSearchPath(System.String)">
+            <summary>
+            splits a search path into its component parts
+            </summary>
+            <param name="path">the expanded path to split</param>
+            <returns>the list of elements making up the search path</returns>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.Interface.UnitSetsListRegister">
+            <summary>
+            The unit sets list register handles different requests for information, made by the various modules that
+            need the unit sets. So i.e it provides a list of units of a particular unit set, or brings back all the unit sets
+            in the model. It also provides default units from the database to the calling modules, in case a unit set is not provided.
+            Since it can have access to the underlying model, it can be used as wrapper and get extended to provide 
+            any kind of information needed back to the calling module. 
+            All external applications should use the register in order to use unit sets. Any needed functionality should be exposed through here first.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.attributeUnitSets">
+            <summary>
+            This is the registry that associates the attributes with their unit sets. In this registry, there are
+            only attributes that can take real values.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.manager">
+            <summary>
+            The unit sets manager, that loads all the sets from the settings manager. The sets must be set in Lexicon
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.settings">
+            <summary>
+            The settings for the unit sets
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.#ctor(Aveva.Core.UnitSets.UnitSetsSettingsManager)">
+            <summary>
+            Constructor used for testing.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.#ctor">
+            <summary>
+            Default constructor for unitsets 14.2.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.Register(System.Collections.Generic.Dictionary{System.Object,System.String})">
+            <summary>
+            Register the attributes with their corresponding unit sets.
+            </summary>
+            <param name="items">A dictionary with the attributes and their corresponding unit set list</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetUnitsFromRegistry(System.Object)">
+            <summary>
+            Get the list of units for the specified attribute. A set of units must be registered before this method can 
+            be used. Null is returned if nothing is found. 
+            </summary>
+            <param name="key">The attribute</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetDefaultUnit(System.Object)">
+            <summary>
+            Get the default unit for a specified attribute. If the attribute does not have an associated unit set, then it returns the first unit in its 
+            corresponding list of units. It returns the unit in {unitLabel, unitDbName} format.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetDefaultUnit(System.String)">
+            <summary>
+            Get the default unit for a specified unitset. It returns the unit in {unitLabel, unitDbName} format.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetUnits(System.String,System.String)">
+            <summary>
+            Get units depending on the unit set name or their dimension. If a set is not provided then a dimension should be provided.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetUnitSets(System.String)">
+            <summary>
+            Get all the unit sets of a specific dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetDimensionsAndUnitSets">
+            <summary>
+            Gets all the dimensions of the unit sets currently stored and their sets
+            </summary>
+            <returns>A dictionary with the dimensions and their corresponding sets</returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetUnitSetsWithDimensions">
+            <summary>
+            Gets all the unitsets with their respective dimensions
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.PopulateUnits(System.Object)">
+            <summary>
+            Get units list from the given attribute or dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetDBUnitFromLabel(System.Object,System.String)">
+            <summary>
+            Get the unit depending on its custom label.
+            If the label exists in the unit set then return the database unit. In other case, if the label does not exist in the unit, it returns the default unit of the 
+            unitset, which in this case it is the highest order unit in the set.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetDBUnitFromLabel(System.String,System.String)">
+            <summary>
+            Get the unit depending on its custom label.
+            If the label exists in the unit set then return the database unit. In other case, if the label does not exist in the unit, it returns the default unit of the 
+            unitset, which in this case it is the highest order unit in the set.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetLabelFromDbUnit(System.Object,System.String)">
+            <summary>
+            Get the custom label of a specific unit, given the property/attribute that it belongs and its name that it was used when first storing it.
+            e.g. Unit (DB)   Custom Label
+                  m             metra
+                metres            m
+                
+            etc.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetPrecisionForUnit(System.Object,System.String)">
+            <summary>
+            Gets the precision for a specific unit given its label. It returns the default precision value of 2 if nothing is found.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetDatabaseUnitsLabel(System.String,System.String)">
+            <summary>
+            Get the database units label from the compound unit override instance.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.UnitSetExists(System.String)">
+            <summary>
+            Checks if the requested unitset exist.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.GetUnitSetForAttribute(System.Object)">
+            <summary>
+            Get the unitset for the registered attribute.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.RefreshData">
+            <summary>
+            Refresh the unit sets data. It is used to enforce the refreshing of data, especially if there are changes in the underlying model that is stored in the database.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.Interface.UnitSetsListRegister.ProjectName">
+            <summary>
+            The project that will be loaded. The project should exist in the default location.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.Interface.DefaultUnit">
+            <summary>
+            The default unit returned by the GetDefaultUnit method.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.Interface.DefaultUnit.DisplayLabel">
+            <summary>
+            The display label of the unit
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.Interface.DefaultUnit.DBUnit">
+            <summary>
+            The actual database unit
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsLogger">
+            <summary>
+            Unit sets logger. Reinventing the wheel, because there is not a solid solution so far to be reused.
+            It just prints a message to the console. It can be re-written in order to take advantage of a more
+            uniform system in the future.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsLogger.LogMessage(System.String)">
+            <summary>
+            Prints a message to the console
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsManager">
+            <summary>
+            The manager that handles the interaction with the model. Needs a provider that will supply the necessary
+            info from a datasource
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.#ctor(Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider,Aveva.Core.UnitSets.UnitSetsCollection)">
+            <summary>
+            Constructor. It loads the units sets and the providers given in the settings file.
+            </summary>
+            <param name="dbProvider">The database provider to be used</param>
+            <param name="unitSets">The unit sets model to manage</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.#ctor(Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider)">
+            <summary>
+            The default constructor gets the database provider only in order to perform any validations and bring back any dimensions needed.
+            </summary>
+            <param name="dbProvider">The database provider</param>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.ContainsUnitSet(System.String)">
+            <summary>
+            Determines weather the given set name already exists in the unit sets list.
+            </summary>
+            <param name="setName">The name to look for</param>
+            <returns>True if found</returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.AddUnitSet(System.String)">
+            <summary>
+            Adds a new unit set.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.AddUnitSet(System.String,System.String)">
+            <summary>
+            Adds a new unit set to the list of a certain dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.RemoveUnitSet(System.String)">
+            <summary>
+            Remove the selected set from the list of the unit sets
+            </summary>
+            <param name="setName">The set to be removed</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.CopyUnitSet(System.String)">
+            <summary>
+            Copies an existing unit set
+            </summary>
+            <param name="setName"></param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.CopyUnitSet(System.String,System.String)">
+            <summary>
+            Copies an existing unit set, using a completely different name. All the checks for the existence of the name
+            in order to avoid duplicates, is performed internally.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDimensionOfUnitSet(System.String)">
+            <summary>
+            Gets the dimension of a unit set, given its name
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetUnitsForSet(System.String)">
+            <summary>
+            Get all the units of measure for the required set
+            </summary>
+            <param name="setName">The name of the set</param>
+            <returns>A list of strings containing the units of measure</returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetUnitsForConfigurationView(System.String)">
+            <summary>
+            It returns a list of comma seperated strings that contain all the information for units. 
+            NOTE: Only for presentation in the configuration form.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetAllUnitSets">
+            <summary>
+            Gets all the names of the unit sets as a list of strings.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetAllUnitSets(System.String)">
+            <summary>
+            Returns all the unit sets based on a specific dimension
+            </summary>
+            <param name="dimension">The dimension</param>
+            <returns>A list with the names of the sets</returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDimensionsWithUnitSets">
+            <summary>
+            Returns a dictionary with all the dimensions that are used in all lists and their 
+            corresponding lists.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetUnitSetsWithDimensions">
+            <summary>
+            Get all the unitsets with their dimensions
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.ChangeSetName(System.String,System.String)">
+            <summary>
+            Changes the name of the current set
+            </summary>
+            <param name="oldName">The old name of the set</param>
+            <param name="newName">The new name of the set</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.UpdateUnitSetSystem(System.String,System.String)">
+            <summary>
+            Updates the system of the unitset
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.UpdateUnitSetDecimalSeparator(System.String,System.String)">
+            <summary>
+            Updates the decimal separator for the specified unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetUnitSetSystem(System.String)">
+            <summary>
+            Get the unit system associated with the set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetUnitSetDecimalSeparator(System.String)">
+            <summary>
+            Get the selected unit sets decimal separator
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.UpdateUnitOfMeasure(System.String,System.String,System.String[])">
+            <summary>
+            Change the unit
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.AddNewUnitOfMeasure(System.String,System.String,System.String,System.String)">
+            <summary>
+            Add a new unit of measure to the current set.
+            The model throws an exception if the unit is already in the list, or if it cannot be added
+            to the current list.
+            </summary>                
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.RemoveUnitOfMeasure(System.String,System.String)">
+            <summary>
+            Remove a unit of measure from the list
+            </summary>
+            <param name="setName">The name of the set that the unit will be removed from</param>
+            <param name="unit">The unit to be removed</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.IsValidUnitOfMeasure(System.String,System.String)">
+            <summary>
+            Checks if a unit can be added to the set. The check is made against the database provider.
+            If something goes wrong it returns false and logs the message
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.ContainsUnitOfMeasure(System.String,System.String)">
+            <summary>
+            Checks if a set contains a unit of measure. Throws an exception if something goes wrong and logs the message.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.MoveUnitOfMeasureUp(System.String,System.String)">
+            <summary>
+            Move the unit up the order
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.MoveUnitOfMeasureDown(System.String,System.String)">
+            <summary>
+            Move the unit down the order
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDefaultUnits(System.Object)">
+            <summary>
+            Gets the default units for a dimension or for an attribute.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDefaultUnit(System.String)">
+            <summary>
+            Get the default unit for a unitset
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDefaultUnit(System.Object)">
+            <summary>
+            Get the default unit for an attribute/property if there is a unit set with the same name as its dimension.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDBUnitFromDisplayLabel(System.String,System.String)">
+            <summary>
+            Get the proper DB unit given its display label. The unitset name needs to be known
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDBUnitFromDisplayLabel(System.Object,System.String)">
+            <summary>
+            Get the proper db unit given its display label.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDisplayLabelFromDBUnit(System.String,System.String)">
+            <summary>
+            Get the label of a unit.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetPrecisionForUnit(System.String,System.String)">
+            <summary>
+            Gets the precision of a unit, given its unit set name and its label.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetPrecisionForUnit(System.Object,System.String)">
+            <summary>
+            Gets the precision of a unit, given the attribute that it belongs to and its label
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.UpdateDimension(System.String,System.String)">
+            <summary>
+            Changes the dimension of the current set, according to the correct name of the dimension as taken from the database provider
+            </summary>
+            <param name="setName">The name of the set</param>
+            <param name="dimension">The new dimension</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsManager.GetDimension(System.String)">
+            <summary>
+            Gets the dimension from the database, which is determined by the argument
+            </summary>        
+            <returns>The name of the dimension or an empty string</returns>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsManager.AllDimensions">
+            <summary>
+            All standard dimensions in the database (Read-only)
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsSettingsManager">
+            <summary>
+            The settings manager loads the units sets manager. It can be customised to load
+            the user's specific providers for importing/exporting and database connection. The user can also change the
+            default name for the directory of the unit sets, as well as the project directory. By default the 
+            settings manager is looking for the UnitSets.xml file. The name of this file can not be changed, for
+            consistency reasons. If the file is not found, then it is created automatically in the predefined directory.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.#ctor(Aveva.Core.UnitSets.Interface.IUnitSetsImportExport,Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider)">
+            <summary>
+            Constructor that gets an import/export provide and a database provider. LoadUnitSets method should be called after this.
+            Used for testing mainly.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.Load(System.String)">
+            <summary>
+            Loads the unit sets file for the specified project (PDMS/E3D1.1/Engineering 14.1 or when XML provider is needed ONLY)
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.Load">
+            <summary>
+            Load the unit sets from the database. (Engineering 14.1.SP1 and 14.2 option ONLY)
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.SaveUnitSets">
+            <summary>
+            Saves the unit sets configuration using the specified import/export provider.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.ProjectDefaultDir(System.String)">
+            <summary>
+            Returns the configuration directory within the project default directory for the specified project
+            </summary>
+            <param name="projectName">The name of the project to get the directory for</param>
+            <returns>The path to the project defaults directory or an empty string if an error occurred</returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsSettingsManager.Refresh">
+            <summary>
+            Refresh the unit sets from the underlying db model.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.UnitSetsDefaultDirectoryName">
+            <summary>
+            Get or set the default directory name for storing the unit sets
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.UnitSetsDefaultDirectoryPath">
+            <summary>
+            Get or set the default directory full path for storing the unit sets
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.DatabaseProvider">
+            <summary>
+            Set the database provider to be used by the units sets.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.ImportExportProvider">
+            <summary>
+            Set the provider to be used to import or export unit sets
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.ConfigFullFilename">
+            <summary>
+            Get the full path and the xml file to load/save the unitsets
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.UnitSetsManagerInstance">
+            <summary>
+            Gets the instance of the unit sets manager. LoadUnitSets method MUST have been called before!
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsSettingsManager.UnitSystemsManagerInstance">
+            <summary>
+            Gets the instance of the unit systems manager. LoadUnitSets method MUST have been called before!
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystems">
+            <summary>
+            The Unit Systems collection
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.#ctor(System.Collections.Generic.List{Aveva.Core.UnitSets.UnitSystem})">
+            <summary>
+            Constructor that initialises with a system list
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.AddUnitSystem(System.String)">
+            <summary>
+            Adds a new unit system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.RemoveUnitSystem(System.String)">
+            <summary>
+            Removes the specified unit system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.UpdateUnitSystemName(System.String,System.String)">
+            <summary>
+            Updates the name of a unit system, checking for duplicates in the process.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.ContainsUnitSystem(System.String)">
+            <summary>
+            Gets if the unit system exists
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.GetUnitSystem(System.String)">
+            <summary>
+            Gets the required unit system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.GetSchema">
+            <summary>
+            There is no schema to return
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            ReadXml
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystems.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Write xml
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystems.UnitSystemsList">
+            <summary>
+            Gets or sets the list of unit systems
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystem">
+            <summary>
+            A unit system. It includes all the units that are using this system and their respecting dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.#ctor(System.String)">
+            <summary>
+            Creates a unit system with the required name
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.AddUnitSystemItem(System.String,System.String)">
+            <summary>
+            Add a dimension with its default unit for this system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.UpdateUnitSystemItem(System.String,System.String)">
+            <summary>
+            Updates the default unit of measure for the specified dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.RemoveUnitSystemItem(System.String)">
+            <summary>
+            Removes a unit system item from the dictionary
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.GetUnitSystemItem(System.String)">
+            <summary>
+            Gets the required unit system item. It includes the dimension and the default unit for the dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.ContainsUnitSystemItemUoM(System.String,System.String)">
+            <summary>
+            Gets if the required Unit of Measure is already defined for the unit system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.GetSchema">
+            <summary>
+            GetSchema
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            ReadXml
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystem.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            WriteXml
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystem.Name">
+            <summary>
+            The name of the unit system. i.e Metric
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystem.UnitSystemItemList">
+            <summary>
+            The list of dimensions and default units for this unit system, i.e Length - metres
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystemItem">
+            <summary>
+            The unit system item, which is the unit and its dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemItem.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemItem.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemItem.Dimension">
+            <summary>
+            The dimension that this unit is default under a system
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemItem.UoM">
+            <summary>
+            The Unit of Measure
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystemsManager">
+            <summary>
+            The manager that interacts with the unit systems model. It communicates with the UnitSets manager. It holds a 
+            registry of the systems and the units that are already being used. The unit sets manager can query this registry
+            and assign the correct system to the units. The unit systems manager provides all the available systems to the view,
+            and the view can add or remove systems, while at the same time updating the registry
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.#ctor(Aveva.Core.UnitSets.Interface.IUnitSetsDatabaseProvider,Aveva.Core.UnitSets.UnitSystems)">
+            <summary>
+            Default constructor. 
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.InitialiseStandardSystemsSet">
+            <summary>
+            Initialise the standard systems
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.IsValidUoM(System.String,System.String)">
+            <summary>
+            Gets if the unit is valid for the required dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.AddSystemItem(System.String,System.String,System.String)">
+            <summary>
+            Add the dimension with the default unit of measure to the specified system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.RemoveSystemItem(System.String,System.String)">
+            <summary>
+            Removes the dimension and the default unit from the system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.GetDefaultUoMForDimension(System.String,System.String)">
+            <summary>
+            Gets the default Unit of Measure for the required dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.UpdateDefaultUoMForDimension(System.String,System.String,System.String)">
+            <summary>
+            Updates the default unit of measure for the specified dimension of a system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.ContainsUoMForDimension(System.String,System.String,System.String)">
+            <summary>
+            Checks if the unit system contains the specified unit of measure for the dimension
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.AddSystem(System.String)">
+            <summary>
+            Adds a new system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.ContainsSystem(System.String)">
+            <summary>
+            Gets if the system exists in the model
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.RemoveSystem(System.String)">
+            <summary>
+            Removes the specified system from the model
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsManager.UpdateSystem(System.String,System.String)">
+            <summary>
+            Updates the name of the system
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemsManager.AllSystems">
+            <summary>
+            Gets all the systems currently in the model
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.XMLImportExport">
+            <summary>
+            Imports and exports a unit set configuration from/to an xml file
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.XMLImportExport.#ctor">
+            <summary>
+            Default constructor. It can not perform any import/export operation, unless 
+            a database provider is given
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.XMLImportExport.Import(Aveva.Core.UnitSets.UnitSetsContainer@,System.String,System.Object[])">
+            <summary>
+            Imports the specified unit set configuration
+            </summary>
+            <param name="destination">The dictionary that will be filled with the new configuration</param>        
+            <param name="fullFilename">The xml file name to be imported</param>
+            <param name="options">Extra options that might be needed for the import operation</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.XMLImportExport.Export(Aveva.Core.UnitSets.UnitSetsContainer,System.String,System.Object[])">
+            <summary>
+            Exports the current unit set configuration to the specified xml file
+            </summary>
+            <param name="source">The source of the unit set configuration</param>
+            <param name="fullFilename">The xml filename to be exported to</param>
+            <param name="options">Extra options that might be needed for the export operation</param>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.SortableBindingList`1">
+            <summary>
+            Customised binding list that offers sorting capabilities
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.SortableBindingList`1.GetComparer(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the comparer for the properties of the items in the list
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.SortableBindingList`1.ApplySortCore(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sort the list, with respect to the required property and sort direction
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.SortableBindingList`1.RemoveSortCore">
+            <summary>
+            Removes the sorting from the list
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.SortableBindingList`1.SupportsSortingCore">
+            <summary>
+            Gets if the list supports sorting
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.SortableBindingList`1.IsSortedCore">
+            <summary>
+            Gets if the list is sorted
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.SortableBindingList`1.SortDirectionCore">
+            <summary>
+            Gets the sorting direction
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.SortableBindingList`1.SortPropertyCore">
+            <summary>
+            Gets if the list can be sorted
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsAddin">
+            <summary>
+            The Unit Sets Addin
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsAddin.Start(Aveva.ApplicationFramework.ServiceManager)">
+            <summary>
+            Start Addin [Obsolete]
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsAddin.Start(Aveva.ApplicationFramework.IDependencyResolver)">
+            <summary>
+            Start addin
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsAddin.Stop">
+            <summary>
+            Stop addin
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddin.Description">
+            <summary>
+            Addin description
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddin.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.OpenUnitSetsConfigurationCommand">
+            <summary>
+            The command that opens the unit sets configuration form
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.OpenUnitSetsConfigurationCommand.#ctor(Aveva.Core.UnitSets.UnitSetsConfigurationPresenter)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.OpenUnitSetsConfigurationCommand.Execute">
+            <summary>
+            Opens the unit sets configuration form
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.OpenUnitSetsConfigurationContextCommand">
+            <summary>
+            This command is used to open the configuration form from a context menu
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.OpenUnitSetsConfigurationContextCommand.#ctor(Aveva.Core.UnitSets.UnitSetsConfigurationPresenter)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.OpenUnitSetsConfigurationContextCommand.Execute">
+            <summary>
+            Opens the unit sets configuration form
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.OpenUnitSetsConfigurationContextCommand.GetState(System.String)">
+            <summary>
+            Gets the state of the command
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.ExportToXmlUnitSetsConfigurationCommand">
+            <summary>
+            Export to Xml UnitSets Configuration Command
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.ExportToXmlUnitSetsConfigurationCommand.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.ExportToXmlUnitSetsConfigurationCommand.Execute">
+            <summary>
+            Execute Command
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.ImportFromXmlUnitSetsConfigurationCommand">
+            <summary>
+            Import from Xml UnitSets Configuration Command
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.ImportFromXmlUnitSetsConfigurationCommand.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.ImportFromXmlUnitSetsConfigurationCommand.Execute">
+            <summary>
+            Execute Command
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsAddinCommon">
+            <summary>
+            Provides common settings for all the classes
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinCommon.ResourceSetName">
+            <summary>
+            The name of the resource used by the UnitSets configuration form
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinCommon.StandardIconsSetName">
+            <summary>
+            The standard icons resource set name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinCommon.SharedIconsSetName">
+            <summary>
+            The shared icons resource name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinCommon.AvevaSharedIconsSetName">
+            <summary>
+            Aveva shared icons resource set name
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsAddinResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_AVEVA_ICO">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_DOWNARROW">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITDIMENSION">
+            <summary>
+              Looks up a localized string similar to Dimension.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITDISPLAYLABEL">
+            <summary>
+              Looks up a localized string similar to Display Label.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITNAME">
+            <summary>
+              Looks up a localized string similar to Unit.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITOFMEASURE">
+            <summary>
+              Looks up a localized string similar to Unit of Measure.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITPRECISION">
+            <summary>
+              Looks up a localized string similar to Precision.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITSETNAME">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITSETS_ADD">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITSETS_REMOVE">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UNITSYSTEM">
+            <summary>
+              Looks up a localized string similar to Unit System.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.ID_UPARROW">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.IDC_UNITSYSTEMID">
+            <summary>
+              Looks up a localized string similar to UnitSystemID.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.IDC_UNITSYSTEMITEMDIM">
+            <summary>
+              Looks up a localized string similar to UnitSystemDimension.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.IDC_UNITSYSTEMITEMUOM">
+            <summary>
+              Looks up a localized string similar to UnitSystemUoM.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.IDC_UNITSYSTEMNAME">
+            <summary>
+              Looks up a localized string similar to UnitSystemName.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_ADDUNIT">
+            <summary>
+              Looks up a localized string similar to Add unit.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_COPYSET">
+            <summary>
+              Looks up a localized string similar to Copy unit set.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_CREATESET">
+            <summary>
+              Looks up a localized string similar to Create unit set.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_DELETESET">
+            <summary>
+              Looks up a localized string similar to Delete unit set.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_DELETEUNIT">
+            <summary>
+              Looks up a localized string similar to Delete unit.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_DISPLAYLABEL">
+            <summary>
+              Looks up a localized string similar to The label that will appear for the unit..
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_HELP">
+            <summary>
+              Looks up a localized string similar to Open help.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_MOVEDOWN">
+            <summary>
+              Looks up a localized string similar to Move down.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_MOVEUP">
+            <summary>
+              Looks up a localized string similar to Move up.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_PRECISION">
+            <summary>
+              Looks up a localized string similar to Decimal precision, i.e. number of decimal places..
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsAddinResources.TOOLTIP_UNITNAME">
+            <summary>
+              Looks up a localized string similar to The database name of the unit..
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsConfiguration">
+            <summary>
+            The unit sets configuration form
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsConfiguration.unitSetsDataSourceManager">
+            <summary>
+            The unit sets datasource for the data grid.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsConfiguration.unitSystemsViewDataSource">
+            <summary>
+            The unit systems datasource for the systems datagrid
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsConfiguration.unitSetsDimensionsValueList">
+            <summary>
+            The value list for the dimensions
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsConfiguration.currentProjectName">
+            <summary>
+            The currently open project
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.#ctor(System.String)">
+            <summary>
+            The unit sets configuration constructor
+            </summary>
+            <param name="projectName">The currently loaded project</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.AttachUIEvents">
+            <summary>
+            Attach the various events for UI elements
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.LoadIcons">
+            <summary>
+            Loads the icons for the form controls        
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.LoadUnitSets">
+            <summary>
+            Loads the unit sets to the datagrid
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.Editor_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            TODO: Consider for refactoring
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.unitSetsGrid_BeforeSortChange(System.Object,Infragistics.Win.UltraWinGrid.BeforeSortChangeEventArgs)">
+            <summary>
+            Before the datagrid is visually sorted, the underlying binding list should get sorted as well.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.unitSetsGrid_AfterRowActivate(System.Object,System.EventArgs)">
+            <summary>
+            After the user picks a row, the units for the list appear in the list box
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.CellEnterEditMode(Infragistics.Win.UltraWinGrid.UltraGrid,Infragistics.Win.UltraWinGrid.UltraGridCell)">
+            <summary>
+            Sets the specified cell to edit mode
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.ShowError(System.String)">
+            <summary>
+            Displays an error message
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.LoadContextMenu">
+            <summary>
+            Loads the context menu for each unit of measure in the unit sets list.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.LoadContextMenuItems">
+            <summary>
+            Loads the unit system items in the context menu
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsConfiguration.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfiguration.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsConfigurationPresenter">
+            <summary>
+            The presenter for the Unit sets configuration form
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfigurationPresenter.Instance(System.String)">
+            <summary>
+            Gets an instance of the presenter.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfigurationPresenter.#ctor(System.String)">
+            <summary>
+            Private constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsConfigurationPresenter.Present">
+            <summary>
+            Show the view
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.IListUpdate">
+            <summary>
+            An interface to support update operations to value lists
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.IListUpdate.UpdateList(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Updates the underlying view list with a new list
+            </summary>
+            <param name="newList">The new list</param>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsViewDimensionsDataSource">
+            <summary>
+            The datasource for the unit sets dimensions
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDimensionsDataSource.#ctor(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Default constructor for the dimension datasource. Adds all the dimensions of the database
+            </summary>
+            <param name="allDimensions">The unit sets manager to use</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDimensionsDataSource.UpdateList(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Updates the list with new dimensions if there is a need.
+            </summary>
+            <param name="newList">The new list</param>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsViewSystemsDataSource">
+            <summary>
+            The data source for the unit sets system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewSystemsDataSource.#ctor(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Default constructor for the datasource
+            </summary>
+            <param name="systems">The unit sets manager to use</param>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewSystemsDataSource.UpdateList(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Updates the list of systems
+            </summary>
+            <param name="newSystemList">The new list</param>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsViewBindingList">
+            <summary>
+            A customised binding list for UnitSetsViewModelEx objects
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewBindingList.GetComparer(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the comparer for the properties of the items in the list
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewBindingList.Sort(System.String,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sorts the column in the specified order
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsViewDataSource">
+            <summary>
+            The unit sets datagrid source. Its purpose is to synchronise the unit sets datagrid with the internal model.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.activeUnitSetIndex">
+            <summary>
+            The currently chosen unit set
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.activeUnitIndex">
+            <summary>
+            The index of the currently active unit
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.currentUnitSetName">
+            <summary>
+            We keep the name of the set on a seperate variable for undo operation if needed, when the name is changed to something invalid.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.currentUnit">
+            <summary>
+            The currently selected unit
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.unitSetsList">
+            <summary>
+            The list of all the unit sets
+            </summary>        
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.unitsList">
+            <summary>
+            The list of the units for a particular unit set.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.newUnitSetNameIndex">
+            <summary>
+            This index is used to keep an index of the new unit sets, in order to avoid duplicates template names
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.UnitSets.UnitSetsViewDataSource.copyUnitSet">
+            <summary>
+            A flag that is set when the user wants to copy a unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.#ctor(System.String)">
+            <summary>
+            Default constructor. The datasource is initialised by the data passed from the UnitSetManager.
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.AddNewUnitSet">
+            <summary>
+            Add a unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.RemoveUnitSet(System.Int32)">
+            <summary>
+            Remove a unit set
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.CopyUnitSet">
+            <summary>
+            Copies the currently selected unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.Sort(System.Int32,System.String,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sorts the datasource with respect to the column and the sorting direction required. 0 for unitSetsList, 1 for unitsList
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.GetCurrentSetSystem">
+            <summary>
+            Get the current set system
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.GetCurrentSetDecimalSeparator">
+            <summary>
+            Get the current set decimal separator
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.GetAllDecimalSeparators">
+            <summary>
+            Gets the list of all decimal separators
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.UpdateCurrentSetSystem(System.String)">
+            <summary>
+            Update the current set system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.UpdateCurrentSetDecimalSeparator(System.String)">
+            <summary>
+            Update the current set decimal separator
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.UnitSetNameExists(System.String)">
+            <summary>
+            Checks if the set name exists.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.GetProperDimensionName(System.String)">
+            <summary>
+            Gets the proper dimension name from the database
+            </summary>
+            <param name="dimension"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.SaveChanges">
+            <summary>
+            Saves the changes back to the configuration file
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.GetUnitsForSet">
+            <summary>
+            Gets all the units of the selected set
+            </summary>                
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.parseUnitsData(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Parses the list of unit configurations from the model into the view model.
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.AddNewUnit(System.String)">
+            <summary>
+            Adds a new unit to the set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.RemoveUnit(System.Int32)">
+            <summary>
+            Removes the selected unit
+            </summary>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.IsValidUnit(System.String)">
+            <summary>
+            Checks if a unit is valid for the current unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.containsUnit(System.String)">
+            <summary>
+            Checks if a unit exists in the current unit set
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.MoveUnitUpOrder">
+            <summary>
+            Move the unit higher in order.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewDataSource.MoveUnitDownOrder">
+            <summary>
+            Move the unit lower in order
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewDataSource.UnitSetsList">
+            <summary>
+            Gets the unit sets
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewDataSource.AllDimensions">
+            <summary>
+            Gets all the dimensions
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewDataSource.UnitSystemViewList">
+            <summary>
+            Set the view list that is used by the view for the unit systems
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewDataSource.UnitDimensionsViewList">
+            <summary>
+            Set the view list that is used by the view for the dimensions
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewDataSource.ActiveUnitSetIndex">
+            <summary>
+            The index of the currently chosen unit set
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewDataSource.ActiveUnitIndex">
+            <summary>
+            The index of the currently chosen unit
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystemsErrorArgs">
+            <summary>
+            The arguments for the unit systems error event handler
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsErrorArgs.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemsErrorArgs.ErrorMsg">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsDimensionEditor">
+            <summary>
+            The editor used for setting the correct dimension in the cells
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsDimensionEditor.#ctor(Aveva.Core.UnitSets.UnitSetsViewDataSource)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsDimensionEditor.OnBeforeExitEditMode(System.Boolean@,System.Boolean,System.Boolean)">
+            <summary>
+            Before the cell exits edit mode, it changes the dimension to a proper dimension from the database.
+            This is happening here in order to avoid unnecessary conflicts with property changed events. The 
+            Datagrid was not handling at a well timed matter the change of the dimension property and this was the only
+            way to change the value of the cell before the property changed event.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsViewModel">
+            <summary>
+            An entry in the unit sets datagrid
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewModel.#ctor(System.String,System.String)">
+            <summary>
+            Default constructor for the view model
+            </summary>
+            <param name="name">The name of the set</param>
+            <param name="dimension">The dimension of the set</param>        
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewModel.#ctor(System.String)">
+            <summary>
+            Constructor for an empty record
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsViewModel.#ctor(Aveva.Core.UnitSets.UnitSetsViewModel)">
+            <summary>
+            Copy constructor
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.UnitSetsViewModel.PropertyChanging">
+            <summary>
+            This event triggers before a property changes
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.UnitSetsViewModel.PropertyChanged">
+            <summary>
+            This event triggers after a property changed
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewModel.Name">
+            <summary>
+            The name of the set.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsViewModel.Dimension">
+            <summary>
+            The dimension of the units in the set
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsViewModel.UnitSetsPropertyChangingEventHandler">
+            <summary>
+            The delegate for the property changing event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSetsPropertyChangingEventArgs">
+            <summary>
+            UnitSets specific property changing event arguments
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSetsPropertyChangingEventArgs.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsPropertyChangingEventArgs.OldValue">
+            <summary>
+            The property's old value
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSetsPropertyChangingEventArgs.NewValue">
+            <summary>
+            The property's new value
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystemsViewDataSource">
+            <summary>
+            The unit systems datagrid source. It created the appropriate data source to view the unit systems grid and perform all the necessary transactions
+            to the underlying model
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsViewDataSource.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsViewDataSource.GenerateDataSet">
+            <summary>
+            Creates the dataset
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsViewDataSource.AddNewUnitSystem(System.String)">
+            <summary>
+            This is for private use only. It adds the unit systems to the dataset during the initialisation phase.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsViewDataSource.AddUnitSystem">
+            <summary>
+            Add a new row to the Unit Systems
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitSystemsViewDataSource.AddUnitSystemItem(System.String,System.String)">
+            <summary>
+            Add a new unit system item
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.UnitSystemsViewDataSource.ErrorRaised">
+            <summary>
+            Event that is raised when an error is raised
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.UnitSystemsViewDataSource.UnitSystemsUpdated">
+            <summary>
+            Event that is raised when a unit system is updated
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemsViewDataSource.ActiveSystem">
+            <summary>
+            The currently selected system
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemsViewDataSource.UnitSystemsSource">
+            <summary>
+            Gets the data for the unit systems
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitSystemsViewDataSource.AllSystems">
+            <summary>
+            Gets a list with all the systems
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitSystemsViewDataSource.UnitSystemsErrorHandler">
+            <summary>
+            Error handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitsViewBindingList">
+            <summary>
+            A customised binding list for UnitViewModel elements
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitsViewBindingList.GetComparer(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the comparer for the properties of the items in the list
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitsViewBindingList.Sort(System.String,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sorts the column in the specified order
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitsViewModel">
+            <summary>
+            An entry in the Units of Measure grid
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitsViewModel.OnPropertyChanging(System.String,System.String,System.String)">
+            <summary>
+            Triggers the Property Changing event
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitsViewModel.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Default constructor for the view model
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitsViewModel.#ctor">
+            <summary>
+            Constructor for an empty record
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnitsViewModel.#ctor(Aveva.Core.UnitSets.UnitsViewModel)">
+            <summary>
+            Copy constructor
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.UnitsViewModel.PropertyChanging">
+            <summary>
+            The event that fires when a property of the unit changes
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.UnitSets.UnitsViewModel.PropertyChanged">
+            <summary>
+            This event is fired when a property has been changed
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitsViewModel.UnitName">
+            <summary>
+            The name of the unit as it is in the database
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitsViewModel.DisplayLabel">
+            <summary>
+            The display label of the unit
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.UnitSets.UnitsViewModel.Precision">
+            <summary>
+            The floating point precision of the unit
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnitsViewModel.UnitPropertyChangingEventHandler">
+            <summary>
+            The delegate for the property changing event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.UnitSets.UnicodeParser">
+            <summary>
+            Unicode parser.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.ScanForSupSub(System.String,System.String@)">
+            <summary>
+            Scan for superscripts or subscripts
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.ScanForUnicode(System.String,System.String@)">
+            <summary>
+            Scan an input string for unicode escape characters and convert them to the correspoding unicode character
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.GetSuperscriptForNumber(System.Char,System.String@)">
+            <summary>
+            Gets the superscript for the corresponding number
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.GetNumberFromSuperscript(System.Char)">
+            <summary>
+            Get the numeric value represented by a superscript
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.GetNumberFromSubscript(System.Char)">
+            <summary>
+            Get the numeric value represented by a subscript
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.IsSuperscript(System.Char)">
+            <summary>
+            Check if the character is a superscript
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.IsSubscript(System.Char)">
+            <summary>
+            Check if the input character is a subscript
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.GetSubscriptForNumber(System.Char,System.String@)">
+            <summary>
+            Get the subscript representation for a number
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.ScanForPowers(System.String,System.String@)">
+            <summary>
+            Scan for powers that are entered using the ^.. syntax
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.GetUnicodePower(System.Text.RegularExpressions.Match)">
+            <summary>
+            Get the relevant power in unicode
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UnitSets.UnicodeParser.GetUnicodeCharacter(System.Text.RegularExpressions.Match)">
+            <summary>
+            Gets the unicode character of the match
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+<ArrayOfPartType xmlns="http://schemas.datacontract.org/2004/07/Aveva.Engineering.PartsBreakdown.Models" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <PartType>
+    <ActualClassName>Terminal</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#bc52629a3-f0aa-4aa9-884b-8729b7f9c68f</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Terminals</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#b676e556d-e6d5-41b6-b419-3e28166185e6</AssociationUri>
+      <Cardinality>*</Cardinality>
+    </Association>
+    <BaseClassName>Terminal</BaseClassName>
+    <BaseClassUri>http://www.aveva.com/datamodel/item#bc52629a3-f0aa-4aa9-884b-8729b7f9c68f</BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+</ArrayOfPartType>

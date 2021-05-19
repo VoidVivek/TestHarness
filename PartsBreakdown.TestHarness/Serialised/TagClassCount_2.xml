@@ -1,0 +1,19 @@
+<ArrayOfTagClassCount xmlns="http://schemas.datacontract.org/2004/07/Aveva.Engineering.PartsBreakdown.Models" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <TagClassCount>
+    <ClassCountDictionary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:KeyValueOfstringint>
+        <a:Key>http://www.aveva.com/datamodel/item#b0ba6fcc2-b221-49c8-9899-e958316a2e70</a:Key>
+        <a:Value>1</a:Value>
+      </a:KeyValueOfstringint>
+      <a:KeyValueOfstringint>
+        <a:Key>http://www.aveva.com/datamodel/item#bd47a33dd-7342-4d8c-b00d-46fe07de1f36</a:Key>
+        <a:Value>1</a:Value>
+      </a:KeyValueOfstringint>
+      <a:KeyValueOfstringint>
+        <a:Key>http://www.aveva.com/datamodel/item#b997c1ecf-9021-484d-883a-5e8665512b6a</a:Key>
+        <a:Value>1</a:Value>
+      </a:KeyValueOfstringint>
+    </ClassCountDictionary>
+    <TagNo>Multi Sub Class</TagNo>
+  </TagClassCount>
+</ArrayOfTagClassCount>

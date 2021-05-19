@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VIEW_ROOT)\Build\AVEVA_msbuild.props" />
+  <Import Project="$(VIEW_ROOT)\Build\PATH.csproj" />-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{837EAF4C-BE29-48C6-9DDB-9FCDE62107B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aveva.Engineering.PartsBreakdown</RootNamespace>
+    <AssemblyName>Aveva.Engineering.PartsBreakdown</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>N:\cadsys\AVEVAPublicKey\17c64733a9775004.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\Build\Products\Engineering\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aveva.Core.Presentation, Version=1.2.4.0, Culture=neutral, PublicKeyToken=17c64733a9775004, processorArchitecture=x86" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="Aveva.Engineering.TMS.Addin" />
+    <Reference Include="Aveva.ApplicationFramework" />
+    <Reference Include="Aveva.ApplicationFramework.Presentation" />
+    <Reference Include="Aveva.Core" />
+    <Reference Include="Aveva.Core.Commands" />
+    <Reference Include="Aveva.Core.Database" />
+    <Reference Include="Aveva.Core.Database.Filters" />
+    <Reference Include="Aveva.Core.Editors" />
+    <Reference Include="Aveva.Core.Utilities" />
+    <Reference Include="Aveva.Core.Database.Xml" />
+    <Reference Include="Aveva.Core.Common.Logging" />
+    <Reference Include="PMLNet" />
+    <Reference Include="Aveva.DataModelling.ApplicationInterface" />
+    <Reference Include="Aveva.Engineering.TMS" />
+    <Reference Include="Aveva.Engineering.ClassModelManager" />
+    <Reference Include="Aveva.Engineering.NamingService" />
+    <Reference Include="Aveva.Engineering.Editors.dll" />
+    <Reference Include="Aveva.Core.Database.View.dll" />
+    <Reference Include="Aveva.Core.DatabaseInternal.dll" />
+    <Reference Include="Aveva.Core.Geometry.dll" />
+    <Reference Include="Aveva.Core.Engineering.Interface.dll" />
+    <Reference Include="Aveva.Engineering.Info.dll" />
+    <Reference Include="Aveva.Engineering.Presentation.AccessEditors" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddPartsCommand.cs" />
+    <Compile Include="Commands\AddPartTypeCommand.cs" />
+    <Compile Include="Commands\CreatePartsCommand.cs" />
+    <Compile Include="Converters\IndexConverter.cs" />
+    <Compile Include="IMainWindowViewModelFactory.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="MainWindowViewModelFactory.cs" />
+    <Compile Include="ModelProvider.cs" />
+    <Compile Include="Models\Association.cs" />
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\PartTypeTms.cs" />
+    <Compile Include="Models\TagAndClassCount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPartsBreakdownRepository.cs" />
+    <Compile Include="Repositories\PartsBreakdownRepository.cs" />
+    <Compile Include="RequestFormViewModelCreator.cs" />
+    <Compile Include="Services\PartsBreakdownService.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Models\PartType.cs" />
+    <Compile Include="Models\PartTagQuantity.cs" />
+    <Compile Include="ViewModels\MainWindowViewModelTms.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NumericTextBox.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

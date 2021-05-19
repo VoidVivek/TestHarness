@@ -1,0 +1,1768 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.Configuration.Implementation</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Configuration.Implementation.BaseElement">
+            <summary>
+            Configuration Database Element base class
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Construct from existing database element
+            </summary>
+            <param name="element">Optional existing database element to initialise with</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.#ctor(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Create a new element in the DB from parameters
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.Initialise(Aveva.Core.Database.DbElement)">
+            <summary>
+            Initialise from an existing database element
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.FindElementByName(System.String,Aveva.Core.Database.DbType)">
+            <summary>
+            Get the element using the Name attribute
+            </summary>
+            <param name="name"></param>
+            <param name="databaseType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Abstract creation method with optional reference
+            </summary>
+            <param name="parameters">   .</param>
+            <returns>
+            A new element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.SetBaseParameters(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Set the base fields on the element.
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.Delete">
+            <summary>
+            Delete an element from the database
+            </summary>
+            <returns>True if deleted successfully, false otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.CanCreateChildElement(Aveva.Core.Database.DbElementType)">
+            <summary>
+            See if an element of the given type can be created as a child of this element.
+            </summary>
+            <param name="type"></param>
+            <returns>True if the element can be created</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.CreateSearchFilter(System.String,Aveva.Core.Database.DbElementType,Aveva.Core.Database.DbAttribute)">
+            <summary>
+            Create a filter for searching for the element by type and key name
+            </summary>
+            <param name="keyName"></param>
+            <param name="elementType"></param>
+            <param name="nameAttribute"></param>
+            <returns>A new filter</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.GetStringAttribute(Aveva.Core.Database.DbAttribute)">
+            <summary>
+            Get a string attribute from the element, if it is valid
+            </summary>
+            <param name="attribute"></param>
+            <returns>The string attribute if it exists, empty string otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.SetStringAttribute(Aveva.Core.Database.DbAttribute,System.String,System.Boolean)">
+            <summary>
+            Set a string attribute on an element
+            </summary>
+            <param name="attribute"></param>
+            <param name="value"></param>
+            <param name="allowUnset">True if the attribute can be set to null</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.GetStaticPropertyValue(System.String)">
+            <summary>
+            Get the value of a static property via reflection on a derived class instance.
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.BaseElement.CreateElement(Aveva.Core.Database.DbElementType,Aveva.Core.Configuration.Implementation.IElementCreateParams)">
+            <summary>
+            CreateElement
+            </summary>
+            <param name="elementType"></param>
+            <param name="typedParams"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.Element">
+            <summary>
+            The DbElement representation
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.Exists">
+            <summary>
+            True if the element exists in the database, false otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.ReadOnly">
+            <summary>
+            True if the element is read-only.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.KeyName">
+            <summary>
+            The key name (trimmed of leading separators) of the element if it exists, empty string otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.DisplayName">
+            <summary>
+            The display name of the element if it exists, empty string otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.Description">
+            <summary>
+              The description of the element if it exists, empty string otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.CanCreateChildren">
+            <summary>
+            True if it is possible to create a child element under this one, i.e. is allowable and isn't read-only.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.InstanceDatabaseType">
+            <summary>
+            The type of database that this element is stored in.
+            Access derived static members via reflection on a derived class instance.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.InstanceElementType">
+            <summary>
+            The database element type associated with the element.
+            Access derived static members via reflection on a derived class instance.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.InstanceNameAttribute">
+            <summary>
+            The name attribute used to lookup this element.
+            Access derived static members via reflection on a derived class instance.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.BaseElement.Ref">
+            <summary>
+            Gets the reference.
+            </summary>
+            <value>
+            The reference.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ConfigType">
+            <summary>
+            Types known to the database provider. These are the types stored in the database in
+            CFGKEY.CFGTYP as text.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Integer">
+            <summary>
+            An enum constant representing the integer option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Text">
+            <summary>
+            An enum constant representing the text option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Logical">
+            <summary>
+            An enum constant representing the logical option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Real">
+            <summary>
+            An enum constant representing the real option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.IntegerArray">
+            <summary>
+            An enum constant representing the integer array option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.LogicalArray">
+            <summary>
+            An enum constant representing the logical array option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.RealArray">
+            <summary>
+            An enum constant representing the real array option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.TextArray">
+            <summary>
+            An enum constant representing the text array option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.DateTime">
+            <summary>
+            An enum constant representing the date time option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Font">
+            <summary>
+            An enum constant representing the font option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Colour">
+            <summary>
+            An enum constant representing the colour option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigType.Enum">
+            <summary>
+            An enum constant representing the enum option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.TypeDefinition">
+            <summary>
+            Definitions associated with a ConfigType
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeDefinition.#ctor(Aveva.Core.Configuration.Implementation.ConfigType,System.Type,Aveva.Core.Database.DbAttribute,Aveva.ApplicationFramework.AllowedValueType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configType"></param>
+            <param name="nativeType"></param>
+            <param name="attribute"></param>
+            <param name="allowedValueType"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.TypeDefinition.ConfigType">
+            <summary>
+            The stored database config type
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.TypeDefinition.NativeType">
+            <summary>
+            The native C# type
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.TypeDefinition.Attribute">
+            <summary>
+            The attribute on the CFGVAL element that stores the value in the database.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.TypeDefinition.AllowedValueType">
+            <summary>
+            The allowed value type for this type
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.IElementCreateParams">
+            <summary>
+            Interface for element creation parameters.
+            Used by ElementFactory to locate implementers of the CreateParams interface.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IElementCreateParams.Owner">
+            <summary>
+            Owner
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IElementCreateParams.Ref">
+            <summary>
+            Ref
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.CreateParams">
+            <summary>
+            Abstract base class for named element creation parameters
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.CreateParams.#ctor(Aveva.Core.Configuration.Implementation.BaseElement,System.String,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Constructor.
+            </summary>
+            <exception cref="T:System.ApplicationException">Thrown when an Application error condition occurs.</exception>
+            <param name="owner">    .</param>
+            <param name="name"> .</param>
+            <param name="displayName">  (Optional)</param>
+            <param name="description">  (Optional)</param>
+            <param name="ref">  (Optional) The reference.</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.CreateParams.GetTypedParameters``1">
+            <summary>
+            Converts the base type to the desired derived type.
+            Throws ApplicationException if the type is mismatched.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.CreateParams.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.CreateParams.Owner">
+            <summary>
+            Owner
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.CreateParams.DisplayName">
+            <summary>
+            Display name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.CreateParams.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.CreateParams.Ref">
+            <summary>
+            Gets or sets the reference.
+            </summary>
+            <value>
+            The reference.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider">
+            <summary>
+            Database configuration provider
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.DATABASE_NAME_PREFIX">
+            <summary>
+            Database keys must be prefixed with this value
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.DEFAULT_SET_NAME">
+            <summary>
+            The key of the default configuration set, used when no set is supplied.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.#ctor(System.String,System.String,System.String,System.Nullable{System.Int32},System.Int32,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetConfigurationsInSet">
+            <summary>
+            Construct a list of all the configurations belonging to a given set.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetConfigurationsBelowGroup">
+            <summary>
+            Construct a list of all the configuration settings belonging to the parent group and its subgroups.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.FindSettingsUnderGroup(Aveva.Core.Configuration.Implementation.GroupElement)">
+            <summary>
+            Recursively descend the configuration group hierarchy, finding configurations.
+            </summary>
+            <param name="parentGroup">The parent Group to descend</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.CreateGroup(Aveva.ApplicationFramework.IConfigurationGroup,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetAllConfigurationValues">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetAllConfigurationValuesUnderGroup(Aveva.Core.Configuration.Implementation.GroupElement)">
+            <summary>
+            Recursively descend the configuration group hierarchy, finding configuration values.
+            </summary>
+            <param name="parentGroup">The parent Group to descend</param>
+            <returns>A list of configuration value elements</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.InvokeGetDatabaseConfigurationValue(Aveva.Core.Configuration.Implementation.KeyDefinitionElement,Aveva.Core.Configuration.Implementation.IDatabaseConfiguration)">
+            <summary>
+            Invoke GetValue with the type of value determined by the configuration
+            </summary>
+            <param name="keyDefinition"></param>
+            <param name="configuration"></param>
+            <returns>A configuration value interface object</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.Get``1(System.String)">
+            <summary>
+            Get Configuration value by key
+            </summary>
+            <typeparam name="T">The type of the configuration item that is to be returned</typeparam>
+            <param name="key"></param>
+            <returns>The configuration value if found</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetUntypedValue(System.String)">
+            <summary>
+            Get the raw native value from the database
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetConfiguration``1(System.String)">
+            <summary>
+            Get Configuration Value by key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns>The ConfigurationValue instance</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetValueFromDatabase``1(Aveva.Core.Configuration.Implementation.IDatabaseConfiguration)">
+            <summary>
+            Get the raw configuration value by key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="configuration"></param>
+            <returns>The native value</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetConfigurationValueFromDatabase``1(Aveva.Core.Configuration.Implementation.IDatabaseConfiguration)">
+            <summary>
+            Retrieve a configuration value from the DB. T as object is a special case.
+            </summary>
+            <typeparam name="T">The native data type expected. If this is 'object', then skip type checking.</typeparam>
+            <param name="configuration"></param>
+            <returns>The full ConfigurationValue if found, a default ConfigurationValue otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.CreateDefaultValue``1(System.String,System.String,Aveva.Core.Configuration.Implementation.IDatabaseConfiguration)">
+            <summary>
+            Create a default config value.
+            </summary>
+            <typeparam name="T">The native type of the value</typeparam>
+            <param name="message">The error message to set</param>
+            <param name="key"></param>
+            <param name="configuration">The configuration, will only be typed if the type T is not 'object'. Optional.</param>
+            <returns>The default configuration value</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.GetDatabaseConfigurationValue``1(Aveva.Core.Configuration.Implementation.KeyDefinitionElement,Aveva.Core.Configuration.Implementation.IDatabaseConfiguration)">
+            <summary>
+            Get a configuration value instance given a configuration key
+            </summary>
+            <typeparam name="T">The type of managed type expected</typeparam>
+            <param name="keyElement"></param>
+            <param name="configuration"></param>
+            <returns>A ConfigurationValue if found, a default ConfigurationValue otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.Set``1(System.String,``0)">
+            <summary>
+            Set configuration by key and value.
+            Throws exceptions if unable to set a configuration item.
+            </summary>
+            <typeparam name="T">The type of the configuration item that is to be set</typeparam>
+            <param name="name">The key of the item to set</param>
+            <param name="value">The configuration value</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.ConfigurationExists(System.String)">
+            <summary>
+            Check if configuration exists
+            </summary>
+            <param name="fullyQualifiedKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.CreateConfiguration``1(Aveva.ApplicationFramework.IConfiguration{``0},``0,System.String,Aveva.ApplicationFramework.IConfigurationProvider)">
+            <summary>
+            Create new configuration from another one
+            </summary>
+            <param name="fromConfiguration"></param>
+            <param name="value"></param>
+            <param name="defaultGroup"></param>
+            <param name="fromProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.NewConfiguration``1(``0,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Nullable{System.Int32},``0)">
+            <summary>
+            Overload of CreateConfiguration.
+            </summary>
+            <exception cref="T:System.ApplicationException">Thrown when an Application error condition occurs.</exception>
+            <typeparam name="T">    .</typeparam>
+            <param name="value">    .</param>
+            <param name="key">  .</param>
+            <param name="name"> .</param>
+            <param name="description">  .</param>
+            <param name="context">  .</param>
+            <param name="uType">    .</param>
+            <param name="uUnits">   .</param>
+            <param name="ulvOptional">  .</param>
+            <param name="canOverride">  .</param>
+            <param name="newKeyRef">  The reference.</param>
+            <param name="default">  .</param>
+            <returns>
+            An IDatabaseConfiguration.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.CreateUpdateValue``1(``0,Aveva.Core.Configuration.Implementation.KeyDefinitionElement,Aveva.ApplicationFramework.ConfigurationConstituents,System.Boolean)">
+            <summary>
+            Create or update a configuration value
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="keyElement"></param>
+            <param name="databaseKeys"></param>
+            <param name="canOverride"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.CreateNewKeyWithDefaultValue(System.String,Aveva.Core.Configuration.Implementation.ConfigType,System.String,System.String,System.Boolean)">
+            <summary>
+            Create new key with default value
+            </summary>
+            <param name="fullyQualifiedKey"></param>
+            <param name="configType"></param>
+            <param name="context"></param>
+            <param name="description"></param>
+            <param name="readOnly"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.ParentGroup">
+            <summary>
+            The top-level Group that this provider is working with
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.SetName">
+            <summary>
+            The name of the set of options represented by this provider
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.SetElement">
+            <summary>
+            The set of options represented by this provider
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.SupportsOverride">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.SetNames">
+            <summary>
+            Return a list of all set names.
+            </summary>
+            <returns>List of set names found</returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationProvider.ProviderType">
+            <summary>
+            Provider Type
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1">
+            <summary>
+            Override ConfigurationValue for the Database Provider, so that the Override flag can be set.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1.#ctor(`0,Aveva.ApplicationFramework.IConfiguration{`0},Aveva.ApplicationFramework.IConfigurationProviderBase,Aveva.Core.Configuration.Implementation.ValueElement)">
+            <summary>
+            Constructor for value created by provider
+            </summary>
+            <param name="value"></param>
+            <param name="setting"></param>
+            <param name="provider"></param>
+            <param name="valueElement"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1.#ctor(`0,System.String,System.String,Aveva.ApplicationFramework.IConfiguration{`0},Aveva.ApplicationFramework.IConfigurationProviderBase)">
+            <summary>
+            Constructor for missing value
+            </summary>
+            <param name="default"></param>
+            <param name="message"></param>
+            <param name="key"></param>
+            <param name="setting"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1.Initialise(Aveva.Core.Configuration.Implementation.ValueElement)">
+            <summary>
+            Initialise properties
+            </summary>
+            <param name="valueElement"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1.AllowsOverride">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1.ValueElement">
+            <summary>
+            The database element represented by this value.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfigurationValue`1.AllowedValues">
+            <summary>
+            The allowed values for this value
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.DatabaseKeyNames">
+            <summary>
+            Class to handle splitting and conversion of key names. Names are prefixed with the database separator.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseKeyNames.NameToDatabaseKey(System.String)">
+            <summary>
+            Utility function to ensure that database keys are prefixed correctly.
+            </summary>
+            <param name="name"></param>
+            <returns>Prefixed key</returns>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1">
+            <summary>
+            Database setting
+            </summary>
+            <typeparam key="T"></typeparam>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.IDatabaseConfiguration">
+            <summary>
+            Database configuration Interface
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.IDatabaseConfiguration.TransformToRequestType(System.Type)">
+            <summary>
+            Perform any transformations to convert the existing configuration to the requested type.
+            Performs transformations for object and enums, to ensure that the type of the value and
+            configuration match.
+            </summary>
+            <param name="requestedType">The return type requested</param>
+            <returns>A new configuration if transformed, otherwise the old configuration</returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IDatabaseConfiguration.ParentGroup">
+            <summary>
+            database
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IDatabaseConfiguration.SetName">
+            <summary>
+            Optional name of the set that the setting belongs to
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1.readOnlyField">
+            <summary>
+            Backing field
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1.#ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.Nullable{System.Int32},`0)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="parentGroup">  .</param>
+            <param name="context">  .</param>
+            <param name="name"> .</param>
+            <param name="qualifiedName">    .</param>
+            <param name="description">  .</param>
+            <param name="readOnly"> .</param>
+            <param name="setName">  (Optional)</param>
+            <param name="ref">  (Optional) The reference.</param>
+            <param name="default">  (Optional)</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1.TransformToRequestType(System.Type)">
+            <summary>
+            Perform any transformations to convert the existing configuration to the requested type.
+            Performs transformations for object and enumerations, to ensure that the type of the value and
+            configuration match.
+            </summary>
+            <param name="requestedType">The return type requested</param>
+            <returns>A new configuration if transformed, otherwise the old configuration</returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1.ParentGroup">
+            <summary>
+            Database
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1.SetName">
+            <summary>
+            Optional name of the set that the setting belongs to
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.DatabaseConfiguration`1.ReadOnly">
+            <summary>
+            Check whether the element is read-only
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.DatabaseConfigurationFactory">
+            <summary>
+            Factory class to create a database configuration key definition.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationFactory.Create(Aveva.Core.Configuration.Implementation.KeyDefinitionElement,System.String,System.String,System.Boolean)">
+            <summary>
+            Factory method to create a database configuration from a configuration key element.
+            </summary>
+            <param name="keyElement"></param>
+            <param name="parentGroup"></param>
+            <param name="setName"></param>
+            <param name="readOnly"></param>
+            <returns>A new database setting</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.DatabaseConfigurationFactory.CreateEnumConfiguration(System.Type,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Static constructor for enumeration using reflection.
+            </summary>
+            <exception cref="T:System.ApplicationException">Thrown when an Application error condition occurs.</exception>
+            <param name="enumType"> .</param>
+            <param name="parentGroup">  .</param>
+            <param name="context">  .</param>
+            <param name="name"> .</param>
+            <param name="qualifiedName">    .</param>
+            <param name="description">  .</param>
+            <param name="readOnly"> .</param>
+            <param name="setName">  (Optional)</param>
+            <param name="ref">  (Optional) The reference.</param>
+            <returns>
+            The new enum configuration.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ElementFactory">
+            <summary>
+            Factory class to create a new Element instance
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ElementFactory.CreateTypeMap">
+            <summary>
+            Map of element creation parameters to their owning element class
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ElementFactory.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Factory method to create a new Element instance based on the parameter type 
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ElementFactory.ConstructElementClass(System.Type,Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Create an instance of the derived Element class
+            </summary>
+            <param name="classType"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ElementFactory.LoadCreateTypes">
+            <summary>
+            Create a map of CreateParams to their owning element classes, to use for instantiation of elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.GroupElement">
+            <summary>
+            A Configuration Group element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.#ctor(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.Find(Aveva.ApplicationFramework.ConfigurationConstituents)">
+            <summary>
+            Get the group element from the database, via the hierarchy
+            </summary>
+            <param name="constituents"></param>
+            <returns>A new Group element</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.Find(System.String)">
+            <summary>
+            Get the group element from the database, via the hierarchy, given only the group name
+            </summary>
+            <param name="groupName"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.FindInHierarchy(Aveva.ApplicationFramework.ConfigurationConstituents)">
+            <summary>
+            Get the group element from the database, via the hierarchy
+            </summary>
+            <param name="constituents"></param>
+            <returns>Element if found, a null instance element if not</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.FindSubGroups(Aveva.Core.Database.DbElement,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recurse the parent group to find all required subgroups
+            </summary>
+            <param name="parentGroup"></param>
+            <param name="subGroupNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Create a new group in the database
+            </summary>
+            <param name="parameters"></param>
+            <returns>The new element</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.GetKeyDefinitions(Aveva.Core.Configuration.Implementation.SetElement)">
+            <summary>
+            Returns a list of all the configuration key definition elements that have instances for the set.
+            </summary>
+            <param name="set"></param>
+            <returns>List of configurations elements found</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.FindOrCreate(Aveva.ApplicationFramework.ConfigurationConstituents,Aveva.Core.Configuration.Implementation.BaseElement,System.Nullable{System.Int32})">
+            <summary>
+            Create a new Group in the database, if it doesn't already exist.
+            </summary>
+            <param name="keys"> .</param>
+            <param name="parentElement">The owning element of the new group, may be the group world or a
+                                        parent group.</param>
+            <param name="ref">  The reference.</param>
+            <returns>
+            The new Group element.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupElement.DatabaseType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupElement.ElementType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupElement.NameAttribute">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupElement.CanCreateChildren">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupElement.KeyNames">
+            <summary>
+            Create a key name from a definition
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupElement.SubGroups">
+            <summary>
+            Return the subgroups directly underneath this group
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.GroupElement.GroupCreationParams">
+            <summary>
+            Creation parameters for sets
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupElement.GroupCreationParams.#ctor(System.String,Aveva.Core.Configuration.Implementation.BaseElement,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+            <param name="owner"></param>
+            <param name="displayName"></param>
+            <param name="description"></param>
+            <param name="ref"></param>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.KeyDefinitionElement">
+            <summary>
+            A Configuration key definition element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.#ctor(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.Find(Aveva.ApplicationFramework.ConfigurationConstituents,Aveva.Core.Configuration.Implementation.GroupElement)">
+            <summary>
+            Get the key definition element from the database, via the owning group
+            </summary>
+            <param name="constituents"></param>
+            <param name="owningGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.FindInHierarchy(System.String,Aveva.Core.Configuration.Implementation.GroupElement)">
+            <summary>
+            Get the key definition element from the database, via the hierarchy
+            </summary>
+            <param name="keyName"></param>
+            <param name="owningGroup"></param>
+            <returns>Element if found, a null instance element if not</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.GetKeyNames">
+            <summary>
+            Create a key name from a definition
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.GetValueElement(Aveva.Core.Configuration.Implementation.SetElement)">
+            <summary>
+            For the configuration key, searches the given set for a matching value.
+            </summary>
+            <param name="set"></param>
+            <returns>The matching element if found, empty element otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.GetValueElement(System.String)">
+            <summary>
+            For the configuration key, searches the set's list of value instances for a match.
+            </summary>
+            <param name="setName"></param>
+            <returns>The matching element if found, empty element otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.GetEnumType(System.String)">
+            <summary>
+            Gets the type of enum if this is a valid enum.
+            </summary>
+            <param name="context">The enum context containing the enum type</param>
+            <returns>An enum type if a valid enum, null otherwise</returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.DatabaseType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.ElementType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.NameAttribute">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.Context">
+            <summary>
+            The context of the element if it exists, empty string otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.ConfigType">
+            <summary>
+            The configuration type of the element if it exists
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.CanCreateChildren">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.EnumType">
+            <summary>
+            Gets the type of enum if this is a valid enum.
+            Returns an enum type if a valid enum, null otherwise.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams">
+            <summary>
+            Creation parameters for key definitions
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams.#ctor(System.String,Aveva.Core.Configuration.Implementation.GroupElement,Aveva.Core.Configuration.Implementation.ConfigType,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            .
+            </summary>
+            <param name="name"></param>
+            <param name="owner"></param>
+            <param name="configDataType"></param>
+            <param name="uType"></param>
+            <param name="uUnits"></param>
+            <param name="ulvOptional"></param>
+            <param name="displayName"></param>
+            <param name="description"></param>
+            <param name="context"></param>
+            <param name="ref"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams.ConfigDataType">
+            <summary>
+            The type of data stored under this key.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams.Context">
+            <summary>
+            The context of the key
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams.ULVOptional">
+            <summary>
+            Limits or valid values optional flag
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams.UType">
+            <summary>
+            UDA Type
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.KeyDefinitionElement.KeyDefinitionCreationParams.UUnits">
+            <summary>
+            UDA Units
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.LocalExtensions">
+            <summary>
+            Local extension methods
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.CheckElementType(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElementType)">
+            <summary>
+            Extension method to check that an element is of the expected type. Throws ApplicationException if it isn't of the expected type.
+            </summary>
+            <param name="element"></param>
+            <param name="expectedType"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.SetStringAttributeOpt(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute,System.String)">
+            <summary>
+            Extension method to optionally set a string attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attribute"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.TrimLast``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Extension method to remove the last item from an enumerable collection
+            </summary>
+            <typeparam name="T">Type of collection</typeparam>
+            <param name="collection"></param>
+            <returns>A new enumerable collection, with the last item trimmed</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.IsIEnumerable(System.Type)">
+            <summary>
+            Determines if a type implements IEnumerable/<T/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.GetEnumerableElementTypes(System.Type)">
+            <summary>
+            Get a list of interfaces that implement IEnumerable on the given type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.GetEnumerableElementType(System.Type)">
+            <summary>
+            Get the underlying element type of an IEnumerable type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.LocalExtensions.Trace(System.String)">
+            <summary>
+            Method for outputting Configuration trace
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.SetElement">
+            <summary>
+            A Configuration Set
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.SetElement.DEFAULT_PRECEDENCE">
+            <summary>
+            The default value to use where no precedence is specified
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetElement.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetElement.#ctor(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetElement.Find(System.String,System.Boolean)">
+            <summary>
+            Get the element from the database by Name.
+            </summary>
+            <param name="setName"></param>
+            <param name="throwIfMissing">True if an exception should be thrown if not found, false otherwise</param>
+            <returns>New Set</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetElement.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Create a new set in the database
+            </summary>
+            <param name="parameters"></param>
+            <returns>The new element</returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.DatabaseType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.ElementType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.NameAttribute">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.CanCreateChildren">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.ValueInstances">
+            <summary>
+            Get a list of all the configuration instances that exist for the given set.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.Precedence">
+            <summary>
+            Precedence
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.SetNames">
+            <summary>
+            Return a list of all set names.
+            </summary>
+            <returns>List of set names found</returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.CanCreateValues">
+            <summary>
+            True if it is possible to create value elements under this set
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.SetElement.SetCreationParams">
+            <summary>
+            Creation parameters for sets
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetElement.SetCreationParams.#ctor(System.String,Aveva.Core.Configuration.Implementation.SetWorld,System.String,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+            <param name="owner"></param>
+            <param name="displayName"></param>
+            <param name="description"></param>
+            <param name="precedence"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetElement.SetCreationParams.Precedence">
+            <summary>
+            The precedence of the set
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.TypeConverter">
+            <summary>
+            Configuration database types and conversions to and from native types
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.TypeConverter.TypeList">
+            <summary>
+            List of type definitions
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.TypeConverter.TypeMap">
+            <summary>
+            Map of configuration types to their definitions
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.TypeConverter.ReverseTypeMap">
+            <summary>
+            Map of native types to configuration definitions.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.CreateDatabaseConfiguration(Aveva.Core.Configuration.Implementation.ConfigType,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Create a database configuration of the correct type.
+            </summary>
+            <param name="type"> .</param>
+            <param name="parentGroup">  .</param>
+            <param name="context">  .</param>
+            <param name="displayName">  .</param>
+            <param name="qualifiedPath">    .</param>
+            <param name="description">  .</param>
+            <param name="setName">  .</param>
+            <param name="readOnly"> .</param>
+            <param name="ref">  (Optional) The reference.</param>
+            <returns>
+            A Database configuration.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.DbValueToNative(Aveva.Core.Configuration.Implementation.ConfigType,Aveva.Core.Database.DbElement)">
+            <summary>
+            Retrieve the raw value from a Value element as an object
+            </summary>
+            <param name="configType"></param>
+            <param name="valueElement"></param>
+            <returns>The native type value as an object</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.SetValue``1(Aveva.Core.Configuration.Implementation.ValueElement,``0)">
+            <summary>
+            Set the value on a Value element, dependent upon the type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="valueElement"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.SetValueToDefault(Aveva.Core.Configuration.Implementation.ValueElement)">
+            <summary>
+            Set the Configuration value to its default for that data type
+            </summary>
+            <param name="valueElement"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.Convert(System.Type)">
+            <summary>
+            Convert a native to configuration type
+            </summary>
+            <param name="type">The native type</param>
+            <returns>The configuration type if found, throws ApplicationException otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.Convert(Aveva.Core.Configuration.Implementation.ConfigType)">
+            <summary>
+            Convert a configuration to native type
+            </summary>
+            <param name="configType">The configuration type</param>
+            <returns>The native type if found, throws ApplicationException otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.GetTypeDefinition(System.Type)">
+            <summary>
+            Get the type definition for a given native type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.GetTypeDefinition(Aveva.Core.Configuration.Implementation.ConfigType)">
+            <summary>
+            Get the type definition for a given configuration type
+            </summary>
+            <param name="configType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.ExpectedTypeMatches(Aveva.Core.Configuration.Implementation.KeyDefinitionElement,System.Type)">
+            <summary>
+            Checks to see if the requested type matches that expected
+            </summary>
+            <param name="keyDefinition"></param>
+            <param name="requestedType"></param>
+            <returns>True if matches, false otherwise</returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.GetValueAttribute(Aveva.Core.Configuration.Implementation.ConfigType)">
+            <summary>
+            Get the attribute associated with this configuration type
+            </summary>
+            <param name="configType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.GetAllowedValueType(Aveva.Core.Configuration.Implementation.ConfigType)">
+            <summary>
+            Get the attribute associated with this configuration type
+            </summary>
+            <param name="configType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.TypeConverter.CheckEnumerableTypeMatches(System.Type,System.Type)">
+            <summary>
+            See if the underlying element type of two IEnumerables match
+            </summary>
+            <param name="expectedType"></param>
+            <param name="requestedType"></param>
+            <returns>True if they match, false otherwise</returns>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ValueElement">
+            <summary>
+            Represents a Configuration Value database element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.#ctor(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.SetValueAttribute``1(``0)">
+            <summary>
+            Set the given value on the value instance element
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.SetValueAttributeToDefault">
+            <summary>
+            Set the value instance element to its default for that data type
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.GetDoubleRanges(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute)">
+            <summary>
+            Get a list of allowed double ranges
+            </summary>
+            <param name="element"></param>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.GetStringValidValues(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbAttribute)">
+            <summary>
+            Get a list of string valid values and descriptions
+            </summary>
+            <param name="element"></param>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.DatabaseType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.ElementType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.NameAttribute">
+            <summary>
+            This attribute is unused for Configuration Values.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.CanOverride">
+            <summary>
+            Flag to indicate whether or not this configuration value can be overridden at a lower level.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.KeyDefinition">
+            <summary>
+            Link to related Configuration Key Definition that this value is an instance of
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.CanCreateChildren">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.AllowedValues">
+            <summary>
+            Get the allowed values/ranges for this value.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.ValueAsObject">
+            <summary>
+            Retrieve the database value as a native type.
+            </summary>
+            <value>The native configuration value as an object</value>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ValueElement.ValueCreationParams">
+            <summary>
+            Creation parameters for sets
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ValueElement.ValueCreationParams.#ctor(Aveva.Core.Configuration.Implementation.SetElement,System.Boolean,Aveva.Core.Configuration.Implementation.KeyDefinitionElement)">
+            <summary>
+            Constructor. Name, DisplayName and Description are unused by this class.
+            </summary>
+            <param name="owningSet"></param>
+            <param name="canOverride"></param>
+            <param name="keyDefinition"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.ValueCreationParams.CanOverride">
+            <summary>
+            True if the value can be overridden by a set at a higher level.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ValueElement.ValueCreationParams.KeyDefinition">
+            <summary>
+            The set that the value belongs to
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.WorldElement">
+            <summary>
+            Base class for determining the world element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.WorldElement.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.WorldElement.FindElement(Aveva.Core.Database.DbType,Aveva.Core.Database.DbElementType)">
+            <summary>
+            Get the world element
+            </summary>
+            <param name="databaseType"></param>
+            <param name="elementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.WorldElement.Create(Aveva.Core.Configuration.Implementation.CreateParams)">
+            <summary>
+            Create a new group in the database
+            </summary>
+            <param name="parameters"></param>
+            <returns>The new element</returns>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.GroupWorld">
+            <summary>
+            Implementation of a Dictionary Group world
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupWorld.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.GroupWorld.Find">
+            <summary>
+            Find the Group World element
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupWorld.DatabaseType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupWorld.ElementType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupWorld.NameAttribute">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.GroupWorld.CanCreateChildren">
+            <inheritdoc />
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.SetWorld">
+            <summary>
+              Implementation of a Configuration Set world
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetWorld.#ctor(Aveva.Core.Database.DbElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.SetWorld.Find">
+            <summary>
+            Find the Set World element
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetWorld.DatabaseType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetWorld.ElementType">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetWorld.NameAttribute">
+            <inheritdoc />
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.SetWorld.CanCreateChildren">
+            <inheritdoc />
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.PMLConfigurationManager">
+            <summary>
+            PML aware consumer class
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.Assign(Aveva.Core.Configuration.Implementation.PMLConfigurationManager)">
+            <summary>
+            Assign - Required for PML
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetString(System.String,System.String)">
+            <summary>
+            Get string setting by name
+            </summary>
+            <param name="key"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetString(System.String)">
+            <summary>
+            Get string setting by key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetBoolean(System.String,System.Boolean)">
+            <summary>
+            Get Boolean setting by key
+            </summary>
+            <param name="key"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetBoolean(System.String)">
+            <summary>
+            Get Boolean setting by key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetInteger(System.String,System.Double)">
+            <summary>
+            Get integer setting by key
+            </summary>
+            <param name="key"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetInteger(System.String)">
+            <summary>
+            Get integer setting by key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetDouble(System.String,System.Double)">
+            <summary>
+            Get double setting by key
+            </summary>
+            <param name="key"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetDouble(System.String)">
+            <summary>
+            Get double setting by key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetAsString(System.String)">
+            <summary>
+            Get setting as string given key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetEnumNames(System.String)">
+            <summary>
+            Set of enumeration names
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.GetEnumValues(System.String)">
+            <summary>
+            Set of enumeration values
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.SetFromString(System.String,System.String)">
+            <summary>
+            Set string
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.SetString(System.String,System.String)">
+            <summary>
+            Set string
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.SetBoolean(System.String,System.Boolean)">
+            <summary>
+            Set Boolean
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.SetInteger(System.String,System.Double)">
+            <summary>
+            Set Integer
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.PMLConfigurationManager.SetDouble(System.String,System.Double)">
+            <summary>
+            Set Double
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ProviderChangeType">
+            <summary>
+            Possible provider changes
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ProviderChangeType.Added">
+            <summary>
+            Configuration added
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ProviderChangeType.Deleted">
+            <summary>
+            Configuration deleted
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ProviderChangeType.KeysChanged">
+            <summary>
+            Configuration value changed
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ProviderEventArgs">
+            <summary>
+            Provide Event Arguments
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ProviderEventArgs.#ctor(Aveva.ApplicationFramework.IConfigurationProvider,Aveva.Core.Configuration.Implementation.ProviderChangeType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="provider"></param>
+            <param name="changeType"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ProviderEventArgs.#ctor(Aveva.ApplicationFramework.IConfigurationProvider,Aveva.Core.Configuration.Implementation.ProviderChangeType,System.Collections.Generic.List{System.String})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="provider"></param>
+            <param name="changeType"></param>
+            <param name="keys"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ProviderEventArgs.Provider">
+            <summary>
+            Provider
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ProviderEventArgs.ChangeType">
+            <summary>
+            Type of change
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ProviderEventArgs.Keys">
+            <summary>
+            Keys that changed
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser">
+            <summary>
+            Configuration Visualiser Control
+            </summary>
+            <summary>
+                Summary description for VmdGuiDefaultsCtrl.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.INDICATOR_SIZE">
+            <summary>
+            Indicator icon size
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.#ctor(Aveva.ApplicationFramework.IConfigurationProvider,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="provider"></param>
+            <param name="isAdministrator"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.Initialize">
+            <summary>
+            Initialise
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.RefreshConfigurations">
+            <summary>
+            Refresh when configurations change
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.SetTreeStyle(System.Boolean)">
+            <summary>
+            Set the tree style
+            </summary>
+            <param name="flat"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.Dispose(System.Boolean)">
+            <summary>
+                Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.InitializeComponent">
+            <summary>
+                Required method for Designer support - do not modify
+                the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.Provider">
+            <summary>
+            Provider
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.ProvidersChanged">
+            <summary>
+            Providers changed event
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.InvalidConfiguration">
+            <summary>
+            For displaying invalid configurations
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.InvalidConfiguration.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.InvalidConfiguration.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.InvalidConfiguration.Key">
+            <summary>
+            SubKey
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ConfigurationVisualiser.InvalidConfiguration.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.IConfigurationNode">
+            <summary>
+            Configuration TreeNode Interface
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IConfigurationNode.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IConfigurationNode.KeyWord">
+            <summary>
+            SubKey
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.IConfigurationNode.Selected">
+            <summary>
+            If selected
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ConfigurationNode`1">
+            <summary>
+            Configuration TreeNode
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ConfigurationNode`1.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+            <param name="keyWord"></param>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ConfigurationNode`1.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Configuration.Implementation.ConfigurationNode`1.KeyWord">
+            <summary>
+            SubKey
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.ProviderFactory">
+            <summary>
+            Factory class for creating providers
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ProviderFactory.#ctor(Aveva.ApplicationFramework.IConfigurationManagerConsumer)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configurationManager"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.ProviderFactory.CreateAll">
+            <summary>
+            Create all known providers
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Configuration.Implementation.InformationRequest">
+            <summary>
+            Form for requesting information
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.InformationRequest.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="labelWidth"></param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.InformationRequest.AddRequestControl``1(System.String,``0)">
+            <summary>
+            Add control
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="labelText"></param>
+            <param name="control"></param>
+        </member>
+        <member name="F:Aveva.Core.Configuration.Implementation.InformationRequest.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.InformationRequest.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aveva.Core.Configuration.Implementation.InformationRequest.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

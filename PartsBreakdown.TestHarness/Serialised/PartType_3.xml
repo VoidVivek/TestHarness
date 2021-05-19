@@ -1,0 +1,15 @@
+<ArrayOfPartType xmlns="http://schemas.datacontract.org/2004/07/Aveva.Engineering.PartsBreakdown.Models" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <PartType>
+    <ActualClassName>Equipment Plug</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#b7665c912-71da-4047-99d7-610e4a847a3b</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Equipment Plugs</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#b71294789-9730-4932-bca6-240d4847762b</AssociationUri>
+      <Cardinality>*</Cardinality>
+    </Association>
+    <BaseClassName>Equipment Plug</BaseClassName>
+    <BaseClassUri>http://www.aveva.com/datamodel/item#b7665c912-71da-4047-99d7-610e4a847a3b</BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+</ArrayOfPartType>

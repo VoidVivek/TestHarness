@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.Database.View.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Database.View.IAttributeFilter">
+            <summary>
+            Class to help with the generic AttributeFilter component.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.View.IAttributeFilter.ATTRIBUTE">
+            <summary>
+            The attribute for the filter
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.View.IAttributeFilter.FILTOPERATOR">
+            <summary>
+            The operator for the filter
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.View.IAttributeFilter.FILTVALUE">
+            <summary>
+            The value of the filter
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Database.View.IInternalAttributeFilter">
+            <summary>
+            Internal interface created to extend IAttributeFilter definition.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.View.IInternalAttributeFilter.SplitValueIntoList">
+            <summary>
+            Splits the FILTVALUE into a string[]
+            </summary>
+            <returns>Does not return null reference.</returns>
+        </member>
+        <member name="P:Aveva.Core.Database.View.IInternalAttributeFilter.IsValid">
+            <summary>
+            Indicates if definition is ok for use.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.View.IInternalAttributeFilter.Visible">
+            <summary>
+            Indicates if filter definition is visible.
+            </summary>
+        </member>
+    </members>
+</doc>

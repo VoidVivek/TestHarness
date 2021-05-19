@@ -1,0 +1,15 @@
+<ArrayOfPartType xmlns="http://schemas.datacontract.org/2004/07/Aveva.Engineering.PartsBreakdown.Models" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <PartType>
+    <ActualClassName>Equipment Socket</ActualClassName>
+    <ActualClassUri>http://www.aveva.com/datamodel/item#b154ff98d-635f-4f3f-8b51-0ba8c12dbad2</ActualClassUri>
+    <Association>
+      <AssociationName>Can Have Equipment Sockets</AssociationName>
+      <AssociationUri>http://www.aveva.com/datamodel/item#b2f674ab1-79b8-4280-8c62-165a5de92997</AssociationUri>
+      <Cardinality>*</Cardinality>
+    </Association>
+    <BaseClassName>Equipment Socket</BaseClassName>
+    <BaseClassUri>http://www.aveva.com/datamodel/item#b154ff98d-635f-4f3f-8b51-0ba8c12dbad2</BaseClassUri>
+    <NamingViewModels />
+    <RequestedQuantity>0</RequestedQuantity>
+  </PartType>
+</ArrayOfPartType>

@@ -1,0 +1,3374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core3D.Graphics</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core3D.Graphics.Colour">
+            <summary>
+            Model colour
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Colour.Index">
+            <summary>
+            Colour index
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Colour.Red">
+            <summary>
+            Red (0 to 256)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Colour.Green">
+            <summary>
+            Green (0 to 256)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Colour.Blue">
+            <summary>
+            Blue (0 to 256)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Colour.Name">
+            <summary>
+            Model colour name
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.Colours">
+            <summary>
+            Summary description for Colours.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.Colours.coloursInstance">
+            <summary>
+            The colours instance.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Colours.ColourTable">
+            <summary>
+            Model colour table.
+            </summary>
+            <returns>
+            Colour table.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Colours.InternalColourTable">
+            <summary>
+            Internal colour table.
+            </summary>
+            <returns>
+            A Colour[].
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Colours.FindColor(System.String)">
+            <summary>
+            Find model system color of given name.
+            </summary>
+            <param name="colourName">   .</param>
+            <returns>
+            System Color.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Colours.FindSystemColor(System.String)">
+            <summary>
+            Convert Infragistics.Win.SystemColor to System.Drawing.SystemColors.
+            </summary>
+            <param name="colourName">   Colour name.</param>
+            <returns>
+            System.Drawing.Color.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Colours.FindPdmsColour(System.String)">
+            <summary>
+            Find model colour of given name.
+            </summary>
+            <param name="colourName">   .</param>
+            <returns>
+            Colour.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Colours.FindPdmsColourByIndex(System.Int32)">
+            <summary>
+            Find model colour of given index.
+            </summary>
+            <param name="colourIndex">  .</param>
+            <returns>
+            Colour.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawList">
+            <summary>
+            Model DrawList associated with a single graphics context which may be shared by one or more
+            3D views.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Add(Aveva.Core.Database.DbElement)">
+            <summary>
+            Adds element.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Add(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Adds elements.
+            </summary>
+            <param name="elements"> .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddOnly(Aveva.Core.Database.DbElement)">
+            <summary>
+            Adds an only.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddOnly(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Adds an only.
+            </summary>
+            <param name="elements"> .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddReferences(Aveva.Core.Database.DbElement)">
+            <summary>
+            Adds the references.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddWithinVolume(Aveva.Core.Database.DbElement)">
+            <summary>
+            Adds a within volume.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddToSelection(Aveva.Core.Database.DbElement,System.Boolean)">
+            <summary>
+            Adds to the selection.
+            </summary>
+            <param name="element">  .</param>
+            <param name="addGraphics">  (Optional) True to add graphics.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddToSelection(Aveva.Core.Database.DbElement[],System.Boolean)">
+            <summary>
+            Adds to the selection.
+            </summary>
+            <param name="element">  .</param>
+            <param name="addGraphics">  (Optional) True to add graphics.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AddChildrenToSelection(Aveva.Core.Database.DbElement)">
+            <summary>
+            Adds a children to selection.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveFromSelection(Aveva.Core.Database.DbElement)">
+            <summary>
+            Removes from selection described by element.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveFromSelection(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Removes from selection described by element.
+            </summary>
+            <param name="element">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.ClearGraphicalSelection">
+            <summary>
+            Clears the graphical selection.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.GraphicalSelectionHasChanged">
+            <summary>
+            Graphical selection has changed.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Exists(Aveva.Core.Database.DbElement)">
+            <summary>
+            Returns true if elements exists in drawlist.
+            </summary>
+            <param name="element">  Element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.AttachedViews">
+            <summary>
+            Returns array of attached 3D views.
+            </summary>
+            <returns>
+            Array of 3D views.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.GraphicalSelection">
+            <summary>
+            Returns elements in graphical selection.
+            </summary>
+            <returns>
+            Array of elements.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Members">
+            <summary>
+            Returns drawlist members.
+            </summary>
+            <returns>
+            Array of members.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.GetDrawListMember(Aveva.Core.Database.DbElement)">
+            <summary>
+            Returns given drawlist member.
+            </summary>
+            <param name="element">  .</param>
+            <returns>
+            Drawlist member.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.GetWithinVolume(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get elements within volume of given element.
+            </summary>
+            <param name="element">  .</param>
+            <returns>
+            Array of elements.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Highlight(Aveva.Core.Database.DbElement)">
+            <summary>
+            Highlight given element.
+            </summary>
+            <param name="element">  Element to highlight.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Highlight(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Highlight given elements.
+            </summary>
+            <param name="elements"> Elements to highlight.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.GetHighlightColour(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get the highlight colour of given element.
+            </summary>
+            <param name="element">  DB Element.</param>
+            <returns>
+            Highlight colour.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetHighlightColour(Aveva.Core.Database.DbElement,System.Int32)">
+            <summary>
+            Sets the highlight colour of a given element.
+            </summary>
+            <param name="element">  Element to highlight.</param>
+            <param name="col">  Colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Remove(Aveva.Core.Database.DbElement)">
+            <summary>
+            Remove given element.
+            </summary>
+            <param name="element">  Element to remove.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Remove(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Remove given elements.
+            </summary>
+            <param name="elements"> Elements to remove.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Remove(Aveva.Core3D.Graphics.DrawListMember)">
+            <summary>
+            Remove given drawlist member.
+            </summary>
+            <param name="member">   Drawlist member.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Remove(Aveva.Core3D.Graphics.DrawListMember[])">
+            <summary>
+            Remove given drawlist members.
+            </summary>
+            <param name="members">  Drawlist members.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveOnly(Aveva.Core.Database.DbElement)">
+            <summary>
+            Remove only this element without removing top level element.
+            </summary>
+            <param name="element">  Element to remove.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveOnly(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Remove only these elements without removing top level element.
+            </summary>
+            <param name="elements"> Elements to remove.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveOnly(Aveva.Core3D.Graphics.DrawListMember)">
+            <summary>
+            Remove only this drawlist member without removing top level element.
+            </summary>
+            <param name="member">   Member to remove.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveOnly(Aveva.Core3D.Graphics.DrawListMember[])">
+            <summary>
+            Remove only these members without removing top level member.
+            </summary>
+            <param name="members">  Members to remove.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RemoveAll">
+            <summary>
+            Remove everything from drawlist.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetColour(Aveva.Core3D.Graphics.DrawListMember[],System.Int32)">
+            <summary>
+            Sets colour of top level drawlist members.
+            </summary>
+            <param name="members">  Drawlist members.</param>
+            <param name="colour">   colour index.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetColour(Aveva.Core.Database.DbElement[],System.Int32)">
+            <summary>
+            Sets colour of database elements which may be above or at top level or below at primitive
+            level.
+            </summary>
+            <param name="elements"> Elements.</param>
+            <param name="colour">   colour index.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetEdges(Aveva.Core3D.Graphics.DrawListMember[],System.Boolean)">
+            <summary>
+            Set edges of top level drawlist members.
+            </summary>
+            <param name="members">  Members.</param>
+            <param name="edges">    Edges on/off.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetEdges(Aveva.Core.Database.DbElement[],System.Boolean)">
+            <summary>
+            Set edges of database elements which may be above or at top level or below at primitive level.
+            </summary>
+            <param name="elements"></param>
+            <param name="edges"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetTransparency(Aveva.Core3D.Graphics.DrawListMember[],System.Int32)">
+            <summary>
+            Set transparency of top level drawlist members.
+            </summary>
+            <param name="members">  Members.</param>
+            <param name="transparency"> Transparency 0 to 100.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetTransparency(Aveva.Core.Database.DbElement[],System.Int32)">
+            <summary>
+             Set transparency of database elements which may be above or at top level or below at
+            primitive level.
+            </summary>
+            <param name="elements"></param>
+            <param name="transparency"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetVisibility(Aveva.Core3D.Graphics.DrawListMember[],System.Boolean)">
+            <summary>
+            Set visibility of top level drawlist members.
+            </summary>
+            <param name="members">  Members.</param>
+            <param name="visibility">   Visibility on/off.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetVisibility(Aveva.Core.Database.DbElement[],System.Boolean)">
+            <summary>
+            Set visibility of database elements which may be above or at top level or below at primitive
+            level.
+            </summary>
+            <param name="elements"></param>
+            <param name="visibility"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetShallowRendering(Aveva.Core3D.Graphics.DrawListMember[],System.Boolean)">
+            <summary>
+            Set shallow rendering of top level drawlist members.
+            </summary>
+            <param name="members">  Members.</param>
+            <param name="shallow">  Shallow rendering on/off.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetShallowRendering(Aveva.Core.Database.DbElement[],System.Boolean)">
+            <summary>
+            Set shallow rendering of database elements which may be above or at top level or below at
+            primitive level.
+            </summary>
+            <param name="elements"></param>
+            <param name="shallow"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetVisualProperties(System.Boolean,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Set visual properties of all elements subsequently added to this drawlist. If autoColour ==
+            true colour rules are applied otherwise overridden by colour parameters.
+            </summary>
+            <param name="autoColour">   Apply colour rules if true.</param>
+            <param name="colour">   Colour override.</param>
+            <param name="transparency"> Transparency override.</param>
+            <param name="edges">    Edges override.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.GetVisualProperties(System.Boolean@,System.Double@,System.Double@,System.Double@,System.Int32@,System.Boolean@)">
+            <summary>
+            Get visual properties applied to all elements.
+            </summary>
+            <param name="autoColour">   [in,out] Colour rules applied if true.</param>
+            <param name="autoColorRed"> [in,out] Colour override.</param>
+            <param name="autoColorGreen">   [in,out] The automatic color green.</param>
+            <param name="autoColorBlue">    [in,out] The automatic color blue.</param>
+            <param name="transparency"> [in,out] Transparency override.</param>
+            <param name="edges">    [in,out] Edges override.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SetVisualProperties(Aveva.Core3D.Graphics.DrawListMember[],System.Boolean,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Set all the visual properties of all the given drawlist members.
+            </summary>
+            <param name="members">  Members to set.</param>
+            <param name="visibility">   .</param>
+            <param name="colour">   .</param>
+            <param name="transparency"> .</param>
+            <param name="edges">    .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Unhighlight(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Unhighlight all the given elements.
+            </summary>
+            <param name="elements"> Array of elements to unhighlight.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Unhighlight(Aveva.Core.Database.DbElement)">
+            <summary>
+            Unhighlight the given element.
+            </summary>
+            <param name="element">  Element to unhighlight.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.VisibleAll">
+            <summary>
+            Make all elements in drawlist visible.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Additions">
+            <summary>
+            Returns added members since last update.
+            </summary>
+            <returns>
+            add members.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.Deletions">
+            <summary>
+            Returns deleted members since last update.
+            </summary>
+            <returns>
+            add members.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.VisualChanges">
+            <summary>
+            Returns visually changed memners since last update.
+            </summary>
+            <returns>
+            add members.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.SaveVisualProperties">
+            <summary>
+            Save the current visual properties.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawList.RestoreVisualProperties">
+            <summary>
+            Restore the current visual properties.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.ArcTol">
+            <summary>
+            Gets or sets the arc tolerance.
+            </summary>
+            <value>
+            The arc tolerance.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Bolts">
+            <summary>
+            Gets or sets a value indicating whether the bolts.
+            </summary>
+            <value>
+            true if bolts, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.CentreLine">
+            <summary>
+            Gets or sets a value indicating whether the centre line.
+            </summary>
+            <value>
+            true if centre line, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Holes">
+            <summary>
+            Gets or sets a value indicating whether the holes.
+            </summary>
+            <value>
+            true if holes, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Insulation">
+            <summary>
+            Gets or sets a value indicating whether the insulation.
+            </summary>
+            <value>
+            true if insulation, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.InsulationTrans">
+            <summary>
+            Gets or sets the insulation transaction.
+            </summary>
+            <value>
+            The insulation transaction.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Level">
+            <summary>
+            Gets or sets the level.
+            </summary>
+            <value>
+            The level.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.NozzLevel">
+            <summary>
+            Gets or sets the nozz level.
+            </summary>
+            <value>
+            The nozz level.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Obstruction">
+            <summary>
+            Gets or sets a value indicating whether the obstruction.
+            </summary>
+            <value>
+            true if obstruction, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.ObstructionTrans">
+            <summary>
+            Gets or sets the obstruction transaction.
+            </summary>
+            <value>
+            The obstruction transaction.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.PipeLevel">
+            <summary>
+            Gets or sets the pipe level.
+            </summary>
+            <value>
+            The pipe level.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Pkey">
+            <summary>
+            Gets or sets a value indicating whether the pkey.
+            </summary>
+            <value>
+            true if pkey, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Pline">
+            <summary>
+            Gets or sets a value indicating whether the pline.
+            </summary>
+            <value>
+            true if pline, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Pnode">
+            <summary>
+            Gets or sets a value indicating whether the pnode.
+            </summary>
+            <value>
+            true if pnode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Points">
+            <summary>
+            Gets or sets a value indicating whether the points.
+            </summary>
+            <value>
+            true if points, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.PpointNumbers">
+            <summary>
+            Gets or sets a value indicating whether the ppoint numbers.
+            </summary>
+            <value>
+            true if ppoint numbers, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Ppoints">
+            <summary>
+            Gets or sets a value indicating whether the ppoints.
+            </summary>
+            <value>
+            true if ppoints, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Snode">
+            <summary>
+            Gets or sets a value indicating whether the snode.
+            </summary>
+            <value>
+            true if snode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.StruLevel">
+            <summary>
+            Gets or sets the stru level.
+            </summary>
+            <value>
+            The stru level.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Tracing">
+            <summary>
+            Gets or sets a value indicating whether the tracing.
+            </summary>
+            <value>
+            true if tracing, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.Tube">
+            <summary>
+            Gets or sets a value indicating whether the tube.
+            </summary>
+            <value>
+            true if tube, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.ID">
+            <summary>
+            ID of DrawList.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.AddOnCreate">
+            <summary>
+            Suppress adding newly created elements to drawlist.
+            </summary>
+            <value>
+            true if add on create, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawList.ZoomOnAdd">
+            <summary>
+            Suppress zooming on newly added elements when drawlist is empty.
+            </summary>
+            <value>
+            true if zoom on add, false if not.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.BeforeDrawListEventArgs">
+            <summary>
+            Before Drawlist events
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.BeforeDrawListEventArgs.#ctor(Aveva.Core3D.Graphics.BeforeDrawListChange,Aveva.Core.Database.DbElement,System.Int32)">
+            <summary>
+            Drawlist change event
+            </summary>
+            <param name="eventType">Type of change</param>
+            <param name="topf">Top level element changed</param>
+            <param name="drawlist">Drawlist identifier</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.BeforeDrawListEventArgs.EventType">
+            <summary>
+            Get type of change
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.BeforeDrawListEventArgs.DrawList">
+            <summary>
+            Get which drawlist has changed
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.BeforeDrawListEventArgs.TopLevelElement">
+            <summary>
+            Get top level element
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.BeforeDrawListEventArgs.Cached">
+            <summary>
+            Get/Set whether top level element has been cached
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.BeforeGetworkEventArgs">
+            <summary>
+            Drawlist before getwork events
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.BeforeGetworkEventArgs.#ctor(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Drawlist before getwork event
+            </summary>
+            <param name="deletions">getwork deletions</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.BeforeGetworkEventArgs.Deletions">
+            <summary>
+            Getwork deletions
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.AfterGetworkEventArgs">
+            <summary>
+            Drawlist after getwork events
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.AfterGetworkEventArgs.#ctor(Aveva.Core.Database.DbElement[],Aveva.Core.Database.DbElement[])">
+            <summary>
+            Drawlist after getwork event
+            </summary>
+            <param name="creations">getwork creations</param>
+            <param name="modifications">getwork modifications</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.AfterGetworkEventArgs.Creations">
+            <summary>
+            Getwork creations
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.AfterGetworkEventArgs.Modifications">
+            <summary>
+            Getwork modifications
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawListEventArgs">
+            <summary>
+            Drawlist events
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListEventArgs.#ctor(Aveva.Core3D.Graphics.DrawListChange,System.Int32)">
+            <summary>
+            Before Drawlist change event
+            </summary>
+            <param name="eventType">Type of change</param>
+            <param name="drawlist">Drawlist identifier</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListEventArgs.EventType">
+            <summary>
+            Get type of change
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListEventArgs.DrawList">
+            <summary>
+            Get which drawlist has changed
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawListEventHandler">
+            <summary>
+            DrawList event handler.
+            </summary>
+            <param name="sender">   Source of the event.</param>
+            <param name="e">    Draw list event information.</param>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.BeforeDrawListEventHandler">
+            <summary>
+            BeforeDrawList event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.BeforeGetworkEventHandler">
+            <summary>
+            DrawList before getwork event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.AfterGetworkEventHandler">
+            <summary>
+            DrawList after getwork event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawListManager">
+            <summary>
+            DrawList management of multiple drawlists, events and modifications. A drawlist may be
+            associated with a single graphics context shared by one or more 3D views.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.DrawListManager.Instance">
+            <summary>
+            The DrawListManager.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.FireChangedEvent(Aveva.Core3D.Graphics.DrawListEventArgs)">
+            <summary>
+            Raises the changed event.
+            </summary>
+            <param name="e">    Event information to send to registered event handlers.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.FireBeforeChangedEvent(Aveva.Core3D.Graphics.BeforeDrawListEventArgs)">
+            <summary>
+            Fire before Drawlist change event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.FireBeforeGetworkEvent(Aveva.Core3D.Graphics.BeforeGetworkEventArgs)">
+            <summary>
+            Fire before Drawlist getwork change event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.FireAfterGetworkEvent(Aveva.Core3D.Graphics.AfterGetworkEventArgs)">
+            <summary>
+            Fire after Drawlist getwork change event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.getDrawList(System.Int32)">
+            <summary>
+            Get the drawlist of given id.
+            </summary>
+            <param name="sglId">    Graphics identifier.</param>
+            <returns>
+            The draw list.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.getDrawLists">
+            <summary>
+            Return array of drawlist identifier.
+            </summary>
+            <returns>
+            An array of int.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.getViewDrawList(System.Int32)">
+            <summary>
+            Get the drawlist associated with given view.
+            </summary>
+            <param name="viewId">   3D View identifier.</param>
+            <returns>
+            Drawlist.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.UpdateGraphics">
+            <summary>
+            Update graphics.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.UpdateCurrentElement">
+            <summary>
+            Update current element.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.BeginUpdate">
+            <summary>
+            Begin drawlist modifications with graphics updates off.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.EndUpdate">
+            <summary>
+            End drawlist modifications turning graphics updates back on.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.RestoringViews(System.Boolean)">
+            <summary>
+            Avoid adjusting view limits when restoring views.
+            </summary>
+            <param name="val">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.PromoteElements(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Promote elements from ARF cache to SGL
+            </summary>
+            <param name="elements"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.CacheGetworkChanges(System.Boolean)">
+            <summary>
+            Cache getwork changes adding new/modified elements to the drawlist
+            </summary>
+            <param name="onoff"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListManager.ChangesBetweenSessions(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Aveva.Core.Database.DbElement[]@,Aveva.Core.Database.DbElement[]@,Aveva.Core.Database.DbElement[]@)">
+            <summary>
+            Get graphical changes between given db sessions
+            </summary>
+            <param name="dbno"></param>
+            <param name="extnonew"></param>
+            <param name="sessionnew"></param>
+            <param name="extnoold"></param>
+            <param name="sessionold"></param>
+            <param name="deletions"></param>
+            <param name="creations"></param>
+            <param name="modifications"></param>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.DrawListManager.Changed">
+            <summary>
+            Drawlist change event.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.DrawListManager.BeforeChanged">
+            <summary>
+            Before Drawlist change event handler
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.DrawListManager.BeforeGetwork">
+            <summary>
+            Before Drawlist getwork event handler
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.DrawListManager.AfterGetwork">
+            <summary>
+            After Drawlist getwork event handler
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListManager.CurrentDrawList">
+            <summary>
+            Get the current drawlist.
+            </summary>
+            <value>
+            A List of current draws.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListManager.SuppressGraphicsUpdate">
+            <summary>
+            Suppress Graphics Update Suppresses any calls to DES_DrawListManager::updateGraphics()
+            </summary>
+            <value>
+            true if suppress graphics update, false if not.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawListPrimitive">
+            <summary>
+            Drawlist graphical primitive below drawlist top level element
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListPrimitive.Colour">
+            <summary>
+            Get/Set primitive colour
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListPrimitive.Edges">
+            <summary>
+            Get/Set primitive edges
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListPrimitive.Transparency">
+            <summary>
+            Get/Set primitive transparency
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListPrimitive.Visibility">
+            <summary>
+            Get/Set primitive visibility
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListPrimitive.ShallowRendering">
+            <summary>
+            Get/Set primitive shallow rendering
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListPrimitive.DbElement">
+            <summary>
+            Get database element associated with this graphical primitive
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawListMember">
+            <summary>
+            Top level element in the DrawList with visual properties
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListMember.SetVisualProperties(System.Boolean,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Set top level element visual properties
+            </summary>
+            <param name="visibility"></param>
+            <param name="colour"></param>
+            <param name="transparency"></param>
+            <param name="edges"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.DrawListMember.GetVisualProperties(System.Boolean@,System.Int32@,System.Int32@,System.Boolean@)">
+            <summary>
+            Get top level element visual properties
+            </summary>
+            <param name="visibility"></param>
+            <param name="colour"></param>
+            <param name="transparency"></param>
+            <param name="edges"></param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.Colour">
+            <summary>
+            Get/Set top level element colour
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.Edges">
+            <summary>
+            Get/Set top level element edges
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.Transparency">
+            <summary>
+            Get/Set top level element transparency
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.Visibility">
+            <summary>
+            Get/Set top level element visibility
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.HighlightCol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.ShallowRendering">
+            <summary>
+            Get/Set top level element shallow rendering
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.DbElement">
+            <summary>
+            Get database element associated with this drawlist member
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.DrawListMember.Primitives">
+            <summary>
+            Get all the graphical primitive below this drawlist member
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.DrawListChange">
+            <summary>
+            Type of drawlist change enumeration
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.DrawListChange.None">
+            <summary>
+            No change
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.DrawListChange.Visual">
+            <summary>
+            Visual properties change
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.DrawListChange.Members">
+            <summary>
+            Drawlist membes added/removed
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.DrawListChange.Graphics">
+            <summary>
+            Graphical selection change
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.BeforeDrawListChange">
+            <summary>
+            Type of before drawlist change enumeration
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.BeforeDrawListChange.Add">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.BeforeDrawListChange.Modify">
+            <summary>
+            Modify
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.BeforeDrawListChange.Remove">
+            <summary>
+            Remove
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.Units">
+            <summary>
+            Units formatting.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.Units.internalUnits">
+            <summary>
+            The internal units.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Units.CreateUnits">
+            <summary>
+            Creates the units.
+            </summary>
+            <returns>
+            The new units.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Units.internalCreateUnits">
+            <summary>
+            Internal create units.
+            </summary>
+            <returns>
+            The Units.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Units.Format(System.Double)">
+            <summary>
+            Formats.
+            </summary>
+            <param name="value">    .</param>
+            <returns>
+            The formatted value.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.Units.GetValue(System.String)">
+            <summary>
+            Gets a value.
+            </summary>
+            <param name="input">    .</param>
+            <returns>
+            The value.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DManager">
+            <summary>
+            Manager for view 3ds.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DManager.Instance">
+            <summary>
+            The instance.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DManager.AddView3DSubscriber(Aveva.Core3D.Graphics.View3DEventSubscriber)">
+            <summary>
+            Adds a view 3D subscriber.
+            </summary>
+            <param name="handler">  The handler.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DManager.RemoveView3DSubscriber(Aveva.Core3D.Graphics.View3DEventSubscriber)">
+            <summary>
+            Removes the view 3D subscriber described by handler.
+            </summary>
+            <param name="handler">  The handler.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DManager.ShowHidePrimitivesBelowType(Aveva.Core.Database.DbElementType,System.Boolean)">
+            <summary>
+            Shows the hide primitives below type.
+            </summary>
+            <param name="type"> The type.</param>
+            <param name="visibility">   true to visibility.</param>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DManager._subscribers">
+            <summary>
+            The subscribers.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DManager.attach">
+            <summary>
+            Attaches this Aveva.Core3D.Graphics.View3DManager.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DManager.CurrentView">
+            <summary>
+            Get the current 3D view.
+            </summary>
+            <value>
+            The current view.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DManager.Views">
+            <summary>
+            Gets the views.
+            </summary>
+            <value>
+            The views.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DEventSubscriber">
+            <summary>
+            Interface for view 3D event subscriber.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DEventSubscriber.OnViewCreation(Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            Executes the view creation action.
+            </summary>
+            <param name="v">    The View3D to process.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DEventSubscriber.OnViewDeletion(Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            Executes the view deletion action.
+            </summary>
+            <param name="v">    The View3D to process.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DEventSubscriber.OnCurrentViewChange(Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            Executes the current view change action.
+            </summary>
+            <param name="v">    The View3D to process.</param>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DLayer">
+            <summary>
+            Enumeration identifying discrete render layers within the scene composition. Can be used to
+            invalidate the scene before an UpdateView(). Values leave room for some extra layers in
+            future.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DLayer.ALL">
+            <summary>All layers</summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DLayer.MAINDEEP">
+            <summary>Main scene geometry (opaque elements that can be cached)</summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DLayer.MAINSHALLOW">
+            <summary>Main scene geometry that is shallow, i.e. onTop, transient elements that are never cached and rendered every frame</summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DLayer.OVERLAY">
+            <summary>Overlay such as flash/immediate elements, or transient overlay elements</summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3D">
+            <summary>
+            A view 3d.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetBackgroundColourNoMapUpdate(System.Int32)">
+            <summary>
+            set the 3D view's background colour using a colour table manager index, without triggering a
+            map or update of the View.
+            </summary>
+            <param name="colourIndex">  the colour table manager index.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetBitmap(System.Int32,System.Int32)">
+            <summary>
+            Get a bitmap of the 3D view's content with the specified dimensions.
+            </summary>
+            <param name="width">    Required bitmap width in pixels.</param>
+            <param name="height">   Required bitmap height in pixels.</param>
+            <returns>
+            Bitmap of the 3D views content, null if bitmap cannot be created.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetImageOfSegments(System.Int32,System.Int32,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Get Image Of Segments
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="elements"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetCentreAndDir(System.Double[],System.Double[])">
+            <summary>
+            Set 3D view centre and direction. Includes map to view and canvas update.
+            </summary>
+            <param name="centre">   View centre point (x, y, z)</param>
+            <param name="dir">  View direction vector (x, y, z)</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetCentreAndDirNoMapUpdate(System.Double[],System.Double[])">
+            <summary>
+            Set 3D view centre and direction. Without a map to view and canvas update.
+            </summary>
+            <param name="centre">   View centre point (x, y, z)</param>
+            <param name="dir">  View direction vector (x, y, z)</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.Draw3DBox">
+            <summary>
+            Draw a 3D Box around the 3D model using the drawlist limits.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.Get3DBoxLimits">
+            <summary>
+            Get 3D Box limits.
+            </summary>
+            <returns>
+            3D box limits (x1, x2, y1, y2, z1, z2)
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.Set3DBoxLimits(System.Double[])">
+            <summary>
+            Set 3D Box Limits.
+            </summary>
+            <param name="limits"> 3D box limits (x1, x2, y1, y2, z1, z2)</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetDrawlistLimits">
+            <summary>
+            Get the draw list limits.
+            </summary>
+            <returns>
+            Draw list limits (x1, x2, y1, y2, z1, z2)
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetDirection(System.Double[])">
+            <summary>
+            Set 3D view direction.
+            </summary>
+            <param name="dir">  View direction (x, y, z)</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetDirection">
+            <summary>
+            Get 3D view direction.
+            </summary>
+            <returns>
+            View direction (x, y, z)
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetThruPoint(System.Double[])">
+            <summary>
+            Set 3D view through point.
+            </summary>
+            <param name="point">    View through point (x, y, z)</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetThruPoint">
+            <summary>
+            Get 3D view through point.
+            </summary>
+            <returns>
+            View through point (x, y, z)
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetBearing(System.Double)">
+            <summary>
+            Set 3D view azimuthal bearing.
+            </summary>
+            <param name="azimuth">  Required azimuthal bearing in degrees.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetBearing">
+            <summary>
+            Get 3D view azimuthal bearing.
+            </summary>
+            <returns>
+            View azimuthal bearing in degrees.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetElevation(System.Double)">
+            <summary>
+            Set 3D view elevation.
+            </summary>
+            <param name="elevation">    Required elevation in degrees.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetElevation">
+            <summary>
+            Get 3D view elevation.
+            </summary>
+            <returns>
+            View elevation in degrees.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetRadius(System.Double)">
+            <summary>
+            Set 3D view radius (i.e. zoom level)
+            </summary>
+            <remarks>
+            The radius is defined as 1 / scale, where scale is defined as: the inverse of the distance in
+            the world model which should be scaled to fit into half the minimum dimension of the view,
+            either the width or the height.
+            </remarks>
+            <param name="radius">   Required 3D view radius.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetRadius">
+            <summary>
+            Get the 3D view radius (i.e. zoom level)
+            </summary>
+            <remarks>
+            The radius is defined as 1 / scale, where scale is defined as: the inverse of the distance in
+            the world model which should be scaled to fit into half the minimum dimension of the view,
+            either the width or the height.
+            </remarks>
+            <returns>
+            View radius.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetExtraTwistDegrees(System.Double)">
+            <summary>
+            Set an "extra angle of twist" eg for the ADEG attribute.
+            </summary>
+            <remarks>
+            the SGL twist setting also includes values calculated from the elevation and bearing values.
+            </remarks>
+            <param name="extraTwistDegrees">    the extra twist to be applied, in degrees.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetExtraTwistDegrees">
+            <summary>
+            Get any "extra angle of twist" eg for the ADEG attribute.
+            </summary>
+            <remarks>
+            the SGL twist setting also includes values calculated from the elevation and bearing values.
+            This function just returns the "extra" angle.
+            </remarks>
+            <returns>
+            the extra twist, in degrees.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetFarNearClippingPlanes">
+            <summary>
+            Get the distances, in mm, to the Far and Near clipping planes.
+            </summary>
+            <remarks>
+            This function use SGL_get_clipping_planes to get the values set on the view by MapView or
+            MapViewNoUpdate. It must there be called AFTER one of those functions!
+            </remarks>
+            <returns>
+            the Far and Near clipping distances, in mm, in that order.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetMaxClipPlanes">
+            <summary>
+            Gets the maximum allowed number of clip planes supported by SGL- this depends on the version
+            of OpenGL or DirectX (should be at least 6, but 8 for OPENGL or 16 for DirectX is likely)
+            </summary>
+            <returns>
+            The maximum clip planes.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetClipPlanesAllOff">
+            <summary>
+            Gets whether individual plane settings (false) or the single 6 plane box (true) is in use.
+            </summary>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetClipPlanesAllOff(System.Boolean)">
+            <summary>
+            Sets whether individual plane settings (false) or the single 6 plane box (true) is in use.
+            </summary>
+            <param name="state">    [out] The state.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetClipStatus">
+            <summary>
+            Get whether clipping is globally enabled or disabled (box and individual planes)
+            </summary>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetClipStatus(System.Boolean)">
+            <summary>
+            Set whether clipping is globally enabled or disabled (box and individual planes)
+            If set to enabled only affects existing planes.
+            </summary>
+            <param name="state">    [out] The state.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetClipPlaneData(System.Int32,System.Boolean@,System.Int32@,System.Boolean@,System.Double[]@,System.Double[]@)">
+            <summary>
+            Get the clip data for an individual plane, if we're not using the single 6 plane box.
+            </summary>
+            <param name="planeNo">  The plane no.</param>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+            <param name="state">    [out] The state.</param>
+            <param name="pos">  [out] The position.</param>
+            <param name="normal">   [out] The normal.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetClipPlane(System.Int32,System.Double[],System.Double[],System.Boolean)">
+            <summary>
+            Set the clip data for an individual plane, if we're not using the single 6 plane box.
+            </summary>
+            <param name="planeID">  Identifier for the plane.</param>
+            <param name="point">    View through point (x, y, z)</param>
+            <param name="normal">   [out] The normal.</param>
+            <param name="clip"> true to clip.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetClipPlaneData(System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Set the capping data for an individual plane, if we're not using the single 6 plane box.
+            </summary>
+            <param name="planeID">  Identifier for the plane.</param>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetClipBoxData(System.Boolean@,System.Int32@)">
+            <summary>
+            Get the clipping and capping data for the single 6 plane box.
+            </summary>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetClipBoxData(System.Boolean@,System.Int32@,System.Double[]@,System.Double[]@,System.Double[]@)">
+            <summary>
+            Get the data for the single 6 plane box.
+            </summary>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+            <param name="xyzlen">   [out] The xyzlen.</param>
+            <param name="pos">  [out] The position.</param>
+            <param name="ori">  [out] The ori.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetClipBoxData(System.Boolean,System.Int32)">
+            <summary>
+            Set the clipping and capping data for the single 6 plane box.
+            </summary>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetClipBoxData(System.Boolean,System.Int32,System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Set the data for the single 6 plane box.
+            </summary>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+            <param name="xyzlen">   [out] The xyzlen.</param>
+            <param name="pos">  [out] The position.</param>
+            <param name="ori">  [out] The ori.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.getMaxClipPlanes">
+            <summary>
+            Gets maximum clip planes.
+            </summary>
+            <returns>
+            The maximum clip planes.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.getClipPlanesAllOff">
+            <summary>
+            Gets clip planes all off.
+            </summary>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.setClipPlanesAllOff(System.Boolean)">
+            <summary>
+            Sets clip planes all off.
+            </summary>
+            <param name="state">    [out] The state.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.getClipStatus">
+            <summary>
+            Gets clip status.
+            </summary>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.setClipStatus(System.Boolean)">
+            <summary>
+            Sets clip status.
+            </summary>
+            <param name="state">    [out] The state.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.getClipPlaneData(System.Int32,System.Boolean@,System.Int32@,System.Boolean@,System.Double[]@,System.Double[]@)">
+            <summary>
+            Gets clip plane data.
+            </summary>
+            <param name="planeNo">  The plane no.</param>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+            <param name="state">    [out] The state.</param>
+            <param name="pos">  [out] The position.</param>
+            <param name="normal">   [out] The normal.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.setClipPlane(System.Int32,System.Double[],System.Double[],System.Boolean)">
+            <summary>
+            Sets clip plane.
+            </summary>
+            <param name="planeID">  Identifier for the plane.</param>
+            <param name="point">    View through point (x, y, z)</param>
+            <param name="normal">   The normal.</param>
+            <param name="clip"> true to clip.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.setClipPlaneData(System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Sets clip plane data.
+            </summary>
+            <param name="planeID">  Identifier for the plane.</param>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.getClipBoxData(System.Boolean@,System.Int32@)">
+            <summary>
+            Gets clip box data.
+            </summary>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.getClipBoxData(System.Boolean@,System.Int32@,System.Double[]@,System.Double[]@,System.Double[]@)">
+            <summary>
+            Gets clip box data.
+            </summary>
+            <param name="capping">  [out] true to capping.</param>
+            <param name="capColour">    [out] The capability colour.</param>
+            <param name="xyzlen">   [out] The xyzlen.</param>
+            <param name="pos">  [out] The position.</param>
+            <param name="ori">  [out] The ori.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.setClipBoxData(System.Boolean,System.Int32)">
+            <summary>
+            Sets clip box data.
+            </summary>
+            <param name="capping">  true to capping.</param>
+            <param name="capColour">    The capability colour.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.setClipBoxData(System.Boolean,System.Int32,System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Sets clip box data.
+            </summary>
+            <param name="capping">  true to capping.</param>
+            <param name="capColour">    The capability colour.</param>
+            <param name="xyzlen">   The xyzlen.</param>
+            <param name="pos">  The position.</param>
+            <param name="ori">  The ori.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.MapView">
+            <summary>
+            Map the view data to the SGL canvas. Includes a canvas update.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.MapViewNoUpdate">
+            <summary>
+            Map the view data to the SGL canvas. but without updating the canvas.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.UpdateView">
+            <summary>
+            Update the View Canvas.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.InvalidateView(Aveva.Core3D.Graphics.View3DLayer)">
+            <summary>
+            Invalidate the View Canvas.
+            </summary>
+            <param name="layer">    The layer.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.MoveTo(Aveva.Core3D.Graphics.MoveToMode)">
+            <summary>
+            Move to.
+            </summary>
+            <param name="moveMode"> The move mode.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetPerspectiveModeNoMapUpdate(System.Boolean)">
+            <summary>
+            set the 3D view's Perspective/Orthogonal Mode without triggering a map or update of the View.
+            </summary>
+            <param name="setModeToPerspective"> true for perspective, false for orthogonal.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetShadeModeNoMapUpdate(System.Boolean)">
+            <summary>
+            set the 3D view's Shaded/Wireframe Mode without triggering a map or update of the View.
+            </summary>
+            <param name="setModeToShaded">  true for shaded, false for wireframe.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireEnteredEvent">
+            <summary>
+            Raises the entered event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireLeftEvent">
+            <summary>
+            Raises the left event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireLimitsChangedEvent">
+            <summary>
+            Raises the limits changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireTransformationChangedEvent">
+            <summary>
+            Raises the transformation changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireLCSChangedEvent">
+            <summary>
+            Raises the lcs changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireLCSGadgetChangedEvent">
+            <summary>
+            Raises the lcs gadget changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireLCSAxisChangedEvent">
+            <summary>
+            Raises the lcs axis changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireRulersChangedEvent">
+            <summary>
+            Raises the rulers changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireGridChangedEvent">
+            <summary>
+            Raises the grid changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireMainWheelChangedEvent">
+            <summary>
+            Raises the main wheel changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireCtrlWheelChangedEvent">
+            <summary>
+            Raises the control wheel changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireAllowEditModeChangedEvent">
+            <summary>
+            Raises the allow edit mode changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireCommandLineChangedEvent">
+            <summary>
+            Raises the command line changed event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireStartPopupEvent(System.Int32,System.Int32)">
+            <summary>
+            Raises the start popup event.
+            </summary>
+            <param name="eleRefPart1">  The first ele reference part.</param>
+            <param name="eleRefPart2">  The second ele reference part.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewEnteredEvent(System.Int32)">
+            <summary>
+            Raises the view entered event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewLeftEvent(System.Int32)">
+            <summary>
+            Raises the view left event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewLimitsChangedEvent(System.Int32)">
+            <summary>
+            Raises the view limits changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewTransformationChangedEvent(System.Int32)">
+            <summary>
+            Raises the view transformation changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewLCSChangedEvent(System.Int32)">
+            <summary>
+            Raises the view lcs changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewLCSGadgetChangedEvent(System.Int32)">
+            <summary>
+            Raises the view lcs gadget changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewLCSAxisChangedEvent(System.Int32)">
+            <summary>
+            Raises the view lcs axis changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewRulersChangedEvent(System.Int32)">
+            <summary>
+            Raises the view rulers changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewGridChangedEvent(System.Int32)">
+            <summary>
+            Raises the view grid changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewMainWheelChangedEvent(System.Int32)">
+            <summary>
+            Raises the view main wheel changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewCtrlWheelChangedEvent(System.Int32)">
+            <summary>
+            Raises the view control wheel changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewAllowEditModeChangedEvent(System.Int32)">
+            <summary>
+            Raises the view allow edit mode changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.FireViewCommandLineChangedEvent(System.Int32)">
+            <summary>
+            Raises the view command line changed event.
+            </summary>
+            <param name="viewId">   Get 3D view's id.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetWindowHeight">
+            <summary>
+            Gets pixel height of the canvas window.
+            </summary>
+            <returns>
+            Pixel height of the canvas window.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetWindowWidth">
+            <summary>
+            Gets pixel width of the canvas window.
+            </summary>
+            <returns>
+            Pixel width of the canvas window.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetWindowHeight(System.Int32)">
+            <summary>
+            Sets pixel height of the canvas window.
+            </summary>
+            <param name="height">   Pixel height of the canvas window.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetWindowWidth(System.Int32)">
+            <summary>
+            Sets pixel width of the canvas window.
+            </summary>
+            <param name="width">    Pixel width of the canvas window.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetSGLView">
+            <summary>
+            Gets the token of the SGL view associated with this 3D view.
+            </summary>
+            <returns>
+            The SGL view token.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetAttachedDrawList">
+            <summary>
+            Gets the id of attached drawlist.
+            </summary>
+            <returns>
+            The SGL view token.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetWindowHandle">
+            <summary>
+            Get the window handle of the SGL window (UI_DruidCanvas)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.IsValid">
+            <summary>
+            Validation.
+            </summary>
+            <returns>
+            true if view is valid.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetLimits(Aveva.Core3D.Graphics.LimitsType)">
+            <summary>
+            Gets this 3D view's working limits of specified type.
+            </summary>
+            <param name="limitsType">   The type of the limits to get.</param>
+            <returns>
+            This 3D view's working limits of specified type, returned as a double array: (x1, x2, y1, y2,
+            z1, z2).
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetViewLimits(System.Double[])">
+            <summary>
+            Set 3D View Limits.
+            </summary>
+            <param name="limits"> Viewlimits (x1, x2, y1, y2, z1, z2)</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetRange">
+            <summary>
+            Gets the current range of this 3D view.
+            </summary>
+            <returns>
+            The calculated range.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetRange(System.Double)">
+            <summary>
+            Sets the new range for this 3D view.
+            </summary>
+            <param name="range">    The range.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetReflection">
+            <summary>
+            Query reflectivity.
+            </summary>
+            <returns>
+            The reflection.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetReflection(System.Single)">
+            <summary>
+            Set reflectivity.
+            </summary>
+            <param name="reflection">   .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetShadows">
+            <summary>
+            Query shadows.
+            </summary>
+            <returns>
+            The shadows.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetShadows(System.Int32)">
+            <summary>
+            Set shadows.
+            </summary>
+            <param name="shadows">  .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.GetEnhancedEdges">
+            <summary>
+            Query edges.
+            </summary>
+            <returns>
+            The enhanced edges.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetEnhancedEdges(System.Int32)">
+            <summary>
+            Set edges.
+            </summary>
+            <param name="edges">    .</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3D.SetLaserQuality(System.Int32)">
+            <summary>
+            Switch the rendering quality of the laser data.
+            </summary>
+            <param name="quality">  Fast or Normal.</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.ViewId">
+            <summary>
+            Get 3D view's id.
+            </summary>
+            <value>
+            The identifier of the view.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.BackgroundColour">
+            <summary>
+            Get and set the 3D view's background colour using a colour table manager index (the "Set"
+            triggers a Map &amp; Update of the view, see SetBackgroundColourNoMapUpdate to avoid this)
+            </summary>
+            <value>
+            The colour of the background.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.Clipping">
+            <summary>
+            Returns the View3DClipping object that manages SGL clipping for this view.
+            </summary>
+            <value>
+            The clipping.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.MouseMode">
+            <summary>
+            Gets or sets the mouse mode.
+            </summary>
+            <value>
+            The mouse mode.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.PerspectiveMode">
+            <summary>
+            Get and set the 3D view's Perspective/Orthogonal Mode (the "Set" triggers a Map &amp; Update
+            of the view, see SetPerspectiveModeNoMapUpdate to avoid this)
+            </summary>
+            <value>
+            true if perspective mode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.EyeMode">
+            <summary>
+            Gets or sets a value indicating whether the eye mode.
+            </summary>
+            <value>
+            true if eye mode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.TooglePickThroughTranslucent">
+            <summary>
+            Gets or sets a value indicating whether the toogle pick through translucent.
+            </summary>
+            <value>
+            true if toogle pick through translucent, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.ShadeMode">
+            <summary>
+            Get and set the 3D view's Shaded/Wireframe Mode (the "Set" triggers a Map &amp; Update of the
+            view, see SetShadeModeNoMapUpdate to avoid this)
+            </summary>
+            <value>
+            true if shade mode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.LCS">
+            <summary>
+            Gets or sets the lcs.
+            </summary>
+            <value>
+            The lcs.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.LCSGadget">
+            <summary>
+            Gets or sets a value indicating whether the lcs gadget.
+            </summary>
+            <value>
+            true if lcs gadget, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.Rulers">
+            <summary>
+            Gets or sets a value indicating whether the rulers.
+            </summary>
+            <value>
+            true if rulers, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.Grid">
+            <summary>
+            Gets or sets a value indicating whether the grid.
+            </summary>
+            <value>
+            true if grid, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.MainWheelVisibility">
+            <summary>
+            Gets or sets a value indicating whether the main wheel visibility.
+            </summary>
+            <value>
+            true if main wheel visibility, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.CtrlWheelVisibility">
+            <summary>
+            Gets or sets a value indicating whether the control wheel visibility.
+            </summary>
+            <value>
+            true if control wheel visibility, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.EditMode">
+            <summary>
+            Gets or sets a value indicating whether the edit mode.
+            </summary>
+            <value>
+            true if edit mode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.CommandLine">
+            <summary>
+            Gets or sets a value indicating whether the command line.
+            </summary>
+            <value>
+            true if command line, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.LCSAxisVisibility">
+            <summary>
+            Gets or sets a value indicating whether the lcs axis visibility.
+            </summary>
+            <value>
+            true if lcs axis visibility, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3D.SGLAxisVisibility">
+            <summary>
+            Gets or sets a value indicating whether the sgl axis visibility.
+            </summary>
+            <value>
+            true if sgl axis visibility, false if not.
+            </value>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.Entered">
+            <summary>
+            Events raised from the unmanged View3D object (Use static fire methods to avoid having to
+            create
+             managed objects in the unmanaged domain)
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.Left">
+            <summary>
+            Event queue for all listeners interested in Left events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.LimitsChanged">
+            <summary>
+            Event queue for all listeners interested in LimitsChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.TransformationChanged">
+            <summary>
+            Event queue for all listeners interested in TransformationChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.LCSChanged">
+            <summary>
+            Event queue for all listeners interested in LCSChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.LCSGadgetChanged">
+            <summary>
+            Event queue for all listeners interested in LCSGadgetChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.LCSAxisChanged">
+            <summary>
+            Event queue for all listeners interested in LCSAxisChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.RulersChanged">
+            <summary>
+            Event queue for all listeners interested in RulersChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.GridChanged">
+            <summary>
+            Event queue for all listeners interested in GridChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.MainWheelChanged">
+            <summary>
+            Event queue for all listeners interested in MainWheelChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.CtrlWheelChanged">
+            <summary>
+            Event queue for all listeners interested in CtrlWheelChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.AllowEditModeChanged">
+            <summary>
+            Event queue for all listeners interested in AllowEditModeChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.CommandLineChanged">
+            <summary>
+            Event queue for all listeners interested in CommandLineChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.StartPopup">
+            <summary>
+            Event queue for all listeners interested in StartPopup events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewEntered">
+            <summary>
+            View specific events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewLeft">
+            <summary>
+            Event queue for all listeners interested in ViewLeft events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewLimitsChanged">
+            <summary>
+            Event queue for all listeners interested in ViewLimitsChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewTransformationChanged">
+            <summary>
+            Event queue for all listeners interested in ViewTransformationChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewLCSChanged">
+            <summary>
+            Event queue for all listeners interested in ViewLCSChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewLCSGadgetChanged">
+            <summary>
+            Event queue for all listeners interested in ViewLCSGadgetChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewLCSAxisChanged">
+            <summary>
+            Event queue for all listeners interested in ViewLCSAxisChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewRulersChanged">
+            <summary>
+            Event queue for all listeners interested in ViewRulersChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewGridChanged">
+            <summary>
+            Event queue for all listeners interested in ViewGridChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewMainWheelChanged">
+            <summary>
+            Event queue for all listeners interested in ViewMainWheelChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewCtrlWheelChanged">
+            <summary>
+            Event queue for all listeners interested in ViewCtrlWheelChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewAllowEditModeChanged">
+            <summary>
+            Event queue for all listeners interested in ViewAllowEditModeChanged events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.View3D.ViewCommandLineChanged">
+            <summary>
+            Event queue for all listeners interested in ViewCommandLineChanged events.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3D.FireEvent">
+            <summary>
+            TODO_SD4: Should use System.Action for this but although System.Core.dll can be referenced by
+            the C# compiler the C++ counterpart of this class cannot find System.Core.dll because the
+            compiler option /AI to add the MS_FRAMEWORK_3.5 path (C:\Program Files\Reference Assemblies\
+            Microsoft\Framework\v3.5)
+            seems not to work if the path has spaces in it. Should the inclusion of this path be added to
+            the general C++ compiler options.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3D.FireEvent2">
+            <summary>
+            Fire event 2.
+            </summary>
+            <param name="contextElement">   The context element.</param>
+            <param name="args"> Event information to send to registered event handlers.</param>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3D.FireViewEvent">
+            <summary>
+            View specific delegate.
+            </summary>
+            <param name="sender">   Source of the event.</param>
+            <param name="args"> Event information to send to registered event handlers.</param>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.MoveToMode">
+            <summary>
+            Move To enum: keep in sync with V3_MoveTo enum (This enum is also replicated in
+            Aveva.Pdms.SDInterface.DesignView.DesignViewMoveMode)
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MoveToMode.CE">
+            <summary>
+            CE
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MoveToMode.DRAWLIST">
+            <summary>
+            Draw List
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MoveToMode.SELECTION">
+            <summary>
+            selection
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MoveToMode.PICK">
+            <summary>
+            pick
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MoveToMode.CENTRE">
+            <summary>
+            centre
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.MiddleMouseMode">
+            <summary>
+            Middle mouse mode enum: keep in sync with V3_MouseMode enum (This enum is also replicated in
+            Aveva.Pdms.SDInterface.DesignView.DesignViewMouseMode)
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MiddleMouseMode.ZOOMRECT">
+            <summary>
+            ZOOMRECT
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MiddleMouseMode.ZOOM">
+            <summary>
+            ZOOM
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MiddleMouseMode.PAN">
+            <summary>
+            PAN
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MiddleMouseMode.ROTATE">
+            <summary>
+            ROTATE
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.MiddleMouseMode.WALK">
+            <summary>
+            WALK
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.LimitsType">
+            <summary>
+            Enumerates the types of limits (axis-aligned 3D boxes) that can be queried from a 3D view
+            object.
+            </summary>
+            <remarks>
+            Used as a parameter for <see cref="M:Aveva.Core3D.Graphics.View3D.GetLimits(Aveva.Core3D.Graphics.LimitsType)"/>. Dedicated methods exist for some
+            limits types: see <see cref="M:Aveva.Core3D.Graphics.View3D.Get3DBoxLimits"/>, <see cref="M:Aveva.Core3D.Graphics.View3D.GetDrawlistLimits"/>.
+            </remarks>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.LimitsType.VIEW">
+            <summary>
+            The limits of the view.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.LimitsType.DRAWLIST">
+            <summary>
+            The limits of the entire draw list.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.LimitsType._3DBOX">
+            <summary>
+            The limits of the 3D box object.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DEventArgs">
+            <summary>
+            3D View events
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DEventArgs.#ctor">
+            <summary>
+            3D View events
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping">
+            <summary>
+            Object associated with a View3D object that manages SGL clipping for this view. It caters for
+            both a box (6 plane clipping) and/or individual plane objects provided by the client to be
+            associated with a clip plane.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.MINBOXFACEID">
+            <summary>
+            The minboxfaceid.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.MAXBOXFACEID">
+            <summary>
+            The maxboxfaceid.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.#ctor(Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            TODO : do we actually need this (eg for PML?)- else remove.
+            </summary>
+            <param name="view"> The view.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.#ctor(System.Int32)">
+            <summary>
+            TODO : do we actually need this (eg for PML?)- else remove.
+            </summary>
+            <param name="viewid">   The viewid.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.UpdateViewIfRequired">
+            <summary>
+            Called from public methods to update 3d view control to flush clipping changes, unless the client
+            has switched off updates
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.GetCappingState(System.Boolean@,System.Int32@)">
+            <summary>
+            Utility method to get core splash capping and colour state, as these are obtained as a single call to core
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetCappingState(System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Utility method to set core splash capping and colour state, as these are set as a single call to core
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ActiveStateToBool(Aveva.Core3D.Graphics.View3DClipping.Active,System.Int32)">
+            <summary>
+            Translates the Active enumeration into an evaluated 'active clip plane' boolean state for a given clipping index
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClearClipPlane(System.Int32,System.IComparable)">
+            <summary>
+            Internal method to clear a clip plane both in sgl and in our in-memory map
+            </summary>
+            <param name="sglPlaneIndex">sgl id for clip plane</param>
+            <param name="obj">Object the client associated with the clip plane</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClearClipPlanes(System.Func{System.Int32,System.Boolean})">
+            <summary>
+            Clear all the clip planes in our map where the index satisfies function clearThisPlaneIndex
+            The view will be automatically updated
+            </summary>
+            <param name="clearThisPlaneIndex">Function taking an sgl plane index and returning clear 'true' or 'false'</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlane(System.Int32,System.IComparable,System.Double[],System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Internal method to generate or update a clip plane both in sgl and in our in-memory map
+            </summary>
+            <param name="sglPlaneIndex">sgl clip plane id to be used</param>
+            <param name="obj">Object the client associated with the clip plane</param>
+            <param name="point">Point on the plane</param>
+            <param name="normal">Normal to the plane</param>
+            <param name="state">Set clip plane active to off, on, or global default</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.GetNextAvailablePlaneIndex(System.Int32@)">
+            <summary>
+            Get next available sgl plane index if any- used for individual planes not 6 box face planes
+            </summary>
+            <param name="sglPlaneIndex">a free sgl plane index</param>
+            <returns>false if we've run out</returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.IsClipPlaneDefined(System.Int32,System.Boolean@)">
+            <summary>
+            Internal method to query core splash state to see if a plane has been defined
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipBoxPlanes(Aveva.Core.Maths.Geometry.D3Point,Aveva.Core.Maths.Geometry.D3Point,Aveva.Core.Maths.Geometry.D3Point,Aveva.Core.Maths.Geometry.D3Point,Aveva.Core.Maths.Geometry.D3Point,Aveva.Core.Maths.Geometry.D3Point,System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Private overload of SetClipBoxPlanes operation that uses D3Point
+            </summary>
+            <param name="xyTop">Middle point on U face</param>
+            <param name="xyBot">Middle point on D face</param>
+            <param name="yzTop">Middle point on E face</param>
+            <param name="yzBot">Middle point on W face</param>
+            <param name="xzTop">Middle point on N face</param>
+            <param name="xzBot">Middle point on S face</param>
+            <param name="xyzrotation">X,Y,Z rotation to apply to box in degrees</param>
+            <param name="state"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlaneForBoxFace(Aveva.Core3D.Graphics.View3DClipping.BoxFace,Aveva.Core.Maths.Geometry.D3Point,Aveva.Core.Maths.Geometry.D3Vector,Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Private overload of poublic SetClipPlaneForBoxFace operation that takes D3 class inputs
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ViewDeleteClipPlane(System.Int32)">
+            <summary>
+            Internal method to wrap horrible sgl interface to clear a clip plane
+            </summary>
+            <param name="sglPlaneIndex"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlanesAllOff(System.Boolean)">
+            <summary>
+            Expose setter for Forms and Menus clipPlanesAllOff boolean state. This has been implemented
+            for Draw which always defines clipping using individual clip planes, even when using a 'box'
+            to define them in the UI. For Draw, clipPlanesAllOff must always be false, since trying to
+            use clipping defined by the Forms and Menus clipping box state is likely to result in bugs,
+            e.g. everything being clipped outside an infinitely small box at the origin.
+            </summary>
+            <param name="allOff">   Set to true for 'box' clipping, false for 'plane' clipping.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClearClipPlanes(Aveva.Core3D.Graphics.View3DClipping.Clear)">
+            <summary>
+            Clear all clip planes as determined by the 'whichPlanes' enumeration The view will be
+            automatically updated.
+            </summary>
+            <param name="whichPlanes">  Enumeration describing which types of planes to clear.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClearClipBoxPlanes">
+            <summary>
+            Clear all clip planes associated with box faces, not those associated with other individual
+            planes. The view will be automatically updated.
+            </summary>
+            <remarks>
+            Will clear box face planes generated by 3rd party code also, assuming they've used sgl
+            indexes 1 to 6.
+            </remarks>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClearClipPlane``1(``0)">
+            <summary>
+            Clear a single clip plane associated with an object (for example a 3d vsec entity)
+            </summary>
+            <typeparam name="T">    Generic type parameter.</typeparam>
+            <param name="plane">    The client provided object identified with a clip plane.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClearClipPlaneForBoxFace(Aveva.Core3D.Graphics.View3DClipping.BoxFace)">
+            <summary>
+            Clear a single clip plane associated with a box face.
+            </summary>
+            <param name="boxFace">  box face identifier.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.IsClipPlaneActive``1(``0)">
+            <summary>
+            Returns whether clip plane is actively clipping. If the plane is undefined it returns false
+            gracefully.
+            </summary>
+            <typeparam name="T">    Generic type parameter.</typeparam>
+            <param name="plane">    The client provided object identified with a clip plane.</param>
+            <returns>
+            true if visible, false if not visible or undefined.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.IsClipPlaneSet``1(``0,System.Boolean@)">
+            <summary>
+            Returns whether this client object is associated with a clip plane.
+            </summary>
+            <typeparam name="T">    Generic type parameter.</typeparam>
+            <param name="plane">    The client provided object identified with a clip plane.</param>
+            <param name="active">   [out] The active.</param>
+            <returns>
+            true if clip plane set, false if cleared.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.IsClipPlaneActiveForBoxFace(Aveva.Core3D.Graphics.View3DClipping.BoxFace)">
+            <summary>
+            Returns whether box face plane is actively clipping. If the box/box face is undefined it
+            returns false gracefully.
+            </summary>
+            <param name="boxFace">  box face identifier.</param>
+            <returns>
+            true if visible, false if not visible or undefined.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.IsClipPlaneSetForBoxFace(Aveva.Core3D.Graphics.View3DClipping.BoxFace,System.Boolean@)">
+            <summary>
+            Returns whether this box face is associated with an active clip plane.
+            </summary>
+            <param name="boxFace">  box face identifier.</param>
+            <param name="active">   [out] The active.</param>
+            <returns>
+            true if clip plane set, false if cleared.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipBoxPlanes(System.Double[],System.Double[],System.Double[],System.Double[],System.Double[],System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            A convenience routine to set first six clipping planes to an axis aligned cube, defined by a
+            point at the centre of each face.
+            </summary>
+            <param name="xyTop"></param>
+            <param name="xyBot"></param>
+            <param name="yzTop"></param>
+            <param name="yzBot"></param>
+            <param name="xzTop"></param>
+            <param name="xzBot"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipBoxPlanes(System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            A convenience routine to set first six clipping planes to an axis aligned cube, defined by
+            the two diagonal corners.
+            </summary>
+            <param name="limits"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipBoxPlanes(System.Double[],System.Double[],System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            A convenience routine to set first six clipping planes to an oriented cube, defined by
+            position, xyz lengths and orientation.
+            </summary>
+            <param name="position"></param>
+            <param name="xyzlen"></param>
+            <param name="xyzrotation"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlane``1(``0,System.Double[],System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Generates or updates a clip plane for an object provided by the client (for example a 3d vsec
+            entity)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="plane"></param>
+            <param name="point"></param>
+            <param name="normal"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlaneForBoxFace(Aveva.Core3D.Graphics.View3DClipping.BoxFace,System.Double[],System.Double[],Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Generates or updates a clip plane for a given box face Note that this uses the current global
+            visibility (property 'Clipping'). To force visibility of the box either set visibility
+            globally using the 'Clipping' property, or use SetClipPlaneForBoxFaceVisibility()
+            </summary>
+            <param name="boxFace"></param>
+            <param name="point"></param>
+            <param name="normal"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlaneActiveState``1(``0,Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Sets an existing clip plane 'active' state to off, on or default global state This is
+            normally set during plane creation (SetClipPlane), but can be controlled separately here.
+            </summary>
+            <typeparam name="T">    Generic type parameter.</typeparam>
+            <param name="plane">    The client provided object identified with a clip plane.</param>
+            <param name="state">    Set clip plane active to off, on, or global default.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.SetClipPlaneForBoxFaceActiveState(Aveva.Core3D.Graphics.View3DClipping.BoxFace,Aveva.Core3D.Graphics.View3DClipping.Active)">
+            <summary>
+            Sets an existing box face clipping 'active' state to off, on or default global state This is
+            normally set during plane creation (SetClipPlaneForBoxFace), but can be controlled separately
+            here.
+            </summary>
+            <param name="boxFace"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.GetClipBoxData(System.Boolean@,System.Int32@,System.Double[]@,System.Double[]@,System.Double[]@)">
+            <summary>
+            Gets clip box data.
+            </summary>
+            <param name="capping">  [out] Global capping flag for all planes or 6 plane box.</param>
+            <param name="capColour">    [out] Global capping colour for all planes or 6 plane box.</param>
+            <param name="xyzlen">   [out] X,Y,Z box lengths.</param>
+            <param name="pos">  [out] The position.</param>
+            <param name="ori">  [out] The ori.</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.View">
+            <summary>
+            Allows the 3d View that owns this clipping object to be queried.
+            </summary>
+            <value>
+            The view.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.AutoUpdateView">
+            <summary>
+            Determines whether the View is refreshed after each call to this object True by default, but
+            if client is making multiple calls (eg one for each plane), they may wish to set this to
+            false and retsore to true at the end of the operation. Note that setting AutoUpdateView to
+            true also forces a view refresh.
+            </summary>
+            <value>
+            true if automatic update view, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.Capping">
+            <summary>
+            Global capping flag for all planes or 6 plane box.
+            </summary>
+            <value>
+            true if capping, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.CapColour">
+            <summary>
+            Global capping colour for all planes or 6 plane box.
+            </summary>
+            <value>
+            The colour of the capability.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.Clipping">
+            <summary>
+            Global clipping flag for all planes or 6 plane box This does not create or clear any planes,
+            it just switches the clipping state on or off for existing planes.
+            </summary>
+            <value>
+            true if clipping, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.MaxSGLClipPlanes">
+            <summary>
+            Gets the maximum allowed number of clip planes supported by SGL- this depends on the version of OpenGL or DirectX
+            (should be at least 6, but 8 for OPENGL or 16 for DirectX is likely)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.UseCache">
+            <summary>
+            Accessor for 'cache in use' state
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping.ClippPlaneAction">
+            <summary>
+            Clipp plane action.
+            </summary>
+            <param name="capping">  true to capping.</param>
+            <param name="capColour">    The capability colour.</param>
+            <param name="xyzlen">   The xyzlen.</param>
+            <param name="pos">  The position.</param>
+            <param name="ori">  The ori.</param>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping.Active">
+            <summary>
+            Values that represent actives.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Active.On">
+            <summary>
+            An enum constant representing the on option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Active.Off">
+            <summary>
+            An enum constant representing the off option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Active.Default">
+            <summary>
+            An enum constant representing the default option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping.BoxFace">
+            <summary>
+            All box face planes mapped onto sgl clip indices 1 to 6.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.BoxFace.W">
+            <summary>
+            An enum constant representing the w option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.BoxFace.S">
+            <summary>
+            An enum constant representing the s option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.BoxFace.D">
+            <summary>
+            An enum constant representing the d option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.BoxFace.E">
+            <summary>
+            An enum constant representing the e option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.BoxFace.N">
+            <summary>
+            An enum constant representing the n option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.BoxFace.U">
+            <summary>
+            An enum constant representing the u option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping.Clear">
+            <summary>
+            Argument passed to ClearClipPlanes.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Clear.BoxFaceOnly">
+            <summary>
+            An enum constant representing the box face only option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Clear.NonBoxFaceOnly">
+            <summary>
+            An enum constant representing the non box face only option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Clear.All">
+            <summary>
+            An enum constant representing all option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Clear.AllIncluding3rdParty">
+            <summary>
+            An enum constant representing all including 3rd party option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping.ClipPlaneId">
+            <summary>
+            Private class used only by View3DClipping
+            Provides a plane object for a boxface to be tracked in clipPlanes
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClipPlaneId.#ctor(Aveva.Core3D.Graphics.View3DClipping.BoxFace)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="boxFace">  The box face.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.View3DClipping.ClipPlaneId.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type and returns an integer
+            that indicates whether the current instance precedes, follows, or occurs in the same position
+            in the sort order as the other object.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.ClipPlaneId.PlaneBoxFace">
+            <summary>
+            Gets the plane box face.
+            </summary>
+            <value>
+            The plane box face.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.View3DClipping.Cache">
+            <summary>
+            In some limited circumstances we can cache the splash data from core
+            (at the cost of some complexity, may not be worth it)
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Cache.capping">
+            <summary>
+            The capping.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Cache.clipping">
+            <summary>
+            The clipping.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.View3DClipping.Cache.capColour">
+            <summary>
+            The capability colour.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.View3DClipping.Cache.UseCache">
+            <summary>
+            Gets or sets a value indicating whether this Aveva.Core3D.Graphics.View3DClipping.Cache use
+            cache.
+            </summary>
+            <value>
+            true if use cache, false if not.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.InteractionManager">
+            <summary>
+            Managed wrapper for GFX_InteractionManager.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.InteractionManager.Instance">
+            <summary>
+            Gets the singleton instance of InteractionManager.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.InteractionManager.FindSignificantElement(System.Tuple{System.Int32,System.Int32})">
+            <summary>
+            Searches for the first significant element.
+            </summary>
+            <param name="segmentID">    Identifier for the segment.</param>
+            <returns>
+            The found significant element.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.InteractionManager.DoSelection(System.Int32[],System.Boolean)">
+            <summary>
+            Performs selection on elements associated with given sgl id.
+            </summary>
+            <param name="sglId">    SGL ID of the element to select.</param>
+            <param name="isModifierKeyDown">Gets flag indicating if at least one of the modifier keys
+                                            (Control, Shift) was down.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.InteractionManager.SetModifyMode(System.Boolean)">
+            <summary>
+            Sitching ON\OFF modify mode of model editor.
+            </summary>
+            <param name="newState"> Desired state.</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.InteractionManager.Graphics">
+            <summary>
+            Gets graphics manager.
+            </summary>
+            <value>
+            The graphics.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GraphicsManager">
+            <summary>
+            Managed wrapper for GFX_GraphicsManager.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GraphicsManager.RedrawHandle(Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            Redraw handle.
+            </summary>
+            <param name="v">    The View3D to process.</param>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GraphicsManager.LinearIncrement">
+            <summary>
+            Gets or sets the linear increment.
+            </summary>
+            <value>
+            The linear increment.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GraphicsManager.FineLinearIncrement">
+            <summary>
+            Gets or sets the fine linear increment.
+            </summary>
+            <value>
+            The fine linear increment.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GraphicsManager.AngularIncrement">
+            <summary>
+            Gets or sets the angular increment.
+            </summary>
+            <value>
+            The angular increment.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXBox">
+            <summary>
+            Managed wrapper for GFX_Box class
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXPrimitive">
+            <summary>
+            Abstract base class for managed wrappers of GFX primitive classes.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.IGFXPrimitive">
+            <summary>
+            Interface representing a presentation layer, graphical (GFX) entity
+            not associated with a database element or drawlist item, e.g. a box.
+            (GFX_Box) 
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.IGFXPrimitive.GetSGLID">
+            <summary>
+            Get the SGL parent segment ID for this entity.
+            Second integer is expected to be zero. First is expected to be unique within
+            the view's segment store.
+            </summary>
+            <returns>Integer SGL segment reference ID</returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.IGFXPrimitive.GetViewID">
+            <summary>
+            Get the ID (gadget ID) of the 3D view in which the primitive is rendered.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.IGFXPrimitive.OnCoreModified">
+            <summary>
+            Method to be called when the core primitive has changed.
+            Allows wrapper to get up to date.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.IGFXPrimitive.UniqueKey">
+            <summary>
+            Gets unique key representing the primitive.
+            (DrawList ID, First integer in SGL segment ID)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.IGFXPrimitive.Type">
+            <summary>
+            Gets primitive type.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.IGFXPrimitive.Visible">
+            <summary>
+            Set to true to make the primitive visible, false otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.IGFXPrimitive.Deleteable">
+            <summary>
+            True if primitive can be deleted.
+            False if the primitive was created and owned by core and cannot be deleted by CIE.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.IGFXPrimitive.IsGhosting">
+            <summary>
+            Set to true when primitive is being temporarily modified (using CIE canvas 
+            ghost) and changes can be ignored by the core object, which should not update
+            the graphics in response. (Other clients of the core data holder may want to
+            respond to these changes and these can be notified on a case by case basis.)
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitive.GetUniqueKey(System.Int32,System.Int32[])">
+            <summary>
+            Gets unique key representing the primitive from its drawlist ID and parent SGL segment ID
+            (first integer only)
+            </summary>
+            <param name="drawListID">   ID of the drawlist attched to 3D View (gadget ID)</param>
+            <param name="sglSegmentID">Parent ID for segment containing the primitive. The parent SGL
+                                       segment is [i, j] where i is unique to the view and j is zero.
+                                       The primitive SGL segment under the parent is [i, BOX_SEGMENT].
+                                       Either can be passed to this method as second and subsequent ints
+                                       are ignored. It's also acceptable to pass a single integer (i) in
+                                       an array of length one.</param>
+            <returns>
+            Tuple representing primitive unique key: [primitive's drawlist, primitive's parent SGL
+            segment ID].
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitive.GetSGLID">
+            <inheritdoc/>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitive.GetViewID">
+            <inheritdoc/>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitive.GetDrawListID">
+            <summary>
+            Gets draw list identifier.
+            </summary>
+            <returns>
+            The draw list identifier.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitive.OnCoreModified">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXPrimitive.UniqueKey">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXPrimitive.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXPrimitive.Visible">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXPrimitive.Deleteable">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXPrimitive.IsGhosting">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBox.Limits">
+            <summary>
+            Property for axes aligned box limits 
+            (effectively  defining box position and size) defined using two
+            points (6 doubles); a vertex on one face and a vertex on the opposite face,
+            diametrically across from the first: 
+            [p1x, p1y, p1z, p2x, p2y, p2z]
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBox.AxesAligned">
+            <summary>
+            If true the box is aligned with world axes.
+            On setting to true the Orientation rotation angles are set to zero.
+            When true, setting the Orientation will have no effect.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBox.Orientation">
+            <summary>
+            Box orientation relative to world coordinates, defined by three
+            doubles corresponding to the rotation angles about the x, y and z
+            axes respectively.
+            If AxesAligned is true the angles will be set to zero and setting
+            this property will have no effect.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBox.Colour">
+            <summary>
+            Property for the box colour (see SGL definition of colour attribute)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBox.Wireline">
+            <summary>
+            Set to true to render the box in wireline, false otherwise
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBox.Type">
+            <inheritdoc />
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXBoxStub">
+            <summary>
+            The graphics box stub.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXBoxStub.#ctor(System.Int32[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXBoxStub.GetSGLID">
+            <inheritdoc/>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXBoxStub.GetViewID">
+            <inheritdoc/>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXBoxStub.GetDrawListID">
+            <inheritdoc/>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXBoxStub.OnCoreModified">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.Limits">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.AxesAligned">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.Orientation">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.Colour">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.Wireline">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.Visible">
+            <inheritdoc/>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.Deleteable">
+            <summary>
+            Gets a value indicating whether this Aveva.Core3D.Graphics.GFXBoxStub is deleteable.
+            </summary>
+            <value>
+            true if deleteable, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXBoxStub.IsGhosting">
+            <inheritdoc/>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXPrimitiveManager">
+            <summary>
+            Singleton managing instances of presentation layer, graphical (GFX) entities not associated
+            with database elements or drawlist items, e.g. a box (GFXBox)
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.RaisePrimitiveCreated(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Raises the primitive created event.
+            </summary>
+            <param name="primitive">    Primitive to delete.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.RaisePrimitiveDeleted(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Raises the primitive deleted event.
+            </summary>
+            <param name="primitive">    Primitive to delete.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.RaisePrimitiveModified(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Raises the primitive modified event.
+            </summary>
+            <param name="primitive">    Primitive to delete.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.CreatePrimitive(Aveva.Core3D.Graphics.GFXPrimitiveTypes,Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            Create a new GFXPrimitive instance and hence a new GFX primitive presentation layer object.
+            </summary>
+            <param name="type"> Type of primitive required.</param>
+            <param name="view"> View to create the primitive in.</param>
+            <returns>
+            A new GFXPrimitive object or null if a new presentation layer GFX primitive instance could
+            not be created.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.DeletePrimitive(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Delete a GFXPrimitive instance ensuring that the presentation layer GFX Primitive object and
+            hence the visible SGL entity is also deleted. WARNING: the primitive reference argument may
+            be set to null on return. (It may not be set to null if the primitive cannot be deleted. If
+            this occurs the core will raise another PrimitiveCreated event for the same primitive
+            reference. Do not use this reference until that occurs)
+            </summary>
+            <param name="primitive">    Primitive to delete.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.ModifyPrimitive(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Notifies about primitive modification that is a result of external interaction.
+            </summary>
+            <param name="primitive">    Primitive reference.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManager.GetPrimitive(System.Int32,System.Int32[])">
+            <summary>
+            Get an instance of the GFX Primitive class, indexed by its view ID (gadget ID)
+            and parent SGL segment ID. If such an instance does not exist, return null.
+            </summary>
+            <param name="viewID">   ID of the primitive's view (i.e. its gadget ID)</param>
+            <param name="sglSegmentID"> Parent SGL segment ID for the box.</param>
+            <returns>
+            GFXPrimitiveinstance corresponding to the SGL segment ID, null if not found.
+            </returns>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.GFXPrimitiveManager.instance">
+            <summary>
+            Field for singleton instance of this class.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.GFXPrimitiveManager.PrimitiveCreated">
+            <summary>
+            Event indicating creation of GFX Primitive, represented by supplied GFXPrimitive instance.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.GFXPrimitiveManager.PrimitiveModified">
+            <summary>
+            Event indicating GFX Primitive, represented by supplied GFXPrimitive instance, has been
+            modified.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.GFXPrimitiveManager.PrimitiveDeleted">
+            <summary>
+            Event indicating GFX Primitive, represented by supplied GFXPrimitive instance, has been
+            deleted. Note: supplied GFXPrimitive is for reference and cannot not be used. Client should
+            nullify it.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.GFXPrimitiveManager.Instance">
+            <summary>
+            Singleton instance of this class. May return null if Avev.Core3D.Graphics has not been
+            initialised.
+            </summary>
+            <value>
+            The instance.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXPrimitiveManager.PrimitiveEventHandler">
+            <summary>
+            Delegate for handling Primitive events.
+            </summary>
+            <param name="primitive">    The primitive.</param>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXPrimitiveManagerStub">
+            <summary>
+            The graphics primitive manager stub.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManagerStub.CreatePrimitive(Aveva.Core3D.Graphics.GFXPrimitiveTypes,Aveva.Core3D.Graphics.View3D)">
+            <summary>
+            Create a new GFXPrimitive instance and hence a new GFX primitive presentation layer object.
+            </summary>
+            <param name="type"> Type of primitive required.</param>
+            <param name="view"> View to create the primitive in.</param>
+            <returns>
+            A new GFXPrimitive object or null if a new presentation layer GFX primitive instance could
+            not be created.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManagerStub.DeletePrimitive(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Delete a GFXPrimitive instance ensuring that the presentation layer GFX Primitive object and
+            hence the visible SGL entity is also deleted. WARNING: the primitive reference argument may
+            be set to null on return. (It may not be set to null if the primitive cannot be deleted. If
+            this occurs the core will raise another PrimitiveCreated event for the same primitive
+            reference. Do not use this reference until that occurs)
+            </summary>
+            <param name="primitive">    Primitive to delete.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManagerStub.ModifyPrimitive(Aveva.Core3D.Graphics.IGFXPrimitive)">
+            <summary>
+            Notifies about primitive modification that is a result of external interaction.
+            </summary>
+            <param name="primitive">    Primitive reference.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXPrimitiveManagerStub.GetPrimitive(System.Int32,System.Int32[])">
+            <summary>
+            Get an instance of the GFX Primitive class, indexed by its view ID (gadget ID)
+            and parent SGL segment ID. If such an instance does not exist, return null.
+            </summary>
+            <param name="viewID">   ID of the primitive's view (i.e. its gadget ID)</param>
+            <param name="sglSegmentID"> Parent SGL segment ID for the box.</param>
+            <returns>
+            GFXPrimitiveinstance corresponding to the SGL segment ID, null if not found.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXPrimitiveTypes">
+            <summary>
+            Available GFX primitive types.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.GFXPrimitiveTypes.BOX">
+            <summary>
+            Gfx Box type.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.IE3DViewManager">
+            <summary>
+            Interface for CommandManager
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.IE3DViewManager.IsActivated">
+            <summary>
+            boolean property to store the activation/disable of 3D controls
+            </summary>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.Increments">
+            <summary>
+            An increments.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Increments.LinearIncrement">
+            <summary>
+            Gets or sets the linear increment.
+            </summary>
+            <value>
+            The linear increment.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Increments.FineLinearIncrement">
+            <summary>
+            Gets or sets the fine linear increment.
+            </summary>
+            <value>
+            The fine linear increment.
+            </value>
+        </member>
+        <member name="P:Aveva.Core3D.Graphics.Increments.AngularIncrement">
+            <summary>
+            Gets or sets the angular increment.
+            </summary>
+            <value>
+            The angular increment.
+            </value>
+        </member>
+        <member name="T:Aveva.Core3D.Graphics.GFXInteractionEventManager">
+            <summary>
+            Class representing a PML object for raising CIE interaction events on behalf of a graphical
+            PML object, e.g. the GFXCUBE. (This is necessary because the C++ PML graphical objects can not
+             define and raise PML events. This can only be done by PMLNetCallable objects.)
+            </summary>
+        </member>
+        <member name="F:Aveva.Core3D.Graphics.GFXInteractionEventManager.InteractionEventManagers">
+            <summary>
+            Map between GFX PML object tokens and the .NET GFXInteractionEventManager objects that have been
+            associated with them. See AssociateGFXObject() and GetInteractionEventManager for details.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.Assign(Aveva.Core3D.Graphics.GFXInteractionEventManager)">
+            <summary>
+            Assigns the given that.
+            </summary>
+            <param name="that"> The that.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.RaiseStartEvent">
+            <summary>
+            Raises the start event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.RaiseStopEvent">
+            <summary>
+            Raises the stop event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.RaiseChangeEvent">
+            <summary>
+            Raises the change event.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.AssociateGFXObject(System.Double)">
+            <summary>
+            Associate a GFX PML object with this event manager using the GFX object's PML token as the
+            key. Use GetInteractionEventManager() to get the GFXInteractionEventManager object (rather
+            than the PMLNetAny one) so that .NET event handling can be hooked up.)
+            </summary>
+            <param name="gfxObjectToken">PML token of the GFX object to be associated with this PML event
+                                         manager.</param>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.GetInteractionEventManager(System.Double)">
+            <summary>
+            Get the underlying .NET GFXInteractionEventManager that was associated with a specific GFX
+            PML object (using AssociateGFXObject). Use this mechanism to enable .NET event handling to be
+            directly hooked up to the GFX object's events.
+            </summary>
+            <param name="gfxObjectToken">   PML token of the GFX PML object.</param>
+            <returns>
+            The associated GFXInteractionEventManager .NET object.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core3D.Graphics.GFXInteractionEventManager.RaisePMLEvent(Aveva.Core.PMLNet.PMLNetDelegate.PMLNetEventHandler)">
+            <summary>
+            Common method to raise PML event ensuring that SGL update does
+            not cause a stack overflow.
+            </summary>
+            <param name="pmlEvent">The event to raise</param>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.GFXInteractionEventManager.InteractionStartEvent">
+            <summary>
+            Event queue for all listeners interested in interactionStart events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.GFXInteractionEventManager.InteractionStopEvent">
+            <summary>
+            Event queue for all listeners interested in interactionStop events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core3D.Graphics.GFXInteractionEventManager.InteractionChangeEvent">
+            <summary>
+            Event queue for all listeners interested in interactionChange events.
+            </summary>
+        </member>
+    </members>
+</doc>

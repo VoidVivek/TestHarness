@@ -1,0 +1,3029 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.DataManagement</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.DataManagement.AssignedStatus">
+            <summary>
+            Summary description for AssignedStatus.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.AssignedStatus.fElement">
+            <summary>
+            The element.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.AssignedStatus.fStatus">
+            <summary>
+            The status.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.#ctor(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="element">    The element.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Init(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            S.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="element">    The element.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Demote">
+            <summary>
+            Demotes.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Demote(System.String)">
+            <summary>
+            Demotes.
+            </summary>
+            <param name="comment">    The comment.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Promote">
+            <summary>
+            Promotes.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Promote(System.String)">
+            <summary>
+            Promotes.
+            </summary>
+            <param name="comment">    The comment.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Remove">
+            <summary>
+            Removes this Aveva.Core.DataManagement.AssignedStatus.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Set(Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Sets.
+            </summary>
+            <param name="val">    The value.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.AssignedStatus.Set(Aveva.Core.DataManagement.StatusValue,System.String)">
+            <summary>
+            Sets.
+            </summary>
+            <param name="val">    The value.</param>
+            <param name="comment">    The comment.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.AssignedStatus.thisElement">
+            <summary>
+            Gets this element.
+            </summary>
+            <value>
+            this element.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.AssignedStatus.Definition">
+            <summary>
+            Gets the definition.
+            </summary>
+            <value>
+            The definition.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.AssignedStatus.CurrentValue">
+            <summary>
+            Gets the current value.
+            </summary>
+            <value>
+            The current value.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.AssignedStatus.Comment">
+            <summary>
+            Gets the comment.
+            </summary>
+            <value>
+            The comment.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentThreadStateEnum">
+            <summary>
+            Thread state.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentThreadStateEnum.Open">
+            <summary>
+            An enum constant representing the open option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentThreadStateEnum.Closed">
+            <summary>
+            An enum constant representing the closed option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentThreadStateEnum.Obsolete">
+            <summary>
+            An enum constant representing the obsolete option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentPurposeEnum">
+            <summary>
+            Deprecated, DO NOT USE.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentPurposeEnum.Undefined">
+            <summary>
+            An enum constant representing the undefined option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentPurposeEnum.Electrical">
+            <summary>
+            An enum constant representing the electrical option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentPurposeEnum.General">
+            <summary>
+            An enum constant representing the general option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentPurposeEnum.Piping">
+            <summary>
+            An enum constant representing the piping option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentPurposeEnum.Structural">
+            <summary>
+            An enum constant representing the structural option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentThread">
+            <summary>
+            A comment thread.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    .</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.Create(Aveva.Core.Database.DbElement)">
+            <summary>
+            Create a CommentThread for a particular (model) element.
+            </summary>
+            <param name="anElement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.FindCommentThreads(Aveva.Core.DataManagement.Commenting.CommentSearchObjects)">
+            <summary>
+            Return all CommentThreads for a particular (model) element.
+            </summary>
+            <param name="opt">    .</param>
+            <returns>
+            The found comment threads.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.FindCommentThreads(Aveva.Core.Database.DbElement)">
+            <summary>
+            Return all CommentThreads for a particular (model) element.
+            </summary>
+            <param name="ele">    .</param>
+            <returns>
+            The found comment threads.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.FindOrphanedCommentThreads">
+            <summary>
+            Return all orphaned CommentThreads.
+            </summary>
+            <returns>
+            List of orphaned threads.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.Get(Aveva.Core.Database.DbElement)">
+            <summary>
+            Gets a comment thread using the given thread ele.
+            </summary>
+            <exception cref="T:System.Exception">  Thrown when an exception error condition occurs.</exception>
+            <param name="threadEle">  The thread ele to get.</param>
+            <returns>
+            A CommentThread.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.Attach(Aveva.Core.Database.DbElement)">
+            <summary>
+            Attaches the given ele.
+            </summary>
+            <param name="ele">    .</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.Detach(Aveva.Core.Database.DbElement)">
+            <summary>
+            Detaches the given ele.
+            </summary>
+            <param name="ele">    .</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.NewPost">
+            <summary>
+            Create a new Comment Post and return the object to the user.
+            </summary>
+            <returns>
+            A Comment Post object.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentThread.RemoveLastPost">
+            <summary>
+            Removes the latest post if it is "owned" by current user.
+            </summary>
+            <returns>
+            true if the thread was deleted as the last post was deleted, false otherwise.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.Subject">
+            <summary>
+            Get/Set the subject text of the comment thread.
+            </summary>
+            <value>
+            The subject.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.CreatedBy">
+            <summary>
+            Get created by username.
+            </summary>
+            <value>
+            Describes who created this Aveva.Core.DataManagement.Commenting.CommentThread.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.CreatedDate">
+            <summary>
+            Get created date.
+            </summary>
+            <value>
+            The created date.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.State">
+            <summary>
+            Get/Set the comment thread state.
+            </summary>
+            <value>
+            The state.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.Purpose">
+            <summary>
+            Get/Set comment purpose.
+            </summary>
+            <value>
+            The purpose.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.Id">
+            <summary>
+            Get the Id (ref) of the underlying DbElement.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.IsOwner">
+            <summary>
+            Get the curernt user the "owner" of the thread?
+            </summary>
+            <value>
+            true if this Aveva.Core.DataManagement.Commenting.CommentThread is owner, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.AttachedTo">
+            <summary>
+            Get the list of elements attached to this thread.
+            </summary>
+            <value>
+            The attached to.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.CategoryValues">
+            <summary>
+            Return the list of categories and their values.
+            </summary>
+            <value>
+            The category values.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentThread.Posts">
+            <summary>
+            Get the list of posts in chronoligical order. Newset first.
+            </summary>
+            <value>
+            The posts.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentPost">
+            <summary>
+            A comment post.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentPost.Create(Aveva.Core.Database.DbElement)">
+            <summary>
+            Creates a new CommentPost.
+            </summary>
+            <param name="ele"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentPost.Get(Aveva.Core.Database.DbElement)">
+            <summary>
+            Gets a comment post using the given post ele.
+            </summary>
+            <exception cref="T:System.Exception">  Thrown when an exception error condition occurs.</exception>
+            <param name="postEle">    The post ele to get.</param>
+            <returns>
+            A CommentPost.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentPost.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentPost.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    The ele.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentPost.AddCapture">
+            <summary>
+            Adds capture.
+            </summary>
+            <returns>
+            A CommentAttachment.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentPost.AddAttachment">
+            <summary>
+            Adds attachment.
+            </summary>
+            <returns>
+            A CommentAttachment.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.CreatedBy">
+            <summary>
+            Gets who created this Aveva.Core.DataManagement.Commenting.CommentPost.
+            </summary>
+            <value>
+            Describes who created this Aveva.Core.DataManagement.Commenting.CommentPost.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.CreatedDate">
+            <summary>
+            Gets the created date.
+            </summary>
+            <value>
+            The created date.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.IsOwner">
+            <summary>
+            Gets a value indicating whether this Aveva.Core.DataManagement.Commenting.CommentPost is owner.
+            </summary>
+            <value>
+            true if this Aveva.Core.DataManagement.Commenting.CommentPost is owner, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.Captures">
+            <summary>
+            Gets the captures.
+            </summary>
+            <value>
+            The captures.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentPost.Attachments">
+            <summary>
+            Gets the attachments.
+            </summary>
+            <value>
+            The attachments.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentAttachment">
+            <summary>
+            A comment attachment.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentAttachment.attEle_">
+            <summary>
+            The att ele.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    The ele.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.CreateAttachment(Aveva.Core.Database.DbElement)">
+            <summary>
+             Creates an attachment.
+            </summary>
+            <param name="postEle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.CreateCapture(Aveva.Core.Database.DbElement)">
+            <summary>
+             Creates an attachment.
+            </summary>
+            <param name="postEle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.Get(Aveva.Core.Database.DbElement)">
+            <summary>
+            Gets a comment attachment using the given att ele.
+            </summary>
+            <exception cref="T:System.Exception">  Thrown when an exception error condition occurs.</exception>
+            <param name="attEle"> The att ele to get.</param>
+            <returns>
+            A CommentAttachment.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.Delete">
+            <summary>
+            Remove this attachment.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentAttachment.CreatePreview(System.Byte[])">
+            <summary>
+            Create a preview for this attachment
+            </summary>
+            <param name="data">the binary image that we want a preview (thumbnail) for</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentAttachment.Title">
+            <summary>
+            Get/Set the title of the attachment.
+            </summary>
+            <value>
+            The title.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentAttachment.ContentType">
+            <summary>
+            Get/Set content type of attachment.
+            </summary>
+            <value>
+            The type of the content.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentAttachment.ModelViewReference">
+            <summary>
+            Get/Set modelviewpos reference of capture.
+            </summary>
+            <value>
+            The model view reference.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentAttachment.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentAttachment.Previews">
+            <summary>
+            Get the preview(s) for this attachment.
+            </summary>
+            <value>
+            The previews.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentAttachment.Data">
+            <summary>
+            Get/Set the binary data that represents this attachment.
+            </summary>
+            <value>
+            The data.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentCapturePreview">
+            <summary>
+            A comment capture preview.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCapturePreview.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCapturePreview.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    The ele.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCapturePreview.Create(Aveva.Core.Database.DbElement)">
+            <summary>
+            Creates a new CommentCapturePreview.
+            </summary>
+            <param name="ele"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCapturePreview.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCapturePreview.Data">
+            <summary>
+            Get/Set the binary data that represents this attachment, currently always treated as a bitmap
+            in.
+            </summary>
+            <value>
+            The data.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentCategory">
+            <summary>
+            A comment category.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategory.Init">
+            <summary>
+            Initialize
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategory.MdbOpenedEventHandler">
+            <summary>
+            At mdbopen
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategory.DbLocalChanged(Aveva.Core.Database.DbRawChanges,Aveva.Core.Database.DbEvents.operation)">
+            <summary>
+            At getwork
+            </summary>
+            <param name="Changes"></param>
+            <param name="Operation"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategory.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategory.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    The ele.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategory.Categories">
+            <summary>
+            Gets the categories.
+            </summary>
+            <value>
+            The categories.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategory.LOV">
+            <summary>
+            Get the keyword List-Of-Value.
+            </summary>
+            <value>
+            The lov.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategory.DefaultValue">
+            <summary>
+            Get the default Value.
+            </summary>
+            <value>
+            The default value.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategory.Attribute">
+            <summary>
+            Gets the attribute.
+            </summary>
+            <value>
+            The attribute.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategory.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentCategoryValues">
+            <summary>
+            Class to manage category values per thread.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategoryValues.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    The ele.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategoryValues.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>
+            The enumerator.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategoryValues.Item(System.Int32)">
+            <summary>
+            Indexer to get items within this collection using array index syntax.
+            </summary>
+            <param name="index">  Zero-based index of the entry to access.</param>
+            <returns>
+            The indexed item.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategoryValues.Item(System.String)">
+            <summary>
+            Indexer to get items within this collection using array index syntax.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the index is outside the required range.</exception>
+            <param name="index">  Zero-based index of the entry to access.</param>
+            <returns>
+            The indexed item.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentCategoryValue">
+            <summary>
+            A comment category value.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategoryValue.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentCategoryValue.#ctor(Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.Commenting.CommentCategory)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ele">    The ele.</param>
+            <param name="cat">    The category.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategoryValue.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategoryValue.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategoryValue.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentCategoryValue.Category">
+            <summary>
+            Gets the category.
+            </summary>
+            <value>
+            The category.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentUtility">
+            <summary>
+            A comment utility.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentUtility.GetCommentWorld(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get the comment world associated with the supplied element
+            </summary>
+            <param name="cmtEle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentUtility.AllElementsWithComments">
+            <summary>
+            Gets all elements with comment threads assigned.
+            </summary>
+            <returns>
+            List of DbElements.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentUtility.AllUsers">
+            <summary>
+            All users.
+            </summary>
+            <returns>
+            A List&lt;string&gt;
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentUtility.DbLocalChanged(Aveva.Core.Database.DbRawChanges,Aveva.Core.Database.DbEvents.operation)">
+            <summary>
+            At getwork, pick up all new users
+            </summary>
+            <param name="Changes"></param>
+            <param name="Operation"></param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentSearchField">
+            <summary>
+            Values that represent comment search fields.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchField.User">
+            <summary>
+            An enum constant representing the user option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchField.Date">
+            <summary>
+            An enum constant representing the date option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchField.Subject">
+            <summary>
+            An enum constant representing the subject option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchField.Text">
+            <summary>
+            An enum constant representing the text option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchField.State">
+            <summary>
+            An enum constant representing the state option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchField.Owner">
+            <summary>
+            An enum constant representing the owner option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentSearchObjects">
+            <summary>
+            A comment search objects.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObjects.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObjects.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>
+            The enumerator.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObjects.MaxResult">
+            <summary>
+            Gets or sets the maximum result.
+            </summary>
+            <value>
+            The maximum result.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObjects.Statement">
+            <summary>
+            Gets the statement.
+            </summary>
+            <value>
+            The statement.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObjects.Item(Aveva.Core.DataManagement.Commenting.CommentSearchField)">
+            <summary>
+            Indexer to get items within this collection using array index syntax.
+            </summary>
+            <param name="index">  Zero-based index of the entry to access.</param>
+            <returns>
+            The indexed item.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObjects.Item(System.String)">
+            <summary>
+            Indexer to get items within this collection using array index syntax.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the index is outside the required range.</exception>
+            <param name="index">  Zero-based index of the entry to access.</param>
+            <returns>
+            The indexed item.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentSearchObject">
+            <summary>
+            A comment search object.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.#ctor">
+            <summary>
+            Construction.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="field">  The field.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.EQ(System.String)">
+            <summary>
+            Eqs the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.EQ(System.Int32)">
+            <summary>
+            Eqs the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.EQ(System.Int32[])">
+            <summary>
+            Eqs the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.NE(System.Int32)">
+            <summary>
+            Nes the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.NE(System.String)">
+            <summary>
+            Nes the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.GT(System.String)">
+            <summary>
+            Gts the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.GE(System.String)">
+            <summary>
+            Ges the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.LT(System.String)">
+            <summary>
+            Lts the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.LE(System.String)">
+            <summary>
+            Les the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Contains(System.String)">
+            <summary>
+            Determines if this collection contains a given object.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.EQ(System.DateTime)">
+            <summary>
+            Eqs the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.NE(System.DateTime)">
+            <summary>
+            Nes the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.GT(System.DateTime)">
+            <summary>
+            Gts the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.GE(System.DateTime)">
+            <summary>
+            Ges the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.LT(System.DateTime)">
+            <summary>
+            Lts the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.LE(System.DateTime)">
+            <summary>
+            Les the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Between(System.DateTime,System.DateTime)">
+            <summary>
+            Betweens.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <param name="value2"> The value 2 Date/Time.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Commenting.CommentSearchObject.IN(System.String[])">
+            <summary>
+            INS the given value 1.
+            </summary>
+            <param name="value1"> The first value.</param>
+            <returns>
+            A CommentSearchObject.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObject.IgnoreCase">
+            <summary>
+            Gets or sets a value indicating whether the ignore case.
+            </summary>
+            <value>
+            true if ignore case, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Criteria">
+            <summary>
+            Gets the criteria.
+            </summary>
+            <value>
+            The criteria.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObject.IsSet">
+            <summary>
+            Gets a value indicating whether this Aveva.Core.DataManagement.Commenting.CommentSearchObject
+            is set.
+            </summary>
+            <value>
+            true if this Aveva.Core.DataManagement.Commenting.CommentSearchObject is set, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Commenting.CommentSearchObject.stmtBetween">
+            <summary>
+            Gets the statement between.
+            </summary>
+            <value>
+            The statement between.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper">
+            <summary>
+            Values that represent operators.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.EQ">
+            <summary>
+            An enum constant representing the eq option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.NE">
+            <summary>
+            An enum constant representing the ne option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.GT">
+            <summary>
+            An enum constant representing the gt option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.GE">
+            <summary>
+            An enum constant representing the ge option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.LT">
+            <summary>
+            An enum constant representing the lt option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.LE">
+            <summary>
+            An enum constant representing the le option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.IN">
+            <summary>
+            An enum constant representing the in option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.Between">
+            <summary>
+            An enum constant representing the between option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.Contains">
+            <summary>
+            An enum constant representing the contain option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Commenting.CommentSearchObject.Oper.nop">
+            <summary>
+            An enum constant representing the nop option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Status">
+            <summary>
+            Wraps status management operations to a managed object.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.#ctor(System.String)">
+            <summary>
+            Construct a Status object based on the name of a Status element.
+            </summary>
+            <param name="statusElementName">  Name of the status element.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Construct a Status object based a status element.
+            </summary>
+            <param name="statusElement">  The status element.</param>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Status.fStatusElement">
+            <summary>
+            The status element.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.Status.fStatusEvents">
+            <summary>
+            The status events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Init(Aveva.Core.Database.DbElement)">
+            <summary>
+            Initialize this Status object based from a Status element, validate its type.
+            </summary>
+            <param name="statusElement">  The status element.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.IsValid(Aveva.Core.Database.DbElementType)">
+            <summary>
+            indicates whether the status is relevant to the given element type.
+            </summary>
+            <param name="etype">  .</param>
+            <returns>
+            true if valid, false if not.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.IsValid(Aveva.Core.Database.DbElementType[])">
+            <summary>
+            indicates whether the status is relevant to all the given element types.
+            </summary>
+            <param name="etypes"> .</param>
+            <returns>
+            true if valid, false if not.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Assign(Aveva.Core.Database.DbElement)">
+            <summary>
+            Assign this Status to Element "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Assign(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Assign this Status to the Elements given in the "elems" array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Assign(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Assign this Status to Element "elem", giving the "comment" comment.
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Assign(Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Assign this Status to the Elements given in the "elems" array, giving the "comment" comment.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Remove(Aveva.Core.Database.DbElement)">
+            <summary>
+            Remove this Status from Element "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Remove(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Remove this Status from the Elements given in the "elems" array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Comment(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Set "comment" comment for this Status to Element "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Comment(Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Set "comment" comment for this Status to the Elements given in the "elems" array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Promote(Aveva.Core.Database.DbElement)">
+            <summary>
+            Promote this Status to Element "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Promote(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Promote this Status on the Elements given in the "elems" array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Promote(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Promote this Status to Element "elem", giving the "comment" comment.
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Promote(Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Promote this Status to the Elements given in the "elems" array, giving the "comment" comment.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Demote(Aveva.Core.Database.DbElement)">
+            <summary>
+            Demote this Status to Element "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Demote(Aveva.Core.Database.DbElement[])">
+            <summary>
+            Demote this Status on the Elements given in the "elems" array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Demote(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Demote this Status to Element "elem", giving the "comment" comment.
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Demote(Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Demote this Status to the Elements given in the "elems" array, giving the "comment" comment.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Element given in "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="val">    The value.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Elements given in the "elems"
+            array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="val">    The value.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.StatusValue,System.String)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Element given in "elem"
+            giving the "comment" comment.
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="val">    The value.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Element given in "elem".
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="val">    The value.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement,System.String,System.String)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Element given in "elem"
+            giving the "comment" comment.
+            </summary>
+            <param name="elem">   The element.</param>
+            <param name="val">    The value.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Elements given in the "elems"
+            array.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="val">    The value.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Elements given in the "elems"
+            array giving the "comment" comment.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="val">    The value.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Status.Set(Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.StatusValue,System.String)">
+            <summary>
+            Set this Status to the specific StatusValue given in "val" on the Elements given in the "elems"
+            array giving the "comment" comment.
+            </summary>
+            <param name="elems">  The elements.</param>
+            <param name="val">    The value.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.StatusElement">
+            <summary>
+            Gets the status element.
+            </summary>
+            <value>
+            The status element.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.Events">
+            <summary>
+            Gets the events.
+            </summary>
+            <value>
+            The events.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.Name">
+            <summary>
+            The name of the Status definition.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.Description">
+            <summary>
+            The description of the Status definition.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.SmallIcon">
+            <summary>
+            The small icon for the Status definition.
+            </summary>
+            <value>
+            The small icon.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.LargeIcon">
+            <summary>
+            The small icon for the Status definition.
+            </summary>
+            <value>
+            The large icon.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.InitialValue">
+            <summary>
+            The Initial Value of the Status definition.
+            </summary>
+            <value>
+            The initial value.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.EligebleFor">
+            <summary>
+            All Status Values defined for this Status definition.
+            </summary>
+            <value>
+            The eligeble for.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.Values">
+            <summary>
+            All Status Values defined for this Status definition.
+            </summary>
+            <value>
+            The values.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.Status.ControlledElements">
+            <summary>
+            All Element controlled by this Status definition.
+            </summary>
+            <exception cref="T:Aveva.Core.Utilities.Messaging.PdmsException">  Thrown when the Pdms error condition occurs.</exception>
+            <value>
+            The controlled elements.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusCommandAction">
+            <summary>
+            Set of command action types.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommandAction.Assign">
+            <summary>
+            An enum constant representing the assign option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommandAction.Set">
+            <summary>
+            An enum constant representing the set option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommandAction.Promote">
+            <summary>
+            An enum constant representing the promote option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommandAction.Demote">
+            <summary>
+            An enum constant representing the demote option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommandAction.Remove">
+            <summary>
+            An enum constant representing the remove option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommandAction.Comment">
+            <summary>
+            An enum constant representing the comment option.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusCommand">
+            <summary>
+            Wraps the StatusComamnd to a managed object.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusCommand.fStatusCommandImpl">
+            <summary>
+            The status command implementation.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            Assign Status "status" to Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Assign Status "status" to Element "elem" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String,System.String)">
+            <summary>
+            Assign Status "status" to Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Assign Status "status" to Elements "elems".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Assign Status "status" to Elements "elems" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Assign Status "status" to Elements "elems" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Remove(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            Remove Status "status" from  Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Remove(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Remove Status "status" from  Elements "elems".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Comment(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Reset Comment for Status "status" on  Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Comment(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Reset Comment for Status "status" on  Elements "elems".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            Promote Status "status" on  Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Promote Status "status" on  Element "elem" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String,System.String)">
+            <summary>
+            Promote Status "status" on  Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Promote Status "status" on  Elements "elems".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Promote Status "status" on  Elements "elems" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Promote Status "status" on  Elements "elems" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            Demote Status "status" on  Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Demote Status "status" on  Element "elem" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,System.String,System.String)">
+            <summary>
+            Demote Status "status" on  Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Demote Status "status" on  Elements "elems".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Demote Status "status" on  Elements "elems" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Demote Status "status" on  Elements "elems" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="value">  The value.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.StatusValue,System.String)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Element "elem" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="value">  The value.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.StatusValue,System.String,System.String)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elem">   The element.</param>
+            <param name="value">  The value.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Elements "elems".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="value">  The value.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.StatusValue,System.String)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Elements "elems" with Comment "comment".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="value">  The value.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.StatusValue,System.String,System.String)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Elements "elems" with Comment "comment" and
+            reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="value">  The value.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Clear(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement)">
+            <summary>
+            Clear Status "status" on  Element "elem"
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Clear(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Clear Status "status" on  Elements "elems"
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.GetErrors">
+            <summary>
+            Get the latest errors set from Status Management / Pdms.
+            </summary>
+            <returns>
+            The errors.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Assign(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Assign Status "status" to Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Remove(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Remove Status "status" from  Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Promote(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Promote Status "status" on  Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Demote(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[],System.String,System.String)">
+            <summary>
+            Demote Status "status" on  Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Comment(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[],System.String)">
+            <summary>
+            Reset Comment for Status "status" on  Element "elem".
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="comment">    The comment.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Set(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[],Aveva.Core.Database.DbElement,System.String,System.String)">
+            <summary>
+            Set StatusValue "value" for Status "status" on Element "elem" with Comment "comment" and reason.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="elems">  The elements.</param>
+            <param name="value">  The value.</param>
+            <param name="comment">    The comment.</param>
+            <param name="reason"> The reason.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.Clear(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement[])">
+            <summary>
+            Clear
+            </summary>
+            <param name="status"></param>
+            <param name="elems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusCommand.GetError">
+            <summary>
+            Gets the error.
+            </summary>
+            <returns>
+            The error.
+            </returns>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent">
+            <summary>
+            The status event.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusEvent.fStatusEventImpl">
+            <summary>
+            The status event implementation.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.GetStatusEventObject">
+            <summary>
+            Gets status event object.
+            </summary>
+            <returns>
+            The status event object.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.GetStatusEventObject(Aveva.Core.DataManagement.Status)">
+            <summary>
+            Gets status event object.
+            </summary>
+            <param name="status"> The status.</param>
+            <returns>
+            The status event object.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.SetStatusElement(Aveva.Core.DataManagement.Status)">
+            <summary>
+            Sets status element.
+            </summary>
+            <param name="status"> The status.</param>
+            <returns>
+            A StatusEvent.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeSaveworkHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeSaveworkEventHandler)">
+            <summary>
+            Adds a before savework handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeSaveworkHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeSaveworkEventHandler)">
+            <summary>
+            Removes the before savework handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddAfterSaveworkHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterSaveworkEventHandler)">
+            <summary>
+            Adds an after savework handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveAfterSaveworkHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterSaveworkEventHandler)">
+            <summary>
+            Removes the after savework handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeFlushHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeFlushEventHandler)">
+            <summary>
+            Adds a before flush handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeFlushHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeFlushEventHandler)">
+            <summary>
+            Removes the before flush handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddAfterFlushHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterFlushEventHandler)">
+            <summary>
+            Adds an after flush handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveAfterFlushHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterFlushEventHandler)">
+            <summary>
+            Removes the after flush handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeStatusAssignHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusAssignEventHandler)">
+            <summary>
+            Adds a before status assign handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeStatusAssignHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusAssignEventHandler)">
+            <summary>
+            Removes the before status assign handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddAfterStatusAssignHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusAssignEventHandler)">
+            <summary>
+            Adds an after status assign handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveAfterStatusAssignHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusAssignEventHandler)">
+            <summary>
+            Removes the after status assign handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddErrorStatusAssignHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusAssignEventHandler)">
+            <summary>
+            Adds an error status assign handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveErrorStatusAssignHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusAssignEventHandler)">
+            <summary>
+            Removes the error status assign handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeStatusRemoveHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusRemoveEventHandler)">
+            <summary>
+            Adds a before status remove handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeStatusRemoveHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusRemoveEventHandler)">
+            <summary>
+            Removes the before status remove handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddAfterStatusRemoveHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusRemoveEventHandler)">
+            <summary>
+            Adds an after status remove handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveAfterStatusRemoveHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusRemoveEventHandler)">
+            <summary>
+            Removes the after status remove handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddErrorStatusRemoveHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusRemoveEventHandler)">
+            <summary>
+            Adds an error status remove handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveErrorStatusRemoveHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusRemoveEventHandler)">
+            <summary>
+            Removes the error status remove handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeStatusCommentHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusCommentEventHandler)">
+            <summary>
+            Add Before Status Comment handler.
+            </summary>
+            <param name="evt"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeStatusCommentHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusCommentEventHandler)">
+            <summary>
+             Remove Before Status Comment handler.
+            </summary>
+            <param name="evt"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddAfterStatusCommentHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusCommentEventHandler)">
+            <summary>
+             Adds After Status Comment Handler
+            </summary>
+            <param name="evt"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveAfterStatusCommentHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusCommentEventHandler)">
+            <summary>
+             Removes After Status Comment Handler
+            </summary>
+            <param name="evt"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddErrorStatusCommentHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusCommentEventHandler)">
+            <summary>
+            Adds Error Status Comment Handler
+            </summary>
+            <param name="evt"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveErrorStatusCommentHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusCommentEventHandler)">
+            <summary>
+            Removes Error Status Comment Handler
+            </summary>
+            <param name="evt"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeStatusChangeHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusChangeEventHandler)">
+            <summary>
+            Adds a before status change handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeStatusChangeHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeStatusChangeEventHandler)">
+            <summary>
+            Removes the before status change handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddAfterStatusChangeHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusChangeEventHandler)">
+            <summary>
+            Adds an after status change handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveAfterStatusChangeHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.AfterStatusChangeEventHandler)">
+            <summary>
+            Removes the after status change handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddErrorStatusChangeHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusChangeEventHandler)">
+            <summary>
+            Adds an error status change handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveErrorStatusChangeHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.ErrorStatusChangeEventHandler)">
+            <summary>
+            Removes the error status change handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.AddBeforeControlledElementDeleteHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeControlledElementDeleteEventHandler)">
+            <summary>
+            Adds a before controlled element delete handler to 'handler'.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEvent.RemoveBeforeControlledElementDeleteHandler(Aveva.Core.DataManagement.StatusEvent,Aveva.Core.DataManagement.StatusEvent.BeforeControlledElementDeleteEventHandler)">
+            <summary>
+            Removes the before controlled element delete handler.
+            </summary>
+            <param name="evt">    The event.</param>
+            <param name="handler">    The handler.</param>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeSavework">
+            <summary>
+            Event queue for all listeners interested in BeforeSavework events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.AfterSavework">
+            <summary>
+            Event queue for all listeners interested in AfterSavework events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeFlush">
+            <summary>
+            Event queue for all listeners interested in BeforeFlush events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.AfterFlush">
+            <summary>
+            Event queue for all listeners interested in AfterFlush events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeStatusAssign">
+            <summary>
+            Event queue for all listeners interested in BeforeStatusAssign events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.AfterStatusAssign">
+            <summary>
+            Event queue for all listeners interested in AfterStatusAssign events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.ErrorStatusAssign">
+            <summary>
+            Event queue for all listeners interested in ErrorStatusAssign events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeStatusRemove">
+            <summary>
+            Event queue for all listeners interested in BeforeStatusRemove events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.AfterStatusRemove">
+            <summary>
+            Event queue for all listeners interested in AfterStatusRemove events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.ErrorStatusRemove">
+            <summary>
+            Event queue for all listeners interested in ErrorStatusRemove events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeStatusComment">
+            <summary>
+             Event queue for all listeners interested in BeforeStatusComment events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.AfterStatusComment">
+            <summary>
+             Event queue for all listeners interested in AfterStatusComment events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.ErrorStatusComment">
+            <summary>
+             Event queue for all listeners interested in ErrorStatusComment events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeStatusChange">
+            <summary>
+            Event queue for all listeners interested in BeforeStatusChange events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.AfterStatusChange">
+            <summary>
+            Event queue for all listeners interested in AfterStatusChange events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.ErrorStatusChange">
+            <summary>
+            Event queue for all listeners interested in ErrorStatusChange events.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusEvent.BeforeControlledElementDelete">
+            <summary>
+            Event queue for all listeners interested in BeforeControlledElementDelete events.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeSaveworkEventHandler">
+            <summary>
+            Code for Event Handlers.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Cancel database change event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.AfterSaveworkEventHandler">
+            <summary>
+            Delegate for handling AfterSavework events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Database change event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeFlushEventHandler">
+            <summary>
+            Delegate for handling BeforeFlush events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Cancel database change event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.AfterFlushEventHandler">
+            <summary>
+            Delegate for handling AfterFlush events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Database change event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeStatusAssignEventHandler">
+            <summary>
+            Delegate for handling BeforeStatusAssign events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Cancel status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.AfterStatusAssignEventHandler">
+            <summary>
+            Delegate for handling AfterStatusAssign events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.ErrorStatusAssignEventHandler">
+            <summary>
+            Delegate for handling ErrorStatusAssign events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Error status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeStatusRemoveEventHandler">
+            <summary>
+            Delegate for handling BeforeStatusRemove events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Cancel status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.AfterStatusRemoveEventHandler">
+            <summary>
+            Delegate for handling AfterStatusRemove events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.ErrorStatusRemoveEventHandler">
+            <summary>
+            Delegate for handling ErrorStatusRemove events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Error status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeStatusCommentEventHandler">
+            <summary>
+             Adds a before status comment handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.AfterStatusCommentEventHandler">
+            <summary>
+             Adds a after status comment handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.ErrorStatusCommentEventHandler">
+            <summary>
+             Adds a ErrorStatusComment handler to a handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeStatusChangeEventHandler">
+            <summary>
+             Adds a BeforeStatusChange handler to a handler.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.AfterStatusChangeEventHandler">
+            <summary>
+            Delegate for handling AfterStatusChange events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.ErrorStatusChangeEventHandler">
+            <summary>
+            Delegate for handling ErrorStatusChange events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Error status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEvent.BeforeControlledElementDeleteEventHandler">
+            <summary>
+            Delegate for handling BeforeControlledElementDelete events.
+            </summary>
+            <param name="sender"> Source of the event.</param>
+            <param name="e">  Cancel status event information.</param>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusEventArgs">
+            <summary>
+            Additional information for status events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusEventArgs.#ctor(Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.Status,Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="list">   The list.</param>
+            <param name="sta">    The sta.</param>
+            <param name="to"> to.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusEventArgs.List">
+            <summary>
+            Gets the list.
+            </summary>
+            <value>
+            The list.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusEventArgs.Status">
+            <summary>
+            Gets the status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusEventArgs.To">
+            <summary>
+            Gets to.
+            </summary>
+            <value>
+            to.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.CancelStatusEventArgs">
+            <summary>
+            Additional information for cancel status events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.CancelStatusEventArgs.#ctor(Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.Status,Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="list">   The list.</param>
+            <param name="sta">    The sta.</param>
+            <param name="to"> to.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.CancelStatusEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether the cancel.
+            </summary>
+            <value>
+            true if cancel, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.CancelStatusEventArgs.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.ErrorStatusEventArgs">
+            <summary>
+            Additional information for error status events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.ErrorStatusEventArgs.#ctor(Aveva.Core.Database.DbElement[],Aveva.Core.DataManagement.Status,Aveva.Core.DataManagement.StatusValue,Aveva.Core.Utilities.Messaging.PdmsMessage)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="list">   The list.</param>
+            <param name="sta">    The sta.</param>
+            <param name="to"> to.</param>
+            <param name="msg">    The message.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.ErrorStatusEventArgs.Message">
+            <summary>
+            Gets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.DBChangeEventArgs">
+            <summary>
+            Additional information for database change events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.DBChangeEventArgs.#ctor(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],Aveva.Core.Database.DbElement[],Aveva.Core.Database.DbElement[])">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="sta">    The sta.</param>
+            <param name="ass">    The ass.</param>
+            <param name="cha">    The cha.</param>
+            <param name="rem">    The rem.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.DBChangeEventArgs.Status">
+            <summary>
+            Gets the status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.DBChangeEventArgs.Assigned">
+            <summary>
+            Gets the assigned.
+            </summary>
+            <value>
+            The assigned.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.DBChangeEventArgs.Changed">
+            <summary>
+            Gets the changed.
+            </summary>
+            <value>
+            The changed.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.DBChangeEventArgs.Removed">
+            <summary>
+            Gets the removed.
+            </summary>
+            <value>
+            The removed.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.CancelDBChangeEventArgs">
+            <summary>
+            Additional information for cancel database change events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.CancelDBChangeEventArgs.#ctor(Aveva.Core.DataManagement.Status,Aveva.Core.Database.DbElement[],Aveva.Core.Database.DbElement[],Aveva.Core.Database.DbElement[])">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="sta">    The sta.</param>
+            <param name="ass">    The ass.</param>
+            <param name="cha">    The cha.</param>
+            <param name="rem">    The rem.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.CancelDBChangeEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether the cancel.
+            </summary>
+            <value>
+            true if cancel, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.CancelDBChangeEventArgs.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs">
+            <summary>
+            Additional information for before status editing user interface load events.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs.#ctor(System.Collections.Generic.List{Aveva.Core.DataManagement.ElementStatusTransition},Aveva.Core.DataManagement.Status,Aveva.Core.DataManagement.StatusUIAction)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="statusTransitions"> The status transitions.</param>
+            <param name="statusDefinition">  The status definition.</param>
+            <param name="action">    The action.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs.StatusTransitions">
+            <summary>
+            Gets the status transitions.
+            </summary>
+            <value>
+            The status transitions.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs.Status">
+            <summary>
+            Gets the status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs.Action">
+            <summary>
+            Gets the action.
+            </summary>
+            <value>
+            The action.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.BeforeStatusEditingUILoadEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether the cancel.
+            </summary>
+            <value>
+            true if cancel, false if not.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusManagement">
+            <summary>
+            The status management.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusManagement.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusManagement.AssignedStatuses(Aveva.Core.Database.DbElement)">
+            <summary>
+            Assigned statuses.
+            </summary>
+            <param name="element">    The element.</param>
+            <returns>
+            An AssignedStatus[].
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusManagement.StatusesFor(Aveva.Core.Database.DbElementType[])">
+            <summary>
+            Provides the list of status eleemnts that are relevant to all of the element types given.
+            </summary>
+            <param name="elementTypes">   .</param>
+            <returns>
+            A Status[].
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusManagement.getAllStatusLinks">
+            <summary>
+            Get All Status Links
+            </summary>
+            <returns>Returns Status Links</returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusManagement.getDbTypes">
+            <summary>
+            Gets DB Types
+            </summary>
+            <returns>Returns DB Types</returns>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusManagement.Statuses">
+            <summary>
+            Gets the statuses.
+            </summary>
+            <value>
+            The statuses.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusUIAction">
+            <summary>
+            The action for which the UI is invoked
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusUIAction.Edit">
+            <summary>Edit</summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusUIAction.Promote">
+            <summary>Promote</summary>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusUIAction.Demote">
+            <summary>Demote</summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusUIMediator">
+            <summary>
+            This class is used by applications to provide additional UI (custom control) for actions integrated with
+            status control. The Status Controller provides a StatusUIEventSource object on which status UI events will be raised.
+            The subscriber uses these events to provide its custom control and update its state.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusUIMediator.#cctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusUIMediator.HasCustomControl">
+            <summary>
+            Returns true if the provider has set custom UI
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusUIMediator.StatusUIEventSourceRegistered">
+            <summary>
+            Event raised when a StatusUIEventSource is registerd
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusUIMediator.StatusUIEventSource">
+            <summary>
+            Provides an object on which further status UI events will be raised.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusUIMediator.CustomControl">
+            <summary>
+            The custom control to be added to the status UI
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusUIMediator.BeforeStatusEditingUILoadEventHandler">
+            <summary>
+            Delegate for the event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusUIMediator.SelectedStatusChangedEventHandler">
+            <summary>
+            Delegate for the event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusUIMediator.AfterApplyUpdatesEventHandler">
+            <summary>
+            Delegate for the event handler
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.ElementStatusTransition">
+            <summary>
+            This class holds information about a status transition for an element
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.ElementStatusTransition.#ctor(Aveva.Core.Database.DbElement,Aveva.Core.DataManagement.StatusValue,Aveva.Core.DataManagement.StatusValue)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.ElementStatusTransition.Element">
+            <summary>The Db element undergoing the transition</summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.ElementStatusTransition.FromStatusValue">
+            <summary>The current status value</summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.ElementStatusTransition.ToStatusValue">
+            <summary>The status value to be set</summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusUICustomControl">
+            <summary>
+            Base class for a custom UI control
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusUICustomControl.UIControl">
+            <summary>
+            Returns the underlying control
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusUICustomControl.IsValid">
+            <summary>
+            Returns true if the custom control is in a valid state
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.StatusUICustomControl.ValidChanged">
+            <summary>
+            Event raised when the valid state of the control changes
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.IStatusUIEventSource">
+            <summary>
+            Interface describing events raised by the StatusUIEventSource
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.BeforeStatusEditingUILoad">
+            <summary>
+            Event raised before the status editing UI is loaded
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.SelectedStatusChanged">
+            <summary>
+            Event raised after the selected state has been changed on the status editing UI
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.BeforeUpdates">
+            <summary>
+            Event raised before the status update is actioned
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.AfterApplyUpdates">
+            <summary>
+            Event raised after the status update is actioned for an Apply operation
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.StatusUpdatesBegin">
+            <summary>
+            Event raised when any of "status update commands" are executed. It is always follwoed by "StatusUpdatesEnd" or "StatusUpdatesAborted".
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.StatusUpdatesEnd">
+            <summary>
+            Event raised when status update ends. It follows "StatusUpdatesBegin" if the update operation is not cancelled.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.DataManagement.IStatusUIEventSource.StatusUpdatesAborted">
+            <summary>
+            Event raised when status update is aborted. It follows "StatusUpdatesBegin" if the update operation is cancelled.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.StatusValue">
+            <summary>
+            The status value.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusValue.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusValue.#ctor(Aveva.Core.Database.DbElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="statusValue">    The status value.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusValue.#ctor(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="statusElement">  The status element.</param>
+            <param name="statusValueName">    Name of the status value.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusValue.#ctor(Aveva.Core.DataManagement.Status,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="status"> The status.</param>
+            <param name="statusValueName">    Name of the status value.</param>
+        </member>
+        <member name="F:Aveva.Core.DataManagement.StatusValue.fStatusVal">
+            <summary>
+            The status value.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusValue.Init(Aveva.Core.Database.DbElement)">
+            <summary>
+            S.
+            </summary>
+            <param name="statusValueElement"> The status value element.</param>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.StatusValue.Init(Aveva.Core.Database.DbElement,System.String)">
+            <summary>
+            S.
+            </summary>
+            <param name="statusElement">  The status element.</param>
+            <param name="statusValueName">    Name of the status value.</param>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusValue.ValueElement">
+            <summary>
+            Gets the value element.
+            </summary>
+            <value>
+            The value element.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusValue.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusValue.Number">
+            <summary>
+            Gets or sets the number of. 
+            </summary>
+            <value>
+            The number.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusValue.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusValue.ValidTransitions">
+            <summary>
+            Gets the valid transitions.
+            </summary>
+            <exception cref="T:Aveva.Core.Utilities.Messaging.PdmsException">  Thrown when the Pdms error condition occurs.</exception>
+            <value>
+            The valid transitions.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.DataManagement.StatusValue.ControlledElements">
+            <summary>
+            Gets the controlled elements.
+            </summary>
+            <exception cref="T:Aveva.Core.Utilities.Messaging.PdmsException">  Thrown when the Pdms error condition occurs.</exception>
+            <value>
+            The controlled elements.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.DataManagement.Utilities">
+            <summary>
+            Summary description for Utilities.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.#ctor">
+            <summary>
+            Specialised default constructor for use only by derived class.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.RefNoAsString(Aveva.Core.Database.DbElement)">
+            <summary>
+            Returns the reference number of an element as a string in the format "=111/222".
+            </summary>
+            <param name="ele">    The ele.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.ParseRef(System.String)">
+            <summary>
+            Parses a reference number string and returns it as a two integers array.
+            </summary>
+            <param name="refString">  The reference string.</param>
+            <returns>
+            An int[].
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.ToDbElement(Aveva.Core.PMLNet.PMLNetAny)">
+            <summary>
+            Returns the DbElement corresponding to a PML DBREF object, or an empty DbElement if the
+            PMLNetAny object is of the wrong type.
+            </summary>
+            <param name="any">    any.</param>
+            <returns>
+            any as a DbElement.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.ToPMLNetAnyTemporary(Aveva.Core.Database.DbElement)">
+            <summary>
+            Returns a temporary PMLNetAny object representing a PML DBREF object from a DbElement
+            (temporary so it will be deleted when it goes out of scope)
+            </summary>
+            <param name="ele">    The ele.</param>
+            <returns>
+            ele as a PMLNetAny.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.GetLargeImage(System.String)">
+            <summary>
+            Gets large image.
+            </summary>
+            <param name="resourceId"> Identifier for the resource.</param>
+            <returns>
+            The large image.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.DataManagement.Utilities.GetSmallImage(System.String)">
+            <summary>
+            Gets small image.
+            </summary>
+            <param name="resourceId"> Identifier for the resource.</param>
+            <returns>
+            The small image.
+            </returns>
+        </member>
+    </members>
+</doc>

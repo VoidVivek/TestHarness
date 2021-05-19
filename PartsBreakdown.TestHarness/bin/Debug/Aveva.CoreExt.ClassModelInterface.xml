@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.CoreExt.ClassModelInterface</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.CoreExt.ClassModelInterface.ClassModelObjectProvider">
+            <summary>
+            An Entity which provides Instance of ClassModelManager
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.ClassModelInterface.ClassModelObjectProvider.GetClassModelInstance">
+            <summary>
+            Gets Instance of Class Model Manager
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.CoreExt.ClassModelInterface.IDataProvider">
+            <summary>
+            Interface for class model manager
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.ClassModelInterface.IDataProvider.GetConceptualClassIdFromElementType(System.String)">
+            <summary>
+            Takes DbElement Id and returns respective
+            Conceptual class Id
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.ClassModelInterface.IDataProvider.GetNamingAttributesOfClass(System.String)">
+            <summary>
+            Gets the naming attributes for a class.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.ClassModelInterface.IDataProvider.GetUdaId(System.String)">
+            <summary>
+            Get the uda, given the conceptual property URI.
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.ClassModelInterface.IDataProvider.GetConceptualModelAttributeName(System.String)">
+            <summary>
+            Get the uda name for given the conceptual attribute name.
+            </summary>
+            <param name="udaName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Aveva.CoreExt.ClassModelInterface.DataProviderMessage">
+            <summary>
+            Message for event aggerator to get DataProvider object
+            </summary>
+        </member>
+        <member name="M:Aveva.CoreExt.ClassModelInterface.DataProviderMessage.#ctor(Aveva.CoreExt.ClassModelInterface.IDataProvider)">
+            <summary>
+            Constructor for DataProviderMessage
+            </summary>
+            <param name="dataProvider"></param>
+        </member>
+        <member name="P:Aveva.CoreExt.ClassModelInterface.DataProviderMessage.DataProviderObject">
+            <summary>
+            Gets the Data provider object of Class Model Manager
+            </summary>
+        </member>
+    </members>
+</doc>

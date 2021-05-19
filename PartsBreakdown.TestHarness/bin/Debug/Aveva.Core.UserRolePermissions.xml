@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.UserRolePermissions</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.UserRolePermissions.IUserPermissions">
+            <summary>
+            IUserPermissions interface
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.UserRolePermissions.IUserPermissions.HasPermission(System.String,Aveva.Core.Database.DbElement)">
+            <summary>
+            determines whether use has permission to the given role or not
+            </summary>
+            <param name="role">Role Name</param>
+            <param name="user">user</param>
+            <returns>returns true if the user has permission to the given role</returns>
+        </member>
+        <member name="M:Aveva.Core.UserRolePermissions.IUserPermissions.CanCreateTag(Aveva.Core.Database.DbElement)">
+            <summary>
+            Determines whether user can create tag or not 
+            </summary>
+            <param name="user">User</param>
+            <returns>returns true if the user has the permission  to create tag</returns>
+        </member>
+        <member name="M:Aveva.Core.UserRolePermissions.IUserPermissions.CanDeleteTag(Aveva.Core.Database.DbElement)">
+            <summary>
+            Determines whether user can delete tag or not 
+            </summary>
+            <param name="user">user</param>
+            <returns>returns true if the user has the permission  to delete tag</returns>
+        </member>
+    </members>
+</doc>

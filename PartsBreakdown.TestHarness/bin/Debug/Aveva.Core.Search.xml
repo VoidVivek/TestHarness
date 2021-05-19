@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.Search</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Search.CollectionsManager">
+            <summary>
+            Collection manager class
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ICollectionsManager">
+            <summary>
+            Collection manager
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.AddCollection(System.String)">
+            <summary>
+            Creates collection or empties existing one
+            </summary>
+            <param name="name"></param>
+            <returns>collection key</returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.AddElements(System.String,System.Collections.Generic.List{Aveva.Core.Database.DbElement})">
+            <summary>
+            Adds elements to collection
+            </summary>
+            <param name="key"></param>
+            <param name="elems"></param>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.GetName(System.String)">
+            <summary>
+            Gets name of object
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.GetPath(System.String)">
+            <summary>
+            Gets name of object
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.IsValid">
+            <summary>
+            Checks if manager is valid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.AddSystemCollection(Aveva.Core.Search.ISystemCollection)">
+            <summary>
+            Adds a system collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.AddReportingCollection(Aveva.Core.Search.ISystemCollection)">
+            <summary>
+            Adds a reporting collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.SystemCollections">
+            <summary>
+            System collections
+            </summary>
+            <returns>List of system collections</returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ICollectionsManager.ReportingCollections">
+            <summary>
+            Reporting collections
+            </summary>
+            <returns>List of reporting collections</returns>
+        </member>
+        <member name="E:Aveva.Core.Search.ICollectionsManager.CurrentCollectionChanged">
+            <summary>
+            Event when collection changed
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ICollectionsManager.CurrentCollection">
+            <summary>
+            Gets Current collection key
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ICollectionsManager.SelectedCollection">
+            <summary>
+            Gets Current collection key
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ICollectionsManager.Current">
+            <summary>
+            Set singleton
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.AddCollection(System.String)">
+            <summary>
+            Creates new collection or empties existing one
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.AddElements(System.String,System.Collections.Generic.List{Aveva.Core.Database.DbElement})">
+            <summary>
+            Adds elements to collection
+            </summary>
+            <param name="key"></param>
+            <param name="elems"></param>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.GetName(System.String)">
+            <summary>
+            Gets name of collection
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.GetPath(System.String)">
+            <summary>
+            Get path of collection
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.IsValid">
+            <summary>
+            Check if manager is valid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.AddSystemCollection(Aveva.Core.Search.ISystemCollection)">
+            <summary>
+            Add a system collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.AddReportingCollection(Aveva.Core.Search.ISystemCollection)">
+            <summary>
+            Add a reporting collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.SystemCollections">
+            <summary>
+            Return system collections
+            </summary>
+            <returns>List of system collections</returns>
+        </member>
+        <member name="M:Aveva.Core.Search.CollectionsManager.ReportingCollections">
+            <summary>
+            Return reporting collections
+            </summary>
+            <returns>List of reporting collections</returns>
+        </member>
+        <member name="P:Aveva.Core.Search.CollectionsManager.Instance">
+            <summary>
+            Instance
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.CollectionsManager.Current">
+            <summary>
+            Sets current collection manager
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.Search.CollectionsManager.CurrentCollectionChanged">
+            <summary>
+            Event when collection changed
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.CollectionsManager.CurrentCollection">
+            <summary>
+            Gets Current collection key
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.CollectionsManager.SelectedCollection">
+            <summary>
+            Gets Selected collection key
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ElementPopulation">
+            <summary>
+            .NET and PML-callable grid control.
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.IElementPopulation">
+            <summary>
+            Population of elements
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.IElementPopulation.Source">
+            <summary>
+            Source of the Element Population (eg "MyData", "DisplayList")
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.IElementPopulation.Elements">
+            <summary>
+            Return the full population
+            A Hashtable of DbElements
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.IElementPopulation.ElementList">
+            <summary>
+            Return the full population
+            As IEnumerable of DbElements
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ElementPopulation.#ctor(System.String)">
+            <summary>
+            ElementPopulation Constructor
+            </summary>
+            <param name="name"> Source name of Element Population</param>
+        </member>
+        <member name="M:Aveva.Core.Search.ElementPopulation.Assign(Aveva.Core.Search.ElementPopulation)">
+            <summary>Assign</summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ElementPopulation.Register">
+            <summary>
+            Register this ElementPopulation with the PDMS SearchManager
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ElementPopulation.Unregister">
+            <summary>
+            Unregister this ElementPopulation with the PDMS SearchManager
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ElementPopulation.ToString">
+            <summary>
+            returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Aveva.Core.Search.ElementPopulation.BeforePopulate">
+            <summary>
+            BeforePopulate event – This event is called when the Search Utility requests the element list
+            The handler should return args[0] as an ARRAY of STRINGs (element names or refs)
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ElementPopulation.IsRegistered">
+            <summary>
+            Is this ElementPopulation registered with the PDMS SearchManager
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ElementPopulation.Source">
+            <summary>
+            Return the Element Population source name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ElementPopulation.Elements">
+            <summary>
+            Return the current list of elements for this Element Population
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ElementPopulation.ElementList">
+            <summary>
+            Return the current list of elements for this Element Population
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.SearchModified">
+            <summary>
+            Modified since
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.SearchModified.ThisSession">
+            <summary>
+            This session
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.SearchModified.Hour">
+            <summary>
+            Within the last hour
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.SearchModified.Day">
+            <summary>
+            Within the last 24 hours
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.SearchModified.Week">
+            <summary>
+            Within the last 7 days
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.SearchModified.Month">
+            <summary>
+            Within the last month
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.SearchModified.Year">
+            <summary>
+            Within the last year
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.PopulationType">
+            <summary>
+            Population type
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.PopulationType.CurrentElement">
+            <summary>
+            Current Element
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.PopulationType.UserElement">
+            <summary>
+            Element
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Search.PopulationType.CurrentCollection">
+            <summary>
+            Current Collection
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ISearch">
+            <summary>
+            Search provider
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearch.Run">
+            <summary>
+            Run the search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.Name">
+            <summary>
+            Search Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.Description">
+            <summary>
+            Search description
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ItemNameContains">
+            <summary>
+            Search for items whose name contains
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ItemTypes">
+            <summary>
+            Search for given item types
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.BeneathItem">
+            <summary>
+            Position in hierarchy to start search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.BeneathItems">
+            <summary>
+            Positions in hierarchy to start search
+            Treats BeneathItem as a space separated array
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.InDatabase">
+            <summary>
+            Database type to search in
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ElementPopulation">
+            <summary>
+            Element population source
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ElementPopulationType">
+            <summary>
+            Population type
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.InVolume">
+            <summary>
+            Controls if search should be constrained within a volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.VolumeOfItem">
+            <summary>
+            Search within volume of given item
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.InVolumeOfItem">
+            <summary>
+            Indicates search within volume of given item or within Explicit Volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.InExplicitVolumeLowerLimit">
+            <summary>
+            Lower limit of explicit volumetric search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.InExplicitVolumeUpperLimit">
+            <summary>
+            Upper limit of explicit volumetric search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.CompletelyWithin">
+            <summary>
+            Should search be restricted to items completely within specified volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.UseModified">
+            <summary>
+            Search based on modified date/time
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.Modified">
+            <summary>
+            Period for modified date/time
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ShowModifiedColumn">
+            <summary>
+            Should Modified column be shown
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.AttributeFilters">
+            <summary>
+            List of attribute filters
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ColumnHeadings">
+            <summary>
+            Search result column headings
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ColumnExpressions">
+            <summary>
+            Search result column expressions
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.GridLayoutFile">
+            <summary>
+            Search result grid layout
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.FreeFilter">
+            <summary>
+            PML Expression
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearch.ShowAdvancedOptions">
+            <summary>
+            Show Advanced Options
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ISystemCollection">
+            <summary>
+            A System Collection 
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ISystemCollection.Members">
+            <summary>
+            Members of collection
+            </summary>
+            <returns>List of collection members</returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISystemCollection.IsValid">
+            <summary>
+            Checks if collection is valid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Aveva.Core.Search.ISystemCollection.CollectionChanged">
+            <summary>
+            Event when collection changed
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISystemCollection.Name">
+            <summary>
+            Gets collection name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISystemCollection.Key">
+            <summary>
+            Gets collection key
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISystemCollection.IsHierarchy">
+            <summary>
+            Returns true if search includes hierarchy
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.Search">
+            <summary>
+            Class to represent a Search.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.Search.Run">
+            <summary>
+            Run the search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.Name">
+            <summary>
+            Search Name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.Description">
+            <summary>
+            Search description
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ItemNameContains">
+            <summary>
+            Search for items whose name contains
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ItemTypes">
+            <summary>
+            Search for given item types
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.BeneathItem">
+            <summary>
+            Position in hierarchy to start search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.BeneathItems">
+            <summary>
+            Positions in hierarchy to start search
+            Treats BeneathItem as a space separated array
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.InDatabase">
+            <summary>
+            Database type to search in
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ElementPopulation">
+            <summary>
+            Element population source
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ElementPopulationType">
+            <summary>
+            Population Type
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.InVolume">
+            <summary>
+            Controls if search should be constrained within a volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.VolumeOfItem">
+            <summary>
+            Search within volume of given item
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.InVolumeOfItem">
+            <summary>
+            Indicates search within volume of given item or within Explicit Volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.InExplicitVolumeLowerLimit">
+            <summary>
+            Lower limit of explicit volumetric search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.InExplicitVolumeUpperLimit">
+            <summary>
+            Upper limit of explicit volumetric search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.CompletelyWithin">
+            <summary>
+            Should search be restricted to items completely within specified volume
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.UseModified">
+            <summary>
+            Search on modified date/time
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.Modified">
+            <summary>
+            Period foe modified date/time search
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ShowModifiedColumn">
+            <summary>
+            Should Modified column be shown
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.AttributeFilters">
+            <summary>
+            List of attribute filters
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ColumnHeadings">
+            <summary>
+            Search result column headings
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ColumnExpressions">
+            <summary>
+            Search result column expressions
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.GridLayoutFile">
+            <summary>
+            Search result grid layout
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.FreeFilter">
+            <summary>
+            PML Expression
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.Search.ShowAdvancedOptions">
+            <summary>
+            Show Advanced Options
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ISearchCollection">
+            <summary>
+            Search Collection
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.Add(System.String)">
+            <summary>
+            Add new search to collection with the given name
+            </summary>
+            <param name="searchName">Name of new search</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.Add(Aveva.Core.Search.Search)">
+            <summary>
+            Add search to collection
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the search collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.Remove(System.String)">
+            <summary>
+            Remove the search with the given name from the collection
+            </summary>
+            <param name="searchName">Name of search to remove</param>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.Remove(Aveva.Core.Search.Search)">
+            <summary>
+            Remove the given search object from the collection
+            </summary>
+            <param name="search">Search object to remove</param>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.Exists(System.String)">
+            <summary>
+            Determines if collection contains a search with the given name
+            </summary>
+            <param name="searchName">Name of search</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchCollection.Exists(Aveva.Core.Search.Search)">
+            <summary>
+            Determines if the collection contains given search object
+            </summary>
+            <param name="search">Search object</param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchCollection.Item(System.String)">
+            <summary>
+            Indexer to return the search with the given name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchCollection.Count">
+            <summary>
+            Number of searches in collection
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.SearchCollection">
+            <summary>
+            A collection of Search objects
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.Add(System.String)">
+            <summary>
+            Add new search to collection with the given name
+            </summary>
+            <param name="searchName">Name of new search</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.Add(Aveva.Core.Search.Search)">
+            <summary>
+            Add search to collection
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the search collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.Remove(System.String)">
+            <summary>
+            Remove the search with the given name from the collection
+            </summary>
+            <param name="searchName">Name of search to remove</param>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.Remove(Aveva.Core.Search.Search)">
+            <summary>
+            Remove the given search object from the collection
+            </summary>
+            <param name="search">Search object to remove</param>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.Exists(System.String)">
+            <summary>
+            Determines if collection contains a search with the given name
+            </summary>
+            <param name="searchName">Name of search</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchCollection.Exists(Aveva.Core.Search.Search)">
+            <summary>
+            Determines if the collection contains given search object
+            </summary>
+            <param name="search">Search object</param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchCollection.Item(System.String)">
+            <summary>
+            Indexer to return the search with the given name
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchCollection.Count">
+            <summary>
+            Number of searches in collection
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ISearchGroup">
+            <summary>
+            Search Group
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroup.Load">
+            <summary>
+            Loads the search group from serialized data
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroup.Save">
+            <summary>
+            Serializes the search group contents into the specified directory
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroup.Searches">
+            <summary>
+            Returns the collection of searches for this group
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroup.GroupName">
+            <summary>
+            Name of search group
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroup.Directory">
+            <summary>
+            Directory into which the search group contents is saved
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroup.Icon">
+            <summary>
+            Icon associated with the search group
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroup.ReadOnly">
+            <summary>
+            Get or sets whether the search group is read only
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroup.DefaultGroup">
+            <summary>
+            Default Group
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.SearchGroup">
+            <summary>
+            A Class to represent a Group of searches.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroup.Load">
+            <summary>
+            Loads the search group from serialized data
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroup.Save">
+            <summary>
+            Serializes the search group contents into the specified directory
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroup.Searches">
+            <summary>
+            Returns the collection of searches for this group
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroup.GroupName">
+            <summary>
+            Name of search group
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroup.Directory">
+            <summary>
+            Directory into which the search group contents is saved
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroup.Icon">
+            <summary>
+            Icon associated with the search group
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroup.ReadOnly">
+            <summary>
+            Get or sets whether the search group is read only
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroup.DefaultGroup">
+            <summary>
+            Default Group
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ISearchGroupsCollection">
+            <summary>
+            Collection of Search Groups
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the search group collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Add(System.String,System.Boolean)">
+            <summary>
+            Add new search group to collection with the given name
+            </summary>
+            <param name="searchGroupName"></param>
+            <param name="defaultGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Add(System.String,System.String,System.Boolean)">
+            <summary>
+            Add new group by name with override directory
+            </summary>
+            <param name="searchGroupName"></param>
+            <param name="directory"></param>
+            <param name="defaultGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Add(Aveva.Core.Search.SearchGroup)">
+            <summary>
+            Add existing group
+            </summary>
+            <param name="searchGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Remove(System.String)">
+            <summary>
+            Remove the search group with the given name from the collection
+            </summary>
+            <param name="searchGroupName"></param>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Remove(Aveva.Core.Search.SearchGroup)">
+            <summary>
+            Remove the given search group object from the collection
+            </summary>
+            <param name="searchGroup"></param>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Exists(System.String)">
+            <summary>
+            Determines if the collection contains a search group with the given name
+            </summary>
+            <param name="searchGroupName">Name of search group</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.ISearchGroupsCollection.Exists(Aveva.Core.Search.SearchGroup)">
+            <summary>
+            Determines if the collection contains a given search group object
+            </summary>
+            <param name="searchGroup">Search group object</param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchGroupsCollection.Item(System.String)">
+            <summary>
+            Indexer to return the search group with the given name
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.SearchGroupsCollection">
+            <summary>
+            A class to represent a collection of search groups.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the search group collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Add(System.String,System.Boolean)">
+            <summary>
+            Add new search group to collection with the given name
+            </summary>
+            <param name="searchGroupName"></param>
+            <param name="defaultGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Add(System.String,System.String,System.Boolean)">
+            <summary>
+            Add new group by name with override directory
+            </summary>
+            <param name="searchGroupName"></param>
+            <param name="directory"></param>
+            <param name="defaultGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Add(Aveva.Core.Search.SearchGroup)">
+            <summary>
+            Add existing search group
+            </summary>
+            <param name="searchGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Remove(System.String)">
+            <summary>
+            Remove the search group with the given name from the collection
+            </summary>
+            <param name="searchGroupName"></param>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Remove(Aveva.Core.Search.SearchGroup)">
+            <summary>
+            Remove the given search group object from the collection
+            </summary>
+            <param name="searchGroup"></param>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Exists(System.String)">
+            <summary>
+            Determines if the collection contains a search group with the given name
+            </summary>
+            <param name="searchGroupName">Name of search group</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchGroupsCollection.Exists(Aveva.Core.Search.SearchGroup)">
+            <summary>
+            Determines if the collection contains a given search group object
+            </summary>
+            <param name="searchGroup">Search group object</param>
+            <returns></returns>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchGroupsCollection.Item(System.String)">
+            <summary>
+            Indexer to return the search group with the given name
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.ISearchManager">
+            <summary>
+            Manage searches
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.ISearchManager.SearchGroups">
+            <summary>
+            Gets the collection of search groups
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Search.SearchManager">
+            <summary>
+            Manages searches
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Search.SearchManager.PopulationSource(System.String)">
+            <summary>
+            Return a named IElementPopulation
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchManager.SearchGroups">
+            <summary>
+            Gets the collection of search groups
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Search.SearchManager.PopulationSources">
+            <summary>
+            Return an ArrayList of IElementPopulations
+            </summary>
+        </member>
+    </members>
+</doc>
